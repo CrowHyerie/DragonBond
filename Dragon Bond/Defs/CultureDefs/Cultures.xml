@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+  <CultureDef>
+    <defName>VeloniriCulture</defName>
+    <label>Veloniri Culture</label>
+    <description>A proud and ancient civilization, defined by its deep connection to dragons and an unyielding sense of nobility.</description>
+    <pawnNameMaker>VeloniriNamer</pawnNameMaker>
+    <pawnNameMakerFemale>FemaleVeloniriNamer</pawnNameMakerFemale>
+    <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoCorunan</ideoNameMaker>
+    <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeityCorunan</deityNameMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerCorunan</deityTypeMaker>
+    <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalCorunan</festivalNameMaker>
+    <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_Corunan</leaderTitleMaker>
+    <allowedPlaceTags>
+      <li>OriginTribal</li>
+    </allowedPlaceTags>
+    <iconPath>World/VelonirBaseIcon</iconPath>
+    <iconColor>(0.8, 0.8, 0.8)</iconColor>
+    <thingStyleCategories>
+      <li>
+        <category>Rustic</category>
+        <priority>2</priority>
+      </li>
+    </thingStyleCategories>
+    <styleItemTags>
+      <li>
+          <tag>Rural</tag>
+          <baseWeight>1</baseWeight>
+          <weightFactor>1</weightFactor>
+      </li>
+      <li>
+        <tag>NoBeard</tag>
+        <baseWeight>0.25</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+      <li>
+        <tag>BeardTribal</tag>
+        <baseWeight>0.85</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    <li>
+      <tag>TattooFaceTribal</tag>
+      <baseWeight>0.4</baseWeight>
+      <weightFactor>1</weightFactor>
+    </li>
+    <li>
+      <tag>TattooBodyTribal</tag>
+      <baseWeight>0.4</baseWeight>
+      <weightFactor>1</weightFactor>
+    </li>
+    </styleItemTags>
+  </CultureDef>
+</Defs>

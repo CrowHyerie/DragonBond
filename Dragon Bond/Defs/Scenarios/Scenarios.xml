@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenarioDef>
+    <defName>Velonir_Rebels</defName>
+    <label>Veloniri Rebels</label>
+<description>You have narrowly escaped the chaos of the crumbling Veloniri empire, now in possession of a dragon egg—a rare and powerful prize. With rival factions closing in, you must decide whether to nurture the dragon and harness its power, or sell it for the resources needed to survive. But if you can overcome the odds, you might just rise to reclaim the glory of the Velonir. Note: Starting with limited resources and technology makes this a challenging scenario.</description>    
+  <scenario>
+      <summary>Four Veloniri Rebels with a valuable Dragon Egg. Difficult.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>VeloniriPlayerFaction</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+          <def>ConfigurePawnsXenotypes</def>
+          <pawnChoiceCount>8</pawnChoiceCount>
+          <customSummary>Start with one Velonir and three Baseliners.</customSummary>
+          <overrideKinds>
+            <li>
+              <xenotype>VelonirRace</xenotype>
+              <pawnKind>Veloniri_Player</pawnKind>
+            </li>
+          </overrideKinds>
+          <xenotypeCounts>
+            <li>
+              <xenotype>VelonirRace</xenotype>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+            <li>
+              <xenotype>Baseliner</xenotype>
+              <count>3</count>
+            </li>
+          </xenotypeCounts>
+        </li>
+
+        <!-- Player starting stuff spawn method-->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+        </li>
+
+        <!-- Player pawns modifiers -->
+        <li Class="ScenPart_SetNeedLevel">
+          <def>SetNeedLevel</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>1.0</chance>
+          <need>Food</need>
+          <levelRange>0~0.1</levelRange>
+        </li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>100</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>500</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>20</count>
+        </li>
+        <li Class="DD.ScenPart_StartingThing_DefinedTamed">
+          <def>StartingThing_DefinedTamed_PlayerTribe</def>
+          <thingDef>EggWhiteDragonFertilized</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>DragonNest</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Short</thingDef>
+          <count>2</count>
+        </li>
+
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
+
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>The Velonir Empire, once a unified and mighty force, now lies in ruins, torn apart by power struggles and ancient rivalries.As the leader of one of the remaining factions, you’ve managed to escape amidst the chaos, but your position is far from secure.The empire's other factions are vying for control, each driven by their own ambitions and visions for the future. With your loyal followers by your side, you have claimed a dragon egg—an unmatched symbol of power and a potential game-changer in the battle for dominance.However, this victory is but a fleeting moment of triumph in the midst of turmoil. As the egg hatches and the dragon grows, it will bring both tremendous power and unforeseen challenges.The road ahead is perilous, but with your trusted comrades the strength of your dragon, you could reunite the Velonir Empire under your rule.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>
