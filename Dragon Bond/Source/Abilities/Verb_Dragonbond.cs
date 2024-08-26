@@ -1,7 +1,7 @@
 ﻿using Verse;
 using RimWorld;
 using System.Linq;
-using UnityEngine; // For random number generation
+using UnityEngine; 
 
 namespace DragonBond
 {
@@ -10,36 +10,20 @@ namespace DragonBond
         // This method checks if the target is a valid dragon.
         private bool IsValidTarget(Pawn target)
         {
-            // List of all valid dragon defNames
-            string[] validDragonDefNames = new string[]
             {
-                // Common Dragons
-                "Black_Dragon",
-                "Blue_Dragon",
-                "Green_Dragon",
-                "Purple_Dragon",
-                "Red_Dragon",
-                "White_Dragon",
-                "Yellow_Dragon",
+                // Check if the target's def is in the DB_DragonRaces category
+                if (!target.def.thingCategories.Contains(ThingCategoryDef.Named("DB_DragonRaces")))
+                {
+                    Messages.Message("This ability can only be used on dragons!", MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
 
-                // Rare Dragons
-                "Gold_Dragon",
-                "Silver_Dragon",
-                "Jade_Dragon",
-                "True_Dragon"
-            };
-
-            // Check if the target's defName is in the list of valid dragon defNames
-            if (!validDragonDefNames.Contains(target.def.defName))
-            {
-                Messages.Message("This ability can only be used on dragons!", MessageTypeDefOf.RejectInput, false);
-                return false;
+                return true;
             }
-
             return true;
         }
 
-        // This method handles the actual casting of the ability.
+        // Ability cast.
         protected override bool TryCastShot()
         {
             Pawn casterPawn = CasterPawn;
@@ -54,7 +38,7 @@ namespace DragonBond
                     return false; // Cancels the action if there's already a bonded dragon
                 }
 
-                // Implement the taming and bonding logic
+                //Taming and bonding logic
                 if (TameDragon(targetPawn, casterPawn))
                 {
                     Messages.Message("Dragon bonding successful!", MessageTypeDefOf.PositiveEvent, false);
@@ -70,7 +54,7 @@ namespace DragonBond
             return false; // Indicates the action failed.
         }
 
-        // This method handles taming and bonding the dragon.
+        // Handles taming and bonding the dragon.
         private bool TameDragon(Pawn dragon, Pawn tamer)
         {
             if (!dragon.RaceProps.Animal || dragon.Faction != null)

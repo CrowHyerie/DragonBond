@@ -15,5 +15,22 @@
         <mustBeSelectable>true</mustBeSelectable>
       </targetParams>
     </verbProperties>
+    <modExtensions>
+      <li Class="DragonBond.Verb_DragonBond">
+        <allowedAnimals>
+          <li>Blue_Dragon</li>
+          <li>Green_Dragon</li>
+          <li>Purple_Dragon</li>
+          <li>Red_Dragon</li>
+          <li>White_Dragon</li>
+          <li>Yellow_Dragon</li>
+          <li>Black_Dragon</li>
+          <li>Jade_Dragon</li>
+          <li>Gold_Dragon</li>
+          <li>Silver_Dragon</li>
+          <li MayRequire="onyxae.dragonsdescent"> </li>
+        </allowedAnimals>
+      </li>
+    </modExtensions>
   </AbilityDef>
 </Defs>

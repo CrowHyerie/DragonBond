@@ -266,7 +266,7 @@
             <VelonirDragonKnight>5</VelonirDragonKnight>
             <VelonirDragonRider>3</VelonirDragonRider>
             <DragonMonarch>1.5</DragonMonarch>
-            <Black_Dragon> 10 </Black_Dragon>
+            <DB_DragonRaces>15</DB_DragonRaces>
           </options>
         </li>
         <li>
@@ -277,8 +277,8 @@
             <VelonirArcher>10</VelonirArcher>
             <VelonirFootsoldier>10</VelonirFootsoldier>
             <VelonirDragonRider>5</VelonirDragonRider>
-            <Black_Dragon> 10 </Black_Dragon>
-          </options>
+            <DB_DragonRaces>10</DB_DragonRaces>        
+        </options>
         </li>
         <li>
           <!-- Normal fights, melee only -->
@@ -289,7 +289,7 @@
             <VelonirSquire>10</VelonirSquire>
             <VelonirDragonKnight>10</VelonirDragonKnight>
             <DragonMonarch>5</DragonMonarch>
-            <Black_Dragon> 10 </Black_Dragon>
+            <DB_DragonRaces>10</DB_DragonRaces>
           </options>
         </li>
         <li>
@@ -305,7 +305,7 @@
             <VelonirDragonKnight>5</VelonirDragonKnight>
             <VelonirDragonRider>3</VelonirDragonRider>
             <DragonMonarch>1.5</DragonMonarch>
-            <Black_Dragon> 10 </Black_Dragon>
+            <DB_DragonRaces> 10 </DB_DragonRaces>
           </options>
         </li>
         <li>
@@ -347,7 +347,7 @@
             <VelonirFootsoldier>10</VelonirFootsoldier>
             <VelonirDragonKnight>7</VelonirDragonKnight>
             <VelonirDragonRider>10</VelonirDragonRider>
-            <Black_Dragon> 10 </Black_Dragon>
+            <DB_DragonRaces> 10 </DB_DragonRaces>
           </options>
         </li>
         <li>
@@ -356,7 +356,7 @@
             <VelonirArcher>10</VelonirArcher>
             <VelonirFootsoldier>10</VelonirFootsoldier>
             <VelonirDragonRider>10</VelonirDragonRider>
-            <Black_Dragon> 10 </Black_Dragon>
+            <DB_DragonRaces> 10 </DB_DragonRaces>
           </options>
         </li>
       </pawnGroupMakers>
