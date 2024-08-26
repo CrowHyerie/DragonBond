@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>VeloniriPlayerFaction</defName>
+    <label>New Holdfast</label>
+    <description>A small Holdfast for new beginnings.</description>
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>Veloniri_Player</basicMemberKind>
+    <allowedCultures>
+      <li>VeloniriCulture</li>
+    </allowedCultures>
+    <pawnSingular>velonir</pawnSingular>
+    <pawnsPlural>veloniri</pawnsPlural>
+    <techLevel>Medieval</techLevel>
+    <factionNameMaker>VeloniriFactionNames</factionNameMaker>
+    <settlementNameMaker>VeloniriSettlementNames</settlementNameMaker>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Tribal</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>World/VelosEnclaveBaseIcon</factionIconPath>
+    <startingResearchTags>
+      <li>TribalStart</li>
+    </startingResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+</Defs>

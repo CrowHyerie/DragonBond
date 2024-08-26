@@ -1,0 +1,19 @@
+<Defs>
+  <AbilityDef>
+    <defName>DragonBondAbility</defName>
+    <label>Dragon Bond</label>
+    <description>Attempt to form a bond with a dragon. Failure may provoke the dragon.</description>
+    <iconPath>Things/GeneIcons/DragonBond</iconPath>
+    <verbProperties>
+      <verbClass>DragonBond.Verb_DragonBond</verbClass>
+      <range>10.9</range>
+      <warmupTime>1.0</warmupTime>
+      <soundCast>Psycast_Psychic_Effect</soundCast>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>true</canTargetAnimals>
+        <mustBeSelectable>true</mustBeSelectable>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+</Defs>
