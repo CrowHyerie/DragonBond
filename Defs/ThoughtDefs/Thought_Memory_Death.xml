@@ -1,0 +1,18 @@
+<Defs>
+  <!-- Dragon Death -->
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>Crows_DragonBondedDied</defName>
+    <label>bonded dragon died</label>
+    <durationDays>30</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <baseMoodEffect>-30</baseMoodEffect>
+        <label>bonded dragon {0} died</label>
+        <description>The death of my bonded dragon is a great loss.</description>
+      </li>
+    </stages>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <maxCumulatedOpinionOffset>-25</maxCumulatedOpinionOffset>
+  </ThoughtDef>
+</Defs>

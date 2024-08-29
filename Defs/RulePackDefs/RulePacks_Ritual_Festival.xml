@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Festival Name -->
+  <RulePackDef>
+    <defName>Crows_NamerFestivalVelonir</defName>
+    <include>
+      <li>NamerFestivalGlobal</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_ritualName->[festivalName]</li>
+
+        <li>festivalName(p=2)->[memeAdjective] [festival]</li>
+        <li>festivalName->[festival] of [chosenTheme]</li>
+        <li>festivalName->[chosenAdjective] [festival]</li>
+        <li>festivalName->[keyDeity]'s [festival]</li>
+        <li>festivalName->[festival] of [keyDeity]</li>
+        <li>festivalName->[festival] of [memeConcept]</li>
+        <li>festivalName->[festival] of [chosenIdeoName]</li>
+
+        <!-- Festival Types -->
+        <li>festival->feast</li>
+        <li>festival->rite</li>
+        <li>festival->gathering</li>
+        <li>festival->ceremony</li>
+        <li>festival->revelry</li>
+        <li>festival->flare</li>
+        <li>festival->ignition</li>
+        <li>festival->blaze</li>
+        <li>festival->inferno</li>
+        <li>festival->eruption</li>
+
+        <!-- Adjectives -->
+        <li>memeAdjective->dragonborn</li>
+        <li>memeAdjective->celestial</li>
+        <li>memeAdjective->mystic</li>
+        <li>memeAdjective->eternal</li>
+        <li>memeAdjective->majestic</li>
+        <li>memeAdjective->infernal</li>
+        <li>memeAdjective->blazing</li>
+        <li>memeAdjective->ember</li>
+        <li>memeAdjective->scorching</li>
+        <li>memeAdjective->fiery</li>
+
+        <!-- Themes -->
+        <li>chosenTheme->the Dragon's Awakening</li>
+        <li>chosenTheme->Celestial Harmony</li>
+        <li>chosenTheme->Mystic Revelations</li>
+        <li>chosenTheme->Eternal Ascendancy</li>
+        <li>chosenTheme->Majestic Triumph</li>
+        <li>chosenTheme->the Dragon's Inferno</li>
+        <li>chosenTheme->Blazing Triumph</li>
+        <li>chosenTheme->Ember Revelations</li>
+        <li>chosenTheme->Scorching Ascendancy</li>
+        <li>chosenTheme->Fiery Eruption</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+
+</Defs>

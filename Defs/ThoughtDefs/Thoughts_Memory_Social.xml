@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Sold Dragon -->
+  <ThoughtDef>
+    <defName>Crows_SoldMyBondedDragon</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>60</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>bonded dragon given away</label>
+        <labelSocial>gave away my bonded dragon</labelSocial>
+        <description>My bonded Dragon was given away! Why am I letting this happen?</description>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Crows_SoldMyBondedDragonMood</defName>
+    <durationDays>60</durationDays>
+    <stackLimit>10</stackLimit>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>bonded animal given away</label>
+        <labelSocial>gave away my bonded dragon</labelSocial>
+        <description>My bonded Dragon was given away! Why am I letting this happen?</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dragon Killed -->
+  <ThoughtDef>
+    <defName>Crows_KilledMyBondedDragon</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>60</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitForSameOtherPawn>10</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>killed my bonded dragon</label>
+        <description>They killed my bonded Dragon. I'll show them.</description>
+        <baseOpinionOffset>-80</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

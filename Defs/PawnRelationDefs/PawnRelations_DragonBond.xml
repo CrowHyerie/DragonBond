@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Custom Dragon-Rider Bond Relation -->
+  <HistoryEventDef>
+    <defName>Crows_DragonRiderBond</defName>
+    <label>Dragon Bond</label>
+  </HistoryEventDef>
+
+  <PawnRelationDef>
+    <defName>Crows_DragonRiderBond</defName>
+    <label>Dragon Bond</label>
+    <importance>100</importance>
+    <diedThought>Crows_DragonBondedDied</diedThought>
+    <soldThoughts>
+      <li>Crows_SoldMyBondedDragon</li>
+      <li>Crows_SoldMyBondedDragonMood</li>
+    </soldThoughts>
+    <lostThought>Crows_DragonBondedLost</lostThought>
+    <killedThought>Crows_KilledMyBondedDragon</killedThought>
+    <opinionOffset>80</opinionOffset>
+    <implied>false</implied>
+    <reflexive>true</reflexive>
+  </PawnRelationDef>
+
+</Defs>

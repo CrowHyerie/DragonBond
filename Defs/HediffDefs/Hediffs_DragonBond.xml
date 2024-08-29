@@ -1,0 +1,18 @@
+<Defs>
+  <!-- Dragon Bond Effect -->
+  <HediffDef>
+    <defName>Crows_DragonBondEffect</defName>
+    <label>dragon bond</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <description>Being bonded to a dragon has enhanced my psychic abilities.</description>
+    <stages>
+      <li>
+        <label>dragon bond</label>
+        <statOffsets>
+          <PsychicSensitivity>0.5</PsychicSensitivity>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

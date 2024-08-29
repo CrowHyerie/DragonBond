@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Dragon Released -->
+
+<ThoughtDef ParentName="LostMemory">
+  <defName>Crows_DragonBondedReleased</defName>
+  <showBubble>true</showBubble>
+  <durationDays>15</durationDays>
+  <stackLimit>5</stackLimit>
+  <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+  <nullifyingTraits>
+    <li>Psychopath</li>
+  </nullifyingTraits>
+  <stages>
+    <li>
+      <label>bonded dragon {0} released</label>
+      <description>Why did I make my dragon leave? What was I thinking?</description>
+      <baseMoodEffect>-5</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+<!--Dragon Lost-->
+
+<ThoughtDef ParentName="LostMemory">
+  <defName>Crows_DragonBondedLost</defName>
+  <showBubble>true</showBubble>
+  <durationDays>30</durationDays>
+  <stackLimit>5</stackLimit>
+  <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+  <nullifyingTraits>
+    <li>Psychopath</li>
+  </nullifyingTraits>
+  <stages>
+    <li>
+      <label>bonded animal {0} lost</label>
+      <description>My bonded dragon is lost. I must find it.</description>
+      <baseMoodEffect>-8</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+</Defs>
