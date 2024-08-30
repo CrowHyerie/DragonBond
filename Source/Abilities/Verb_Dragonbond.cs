@@ -85,6 +85,7 @@ namespace Crows_DragonBond
 
             // Form a bond between the dragon and the tamer
             tamer.relations.AddDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
+            tamer.relations.AddDirectRelation(PawnRelationDefOf.Bond, dragon);
             return true; // Bonding successful
         }
 

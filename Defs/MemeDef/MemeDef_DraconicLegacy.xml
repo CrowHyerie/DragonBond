@@ -8,7 +8,7 @@
   <groupDef>Misc</groupDef>
   <impact>1</impact>
   <renderOrder>999</renderOrder>
-  <veneratedAnimalsCountOverride>10</veneratedAnimalsCountOverride>
+  <veneratedAnimalsCountOverride>3</veneratedAnimalsCountOverride>
   <replacementPatterns>
     <li>GladiatorDuel</li>
   </replacementPatterns>
@@ -126,8 +126,6 @@
       <priority>2</priority>
     </li>
   </thingStyleCategories>
-  
-  <!-- Venerated Animals -->
-  
+    
 </MemeDef>
 </Defs>

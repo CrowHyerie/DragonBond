@@ -8,7 +8,7 @@
     <pawnNameMakerFemale>Crows_FemaleVeloniriNamer</pawnNameMakerFemale>
     <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">Crows_NamerIdeoVelonir</ideoNameMaker>
     <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">Crows_NamerDeityVelonir</deityNameMaker>
-    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">Crows_NamerDeityVelonir</deityTypeMaker>
+    <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMakerGlobal</deityTypeMaker>
     <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">Crows_NamerFestivalVelonir</festivalNameMaker>
     <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">Crows_LeaderTitleMakerVelonir</leaderTitleMaker>
     <allowedPlaceTags>
