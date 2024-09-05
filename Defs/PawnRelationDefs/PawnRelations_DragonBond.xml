@@ -14,7 +14,6 @@
     <diedThought>Crows_DragonBondedDied</diedThought>
     <soldThoughts>
       <li>Crows_SoldMyBondedDragon</li>
-      <li>Crows_SoldMyBondedDragonMood</li>
     </soldThoughts>
     <lostThought>Crows_DragonBondedLost</lostThought>
     <killedThought>Crows_KilledMyBondedDragon</killedThought>

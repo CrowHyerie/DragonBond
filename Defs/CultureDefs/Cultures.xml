@@ -14,7 +14,7 @@
     <allowedPlaceTags>
       <li>OriginTribal</li>
     </allowedPlaceTags>
-    <iconPath>World/VelonirBaseIcon</iconPath>
+    <iconPath>WorldObjects/VelonirBaseIcon</iconPath>
     <iconColor>(0.8, 0.8, 0.8)</iconColor>
     <styleItemTags>
       <li>

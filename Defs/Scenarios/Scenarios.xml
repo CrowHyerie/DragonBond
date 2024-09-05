@@ -2,11 +2,11 @@
 <Defs>
 
   <ScenarioDef>
-    <defName>Crows_Velonir_Rebels</defName>
-    <label>Veloniri Rebels</label>
-<description>You have narrowly escaped the chaos of the crumbling Veloniri empire, now in possession of a dragon egg—a rare and powerful prize. With rival factions closing in, you must decide whether to nurture the dragon and harness its power, or sell it for the resources needed to survive. But if you can overcome the odds, you might just rise to reclaim the glory of the Velonir. Note: Starting with limited resources and technology makes this a challenging scenario.</description>    
-  <scenario>
-      <summary>One Velonir, three Baseliners and a White Dragon Egg. Difficult.</summary>
+    <defName>Crows_DragonsAwakening</defName>
+    <label>Dragon Rising</label>
+    <description>Your tribe of Velonir has discovered a dormant dragon egg deep in the ruins of an ancient Velonir city, along with it's dead mother. Can you restore the Velonir's honor and power by bonding with the dragon and using it to cleanse the land of your enemies?</description>
+    <scenario>
+      <summary>Start with one Velonir and three Baseliners in the ruins of an ancient city, tasked with caring for a dragon egg amidst various threats.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>Crows_VeloniriPlayerFaction</factionDef>
@@ -37,7 +37,7 @@
           </xenotypeCounts>
         </li>
 
-        <!-- Player starting stuff spawn method-->
+        <!-- Player starting stuff spawn method -->
         <li Class="ScenPart_PlayerPawnsArriveMethod">
           <def>PlayerPawnsArriveMethod</def>
           <method>Standing</method>
@@ -64,31 +64,40 @@
           <thingDef>MedicineHerbal</thingDef>
           <count>10</count>
         </li>
-        <li Class="DD.ScenPart_StartingThing_DefinedTamed">
-          <def>StartingThing_DefinedTamed_PlayerTribe</def>
-          <thingDef>EggWhiteDragonFertilized</thingDef>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>DragonNest</thingDef>
-        </li>
         <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>Bow_Short</thingDef>
           <count>2</count>
         </li>
-
+        
         <!-- Scatter some things near player start -->
-        <li Class="ScenPart_ScatterThingsNearPlayerStart">
-          <def>ScatterThingsNearPlayerStart</def>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
           <thingDef>WoodLog</thingDef>
           <count>500</count>
         </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
+        </li>
+        
+         <!-- Scenario Spawns --> 
 
-        <!-- Game start dialog -->
+        <!-- Spawn Dead Dragon -->
+        <li Class="CrowsDragonBond.ScenPart_SpawnDeadDragon">
+          <def>SpawnDeadDragon</def>
+        </li>
+
+        <!-- Spawn Dragon Nest and Egg -->
+        <li Class="CrowsDragonBond.ScenPart_SpawnDragonNestAndEgg">
+          <def>SpawnDragonNestAndEgg</def>
+        </li>
+
+        <!-- Custom Game Start Dialog -->
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>The Velonir Empire, once a unified and mighty force, now lies in ruins. As the leader of one of the remaining factions, you’ve managed to escape amidst the chaos, but your position is far from secure. With your loyal followers by your side, you have claimed a dragon egg—an unmatched symbol of power and a potential game-changer in the battle for dominance. As the egg hatches and the dragon grows, it will bring both tremendous power and unforeseen challenges. The road ahead is perilous, but with your trusted comrades the strength of your dragon, you could reunite the Velonir Empire under your rule.</text>
+          <text>As you enter the ruins, you find the remains of a once-mighty dragon. The stench of death lingers, and it is clear that something terrible has occurred here. The dragon egg it died protecting may be the last hope for your people.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
 

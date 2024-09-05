@@ -24,7 +24,8 @@
         </categories>
       </li>
     </backstoryFilters>
-    <factionIconPath>World/VelosEnclaveBaseIcon</factionIconPath>
+    <factionIconPath>WorldObjects/VelonirBaseIcon</factionIconPath>
+    <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
     <startingResearchTags>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_MedievalStart</li>
       <li>TribalStart</li>

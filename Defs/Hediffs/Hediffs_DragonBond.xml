@@ -1,0 +1,30 @@
+<Defs>
+  
+  <HediffDef>
+    <defName>Crows_DragonBondHediff</defName>
+    <label>Dragon Bond</label>
+    <description>A psychic bond formed between a pawn and a dragon.</description>
+    <hediffClass>DragonBondMod.Hediff_DragonBond</hediffClass>
+    <!-- Updated hediffClass -->
+    <comps>
+      <li Class="DragonBondMod.HediffCompProperties_DragonBond">
+        <compClass>DragonBondMod.HediffComp_DragonBond</compClass>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Crows_DragonBondTorn</defName>
+    <label>Dragon bond torn</label>
+    <description>The dragon bond with their dragon was severed upon their death.</description>
+    <hediffClass>DragonBondMod.Hediff_DragonBondTorn</hediffClass>
+    <!-- Updated hediffClass -->
+    <comps>
+      <li Class="DragonBondMod.HediffCompProperties_DragonBond">
+        <compClass>DragonBondMod.HediffComp_DragonBond</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,134 @@
+<Defs>
+  <!-- Bonded Dragon Close -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondedClose</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Crows_DragonBondHediff</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>feeling the dragon's presence</label>
+        <baseMoodEffect>15</baseMoodEffect>
+        <description>My bond with {0} brings me comfort and reassurance.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Bonded Dragon Far -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondedFar</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Crows_DragonBondHediff</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>missing bonded dragon</label>
+        <baseMoodEffect>-10</baseMoodEffect>
+        <description>Being separated from {0} leaves me feeling uneasy.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Bonded Dragon Died -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondedDied</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Crows_DragonBondHediff</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>bonded dragon died</label>
+        <baseMoodEffect>-20</baseMoodEffect>
+        <description>The loss of {0} has caused deep grief and emotional pain.</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Dragon Bonded Released -->
+  <ThoughtDef ParentName="LostMemory">
+    <defName>Crows_DragonBondedReleased</defName>
+    <showBubble>true</showBubble>
+    <durationDays>15</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>bonded dragon {0} released</label>
+        <description>Why did I make my dragon leave? What was I thinking?</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Dragon Lost -->
+  <ThoughtDef ParentName="LostMemory">
+    <defName>Crows_DragonBondedLost</defName>
+    <showBubble>true</showBubble>
+    <durationDays>30</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>bonded dragon {0} lost</label>
+        <description>My bonded dragon is lost. I must find it.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Dragon Bonded Banished -->
+  <ThoughtDef ParentName="LostMemory">
+    <defName>Crows_DragonBondedBanished</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <showBubble>true</showBubble>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li>Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>bonded dragon {0} banished</label>
+        <description>My bonded Dragon was banished!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Sold Dragon -->
+  <ThoughtDef>
+    <defName>Crows_SoldMyBondedDragon</defName>
+    <label>Sold bonded dragon</label>
+    <description>This pawn is distressed from selling their bonded dragon.</description>
+    <stages>
+      <li>
+        <label>bonded dragon {0} sold</label>
+        <description>My bonded Dragon was sold!</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Killed Dragon -->
+  <ThoughtDef>
+    <defName>Crows_KilledMyBondedDragon</defName>
+    <label>Killed bonded dragon</label>
+    <description>This pawn is furious after their bonded dragon was killed.</description>
+    <stages>
+      <li>
+        <label>bonded dragon {0} killed</label>
+        <description>They killed my dragon. I will show them.</description>
+        <baseMoodEffect>-50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

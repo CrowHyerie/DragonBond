@@ -40,7 +40,6 @@ namespace Crows_DragonBond
             Pawn casterPawn = CasterPawn;
             Pawn targetPawn = (Pawn)currentTarget.Thing;
 
-
             if (IsValidTarget(targetPawn))
             {
                 // Check if the caster already has a bonded dragon
@@ -60,7 +59,13 @@ namespace Crows_DragonBond
                 else
                 {
                     Messages.Message("Dragon bonding failed. The dragon has turned into a manhunter!", MessageTypeDefOf.ThreatBig, false);
-                    targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent); // Dragon becomes a manhunter
+
+                    // Check if the dragon is already tamed and part of the same faction
+                    if (targetPawn.Faction != casterPawn.Faction)
+                    {
+                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent); // Dragon becomes a manhunter
+                    }
+
                     return false; // Indicates the action failed.
                 }
             }
@@ -94,8 +99,31 @@ namespace Crows_DragonBond
         {
             if (rider.RaceProps.Humanlike)
             {
-                Hediff hediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Crows_DragonBondEffect"), rider);
+                Hediff hediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Crows_DragonBondHediff"), rider);
                 rider.health.AddHediff(hediff);
+            }
+        }
+    }
+
+    // This component ensures that when a bonded dragon dies, the bond is broken.
+    public class CompDragonBond : ThingComp
+    {
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            Pawn dragon = this.parent as Pawn;
+
+            if (dragon != null && dragon.RaceProps.Animal)
+            {
+                Pawn bondedPawn = dragon.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
+                if (bondedPawn != null)
+                {
+                    // Remove the bond between the dragon and the pawn
+                    bondedPawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
+                    bondedPawn.relations.RemoveDirectRelation(PawnRelationDefOf.Bond, dragon);
+
+                    Messages.Message($"{bondedPawn.Name} mourns the death of their bonded dragon.", bondedPawn, MessageTypeDefOf.NegativeEvent, historical: false);
+                }
             }
         }
     }
