@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>Crows_VeloniriPlayerFaction</defName>
+    <label>New Holdfast</label>
+    <description>A small Holdfast for new beginnings.</description>
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>Crows_Veloniri_Player</basicMemberKind>
+    <allowedCultures>
+      <li>Crows_VeloniriCulture</li>
+    </allowedCultures>
+    <pawnSingular>velonir</pawnSingular>
+    <pawnsPlural>veloniri</pawnsPlural>
+    <techLevel>Medieval</techLevel>
+    <factionNameMaker>Crows_VeloniriFactionNames</factionNameMaker>
+    <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Tribal</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <factionIconPath>WorldObjects/VelonirBaseIcon</factionIconPath>
+    <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
+    <startingResearchTags>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_MedievalStart</li>
+      <li>TribalStart</li>
+    </startingResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+</Defs>

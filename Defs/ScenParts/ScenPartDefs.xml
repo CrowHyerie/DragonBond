@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ScenPartDef for SpawnDeadDragon -->
+  <ScenPartDef>
+    <defName>SpawnDeadDragon</defName>
+    <label>Spawn Dead Dragon</label>
+    <description>Spawns a dead dragon at the start of the scenario.</description>
+    <scenPartClass>CrowsDragonBond.ScenPart_SpawnDeadDragon</scenPartClass>
+  </ScenPartDef>
+
+  <!-- ScenPartDef for SpawnDragonNestAndEgg -->
+  <ScenPartDef>
+    <defName>SpawnDragonNestAndEgg</defName>
+    <label>Spawn Dragon Nest and Egg</label>
+    <description>Spawns a dragon nest and egg at the start of the scenario.</description>
+    <scenPartClass>CrowsDragonBond.ScenPart_SpawnDragonNestAndEgg</scenPartClass>
+  </ScenPartDef>
+</Defs>

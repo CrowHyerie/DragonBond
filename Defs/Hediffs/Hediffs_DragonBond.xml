@@ -1,0 +1,46 @@
+  <Defs>
+    <!-- Base Hediff that other dragon bond effects will inherit -->
+    <HediffDef>
+      <defName>Crows_DragonBondHediff</defName>
+      <label>psychic bond with dragon</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>This psychic bond connects the pawn to their dragon, granting benefits when the dragon is nearby but causing distress if the dragon dies.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statOffsets>
+            <PsychicSensitivity>0.1</PsychicSensitivity>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Dragon Bond (distance)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <statOffsets>
+            <PsychicSensitivity>0.05</PsychicSensitivity>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+</Defs>

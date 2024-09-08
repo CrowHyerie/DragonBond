@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RulePackDef>
+    <defName>Crows_NamerIdeoVelonir</defName>
+    <include>
+      <li>NamerIdeoGlobal</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <!-- Velonir-specific adjectives and terms -->
+        <li>globalAdjective(p=15)->Draconic</li>
+        <li>globalAdjective(p=10)->Flameborn</li>
+        <li>globalAdjective(p=5)->Dragonfire</li>
+
+        <li>globalHyphenPrefix->dragon</li>
+        <li>globalHyphenPrefix->flame</li>
+        <li>globalHyphenPrefix->dragonfire</li>
+        <li>globalHyphenPrefix->ember</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

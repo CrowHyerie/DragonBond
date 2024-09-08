@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Grimstone : Beasts</li>
+    </mods>
+  </Operation>
+<Operation Class="PatchOperationAdd">
+  <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+  <value>
+    <li MayRequire="Abrolo.Grimstone.Beasts">Grimstone_Grimshadow</li>
+  </value>
+</Operation>
+</Patch>

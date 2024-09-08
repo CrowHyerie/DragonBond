@@ -1,0 +1,39 @@
+<ModMetaData>
+  <name>DragonBond</name>
+  <author>Crow</author>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <description>
+    Discover the Velonir in the DragonBond mod for RimWorld!
+    Inspired by legendary dragonlords from the A Song of Ice and Fire series, the Velonir are a race of noble humanoids with white hair, red eyes and the mysterious ability to form a bond with a Dragon from the Dragons Descent mod!
+  </description>
+  <packageId>Crows.DragonBond</packageId>
+  <modDependencies>
+    <!-- Dragons Descent -->
+    <li>
+      <packageId>onyxae.dragonsdescent</packageId>
+      <displayName>Dragon's Decent</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2026992161</steamWorkshopUrl>
+    </li>
+   <!-- Harmony -->
+      <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      </li>
+
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>UnlimitedHugs.HugsLib</li>
+    <li>onyxae.dragonsdescent</li>
+    <li>BotchJob.Profaned</li>
+    <li>Abrolo.Grimstone.Beasts</li>
+  </loadAfter>
+</ModMetaData>
