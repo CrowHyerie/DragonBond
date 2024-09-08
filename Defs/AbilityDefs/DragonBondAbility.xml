@@ -3,12 +3,16 @@
     <defName>Crows_DragonBondAbility</defName>
     <label>Dragon Bond</label>
     <description>Attempt to form a bond with a dragon. Failure may provoke the dragon.</description>
+    <warmupEffecter>Coagulate</warmupEffecter>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <iconPath>Things/GeneIcons/DragonBond</iconPath>
     <verbProperties>
       <verbClass>Crows_DragonBond.Verb_DragonBond</verbClass>
+      <requireLineOfSight>true</requireLineOfSight>
       <range>10.9</range>
       <warmupTime>1.0</warmupTime>
-      <soundCast>Psycast_Psychic_Effect</soundCast>
       <targetParams>
         <canTargetPawns>true</canTargetPawns>
         <canTargetAnimals>true</canTargetAnimals>

@@ -7,19 +7,20 @@
     <label>Dragon Bond</label>
   </HistoryEventDef>
 
+
+  <!-- Custom Dragon-Rider Bond Relation -->
   <PawnRelationDef>
     <defName>Crows_DragonRiderBond</defName>
     <label>Dragon Bond</label>
     <importance>100</importance>
-    <diedThought>Crows_DragonBondedDied</diedThought>
+    <diedThought>Crows_DragonBondTorn</diedThought>
     <soldThoughts>
       <li>Crows_SoldMyBondedDragon</li>
     </soldThoughts>
     <lostThought>Crows_DragonBondedLost</lostThought>
     <killedThought>Crows_KilledMyBondedDragon</killedThought>
     <opinionOffset>80</opinionOffset>
-    <implied>false</implied>
-    <reflexive>true</reflexive>
+    <reflexive>true</reflexive> <!-- This ensures the bond is recognized in both directions -->
   </PawnRelationDef>
 
 </Defs>

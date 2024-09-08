@@ -2,6 +2,7 @@
 using RimWorld;
 using System.Linq;
 using System.Collections.Generic;
+using DragonBond;
 
 namespace Crows_DragonBond
 {
@@ -13,7 +14,7 @@ namespace Crows_DragonBond
 
     public class Verb_DragonBond : Verb_CastAbility
     {
-        // This method checks if the target is a valid dragon.
+
         private bool IsValidTarget(Pawn target)
         {
             // Retrieve the ModExtension containing allowedAnimals
@@ -34,97 +35,87 @@ namespace Crows_DragonBond
             return false;
         }
 
-        // This method handles the actual casting of the ability.
+        // Handle the actual casting of the ability
         protected override bool TryCastShot()
         {
             Pawn casterPawn = CasterPawn;
             Pawn targetPawn = (Pawn)currentTarget.Thing;
 
-            if (IsValidTarget(targetPawn))
+            if (ValidateTarget(targetPawn))
             {
-                // Check if the caster already has a bonded dragon
-                if (casterPawn.relations.DirectRelations.Any(relation => relation.def == DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond")))
+                // Check if the dragon is already bonded to another pawn
+                if (targetPawn.relations.DirectRelations.Any(rel => rel.def == DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond")))
                 {
-                    Messages.Message("You can only be bonded with one Dragon at a time!", MessageTypeDefOf.RejectInput, false);
-                    return false; // Cancels the action if there's already a bonded dragon
+                    Messages.Message("This dragon is already bonded to another pawn!", MessageTypeDefOf.RejectInput, false);
+                    return false; // Cancel if already bonded
                 }
 
-                // Implement the taming and bonding logic
+                // Try to tame and bond the dragon
                 if (TameDragon(targetPawn, casterPawn))
                 {
                     Messages.Message("Dragon bonding successful!", MessageTypeDefOf.PositiveEvent, false);
-                    ApplyDragonRiderPsychicBond(casterPawn); // Apply the psychic bond effect to the rider
-                    return true; // Indicates the action was successful.
+                    ApplyDragonRiderPsychicBond(casterPawn, targetPawn);
+                    return true; // Bonding successful
                 }
                 else
                 {
                     Messages.Message("Dragon bonding failed. The dragon has turned into a manhunter!", MessageTypeDefOf.ThreatBig, false);
 
-                    // Check if the dragon is already tamed and part of the same faction
                     if (targetPawn.Faction != casterPawn.Faction)
                     {
-                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent); // Dragon becomes a manhunter
+                        // Only make the dragon a manhunter if it was untamed or in another faction
+                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
                     }
-
-                    return false; // Indicates the action failed.
                 }
             }
-            return false; // Indicates the action failed.
+
+            return false; // Bonding failed
         }
 
-        // This method handles taming and bonding the dragon.
         private bool TameDragon(Pawn dragon, Pawn tamer)
         {
             if (!dragon.RaceProps.Animal || dragon.Faction != null)
             {
-                return false; // Can't tame if it's not an animal or if it's already part of a faction
+                return false; // Can't tame if it's not an animal or already part of a faction
             }
 
-            // 20% fail chance for bonding
             if (Rand.Value < 0.2f)
             {
-                return false; // Bonding failed
+                return false; // 20% chance to fail bonding
             }
 
-            dragon.SetFaction(Faction.OfPlayer); // Tame the dragon by setting its faction to the player's faction
-
-            // Form a bond between the dragon and the tamer
+            dragon.SetFaction(Faction.OfPlayer); // Tame the dragon by setting its faction
             tamer.relations.AddDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
             tamer.relations.AddDirectRelation(PawnRelationDefOf.Bond, dragon);
             return true; // Bonding successful
         }
 
-        // This method applies the psychic bond effect to the rider (human pawn) only.
-        private void ApplyDragonRiderPsychicBond(Pawn rider)
+        private void ApplyDragonRiderPsychicBond(Pawn rider, Pawn dragon)
         {
             if (rider.RaceProps.Humanlike)
             {
-                Hediff hediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Crows_DragonBondHediff"), rider);
-                rider.health.AddHediff(hediff);
+                Hediff riderHediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Crows_DragonBondHediff"), rider);
+                rider.health.AddHediff(riderHediff);
+
+                var riderBondComp = riderHediff.TryGetComp<HediffComp_DragonBondLink>();
+                riderBondComp?.SetLinkedPawn(dragon);
             }
-        }
-    }
 
-    // This component ensures that when a bonded dragon dies, the bond is broken.
-    public class CompDragonBond : ThingComp
-    {
-        public override void PostDestroy(DestroyMode mode, Map previousMap)
-        {
-            base.PostDestroy(mode, previousMap);
-            Pawn dragon = this.parent as Pawn;
-
-            if (dragon != null && dragon.RaceProps.Animal)
+            if (dragon.RaceProps.Animal)
             {
-                Pawn bondedPawn = dragon.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
-                if (bondedPawn != null)
-                {
-                    // Remove the bond between the dragon and the pawn
-                    bondedPawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
-                    bondedPawn.relations.RemoveDirectRelation(PawnRelationDefOf.Bond, dragon);
+                Hediff dragonHediff = HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("Crows_DragonBondHediff"), dragon);
+                dragon.health.AddHediff(dragonHediff);
 
-                    Messages.Message($"{bondedPawn.Name} mourns the death of their bonded dragon.", bondedPawn, MessageTypeDefOf.NegativeEvent, historical: false);
-                }
+                var dragonBondComp = dragonHediff.TryGetComp<HediffComp_DragonBondLink>();
+                dragonBondComp?.SetLinkedPawn(rider);
             }
         }
     }
+
+
 }
+
+
+
+
+
