@@ -10,7 +10,7 @@
       <operations>
         <!-- Squire Armor Patch -->
         <li Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Crows_Headgear_DragonHelm"]/costList]</xpath>
+          <xpath>Defs/ThingDef[defName="Crows_Headgear_DragonHelm"]/costList</xpath>
           <value>
             <Leather_DragonScale>50</Leather_DragonScale>
           </value>
@@ -18,7 +18,7 @@
 
         <!-- Velonir Noble Apparel Patch -->
         <li Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList]</xpath>
+          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList</xpath>
           <value>
             <Leather_DragonScale>20</Leather_DragonScale>
           </value>
@@ -26,7 +26,7 @@
 
         <!-- Dragon Knight Armor Patch -->
         <li Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList]</xpath>
+          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList</xpath>
           <value>
             <Leather_DragonScale>100</Leather_DragonScale>
             <Gold>10</Gold>
