@@ -29,7 +29,7 @@
           <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList</xpath>
           <value>
             <Leather_DragonScale>100</Leather_DragonScale>
-            <Gold>10</Gold>
+            <Gold>1</Gold>
           </value>
         </li>
       </operations>
