@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Squire Armor -->
+    <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Crows_SquireArmor</defName>
+    <label>squire armor</label>
+    <description>A lightweight leather armor set designed for agility and protection. Crafted from sturdy leathers and featuring reinforced shoulder pads, this armor is both durable and flexible.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/SquireArmor/SquireArmor</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <tradeability>Sellable</tradeability>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <useIngredientsForColor>true</useIngredientsForColor>
+    </recipeMaker>
+    <costStuffCount>120</costStuffCount>
+    <stuffCategories>
+      <li>Leathery</li>
+    </stuffCategories>
+    <thingCategories Inherit='False'>
+      <li>ApparelArmor</li>
+    </thingCategories>
+      <costList>
+        <Steel>10</Steel>
+      </costList>
+    <statBases>
+      <WorkToMake>1000</WorkToMake>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>10</Mass>
+      <ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.15</ArmorRating_Heat>
+      <Insulation_Cold>1</Insulation_Cold>
+      <EquipDelay>5</EquipDelay>
+      <MarketValue>200</MarketValue>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/SquireArmor/SquireArmor</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <tags>
+        <li>Crows_VelonirSquire</li>
+      </tags>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Anything</li>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel"/>
+  </ThingDef>
+</Defs>

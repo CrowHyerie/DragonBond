@@ -1,0 +1,41 @@
+<Defs>
+  <AbilityDef>
+    <defName>Crows_DragonBondAbility</defName>
+    <label>Dragon Bond</label>
+    <description>Attempt to form a bond with a dragon. Failure may provoke the dragon.</description>
+    <warmupEffecter>Coagulate</warmupEffecter>
+    <warmupStartSound>Coagulate_Cast</warmupStartSound>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <iconPath>Things/GeneIcons/DragonBond</iconPath>
+    <verbProperties>
+      <verbClass>Crows_DragonBond.Verb_DragonBond</verbClass>
+      <requireLineOfSight>true</requireLineOfSight>
+      <range>10.9</range>
+      <warmupTime>1.0</warmupTime>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>true</canTargetAnimals>
+        <mustBeSelectable>true</mustBeSelectable>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="Crows_DragonBond.ModExtension_Crows_DragonBond">
+        <allowedAnimals>
+          <li>Blue_Dragon</li>
+          <li>Green_Dragon</li>
+          <li>Purple_Dragon</li>
+          <li>Red_Dragon</li>
+          <li>White_Dragon</li>
+          <li>Yellow_Dragon</li>
+          <li>Black_Dragon</li>
+          <li>Jade_Dragon</li>
+          <li>Gold_Dragon</li>
+          <li>Silver_Dragon</li>
+          <li>True_Dragon</li>
+        </allowedAnimals>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+</Defs>

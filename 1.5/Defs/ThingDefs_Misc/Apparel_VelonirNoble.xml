@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Velonir Noble Set -->
+    <ThingDef ParentName="ApparelMakeableBase">
+    <defName>Crows_VelonirNobleApparel</defName>
+    <label>velonir noble apparel</label>
+    <description>Finely tailored garments woven from luxurious fabrics, designed to exude elegance and status. Embellished with intricate patterns and gold thread, it symbolizes the nobility’s grace and power.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/VelonirNoble/VelonirNoble</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <tradeability>Sellable</tradeability>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <useIngredientsForColor>true</useIngredientsForColor>
+    </recipeMaker>
+    <costStuffCount>50</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+    </stuffCategories>
+    <thingCategories Inherit='False'>
+      <li>ApparelArmor</li>
+    </thingCategories>
+     <costList>
+       <Gold>5</Gold>
+     </costList>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>1600</WorkToMake>
+      <Mass>0.25</Mass>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.22</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+      <MarketValue>200</MarketValue>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/VelonirNoble/VelonirNoble</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <tags>
+        <li>Crows_VelonirNoble</li>
+        <li>Crows_DragonKnight</li>
+        <li>Crows_DragonRider</li>
+      </tags>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Anything</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel"/>
+  </ThingDef>
+</Defs>

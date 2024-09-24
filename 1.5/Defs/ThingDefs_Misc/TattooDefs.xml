@@ -1,0 +1,373 @@
+<Defs>
+  <!-- Body -->
+  <!-- Dragon Rise -->
+  <TattooDef>
+    <defName>Crows_Body_DragonRiseBlue</defName>
+    <label>Dragon Rise Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_DragonRise/TattooDragonRiseBlue</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <TattooDef>
+    <defName>Crows_Body_DragonRiseRed</defName>
+    <label>Dragon Rise Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_DragonRise/TattooDragonRiseRed</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <TattooDef>
+    <defName>Crows_Body_DragonRiseGreen</defName>
+    <label>Dragon Rise Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_DragonRise/TattooDragonRiseGreen</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <TattooDef>
+    <defName>Crows_Body_DragonRisePurple</defName>
+    <label>Dragon Rise Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_DragonRise/TattooDragonRisePurple</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_DragonRiseYellow</defName>
+    <label>Dragon Rise Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_DragonRise/TattooDragonRiseWhite</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <!-- Spotted Flame -->
+
+  <TattooDef>
+    <defName>Crows_Body_SpottedFlameBlue</defName>
+    <label>Spotted Flame Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_SpottedFlame/TattooSpottedFlameBlue</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_SpottedFlameRed</defName>
+    <label>Spotted Flame Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_SpottedFlame/TattooSpottedFlameRed</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <TattooDef>
+    <defName>Crows_Body_SpottedFlameGreen</defName>
+    <label>Spotted Flame Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_SpottedFlame/TattooSpottedFlameGreen</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_SpottedFlamePurple</defName>
+    <label>Spotted Flame Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_SpottedFlame/TattooSpottedFlamePurple</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_SpottedFlamePurpleYellow</defName>
+    <label>Spotted Flame Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_SpottedFlame/TattooSpottedFlameWhite</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+<!-- Striped Dragon -->
+
+  <TattooDef>
+    <defName>Crows_Body_StripedDragonGreen</defName>
+    <label>Striped Dragon Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_StripedDragon/TattooStripedDragonGreen</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_StripedDragonBlue</defName>
+    <label>Striped Dragon Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_StripedDragon/TattooStripedDragonBlue</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_StripedDragonPurple</defName>
+    <label>Striped Dragon Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_StripedDragon/TattooStripedDragonPurple</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_StripedDragonRed</defName>
+    <label>Striped Dragon Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_StripedDragon/TattooStripedDragonRed</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Body_StripedDragonYellow</defName>
+    <label>Striped Dragon Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Body_StripedDragon/TattooStripedDragonYellow</texPath>
+    <tattooType>Body</tattooType>
+    <category>Misc</category>
+    <visibleNorth>true</visibleNorth>
+    <styleTags>
+      <li>VelonirBodyTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+<!-- Face -->
+  <!-- Dragon Rise -->
+    <TattooDef>
+    <defName>Crows_Face_DragonRiseBlue</defName>
+    <label>Face Dragon Rise Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_DragonRise/Face_DragonRiseBlue</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_DragonRiseGreen</defName>
+    <label>Face Dragon Rise Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_DragonRise/Face_DragonRiseGreen</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_DragonRiseRed</defName>
+    <label>Face Dragon Rise Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_DragonRise/Face_DragonRiseRed</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_DragonRisePurple</defName>
+    <label>Face Dragon Rise Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_DragonRise/Face_DragonRisePurple</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_DragonRiseYellow</defName>
+    <label>Face Dragon Rise Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_DragonRise/Face_DragonRiseYellow</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <!-- Striped Dragon -->
+  
+    <TattooDef>
+    <defName>Crows_Face_StripedDragonBlue</defName>
+    <label>Face Striped Dragon Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_StripedDragon/Face_StripedDragonBlue</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_StripedDragonGreen</defName>
+    <label>Face Striped Dragon Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_StripedDragon/Face_StripedDragonGreen</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_StripedDragonRed</defName>
+    <label>Face Striped Dragon Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_StripedDragon/Face_StripedDragonRed</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_StripedDragonPurple</defName>
+    <label>Face Striped Dragon Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_StripedDragon/Face_StripedDragonPurple</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+    <TattooDef>
+    <defName>Crows_Face_StripedDragonYellow</defName>
+    <label>Face Striped Dragon Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_StripedDragon/Face_StripedDragonYellow</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+  
+  <!-- Spotted Flame -->
+  
+  <TattooDef>
+    <defName>Crows_Face_SpottedDragonBlue</defName>
+    <label>Face Spotted Flame Blue</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_SpottedDragon/Face_SpottedDragonBlue</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Face_SpottedDragonGreen</defName>
+    <label>Face Spotted Flame Green</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_SpottedDragon/Face_SpottedDragonGreen</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Face_SpottedDragonPurple</defName>
+    <label>Face Spotted Flame Purple</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_SpottedDragon/Face_SpottedDragonPurple</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Face_SpottedDragonRed</defName>
+    <label>Face Spotted Flame Red</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_SpottedDragon/Face_SpottedDragonRed</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+
+  <TattooDef>
+    <defName>Crows_Face_SpottedDragonYellow</defName>
+    <label>Face Spotted Flame Yellow</label>
+    <texPath>Things/Pawn/Humanlike/Tattoos/Face_SpottedDragon/Face_SpottedDragonYellow</texPath>
+    <tattooType>Face</tattooType>
+    <category>Misc</category>
+    <visibleNorth>false</visibleNorth>
+    <styleTags>
+      <li>VelonirFaceTattoo</li>
+    </styleTags>
+  </TattooDef>
+</Defs>

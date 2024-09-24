@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ScenPartDef for SpawnDeadDragon -->
+  <ScenPartDef>
+    <defName>SpawnDeadDragon</defName>
+    <label>Spawn Dead Dragon</label>
+    <scenPartClass>CrowsDragonBond.ScenPart_SpawnDeadDragon</scenPartClass>
+  </ScenPartDef>
+
+  <!-- ScenPartDef for SpawnDragonNestAndEgg -->
+  <ScenPartDef>
+    <defName>SpawnDragonNestAndEgg</defName>
+    <label>Spawn Dragon Nest and Egg</label>
+    <scenPartClass>CrowsDragonBond.ScenPart_SpawnDragonNestAndEgg</scenPartClass>
+  </ScenPartDef>
+</Defs>

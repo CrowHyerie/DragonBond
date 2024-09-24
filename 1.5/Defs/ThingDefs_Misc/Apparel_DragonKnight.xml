@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Dragon Knight Armor -->
+    <ThingDef ParentName="ArmorSmithableBase">
+    <defName>Crows_DragonKnightArmor</defName>
+    <label>dragon knight armor</label>
+    <description>A heavily plated suit forged for those who defend the Velonir kingdom. Reinforced with dragon scales, it provides unmatched resilience in battle and commands respect on the battlefield.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/DragonKnightArmor/DragonKnightArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <tradeability>Sellable</tradeability>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>250</displayPriority>
+      <researchPrerequisite>PlateArmor</researchPrerequisite>
+      <useIngredientsForColor>true</useIngredientsForColor>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+    </recipeMaker>
+    <costStuffCount>140</costStuffCount>
+    <stuffCategories>
+      <li>DragonScale</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <thingCategories Inherit='False'>
+      <li>ApparelArmor</li>
+    </thingCategories>
+     <costList>
+       <HardScale>10</HardScale>
+     </costList>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToMake>35000</WorkToMake>
+      <Mass>11</Mass>
+      <StuffEffectMultiplierArmor>0.75</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.45</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.65</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <tradeTags>
+      <li>Clothing</li>
+      <li>Armor</li>
+    </tradeTags>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/DragonKnightArmor/DragonKnightArmor</wornGraphicPath>
+      <tags>
+        <li>Crows_DragonKnight</li>
+      </tags>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Anything</li>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel"/>
+  </ThingDef>
+
+</Defs>

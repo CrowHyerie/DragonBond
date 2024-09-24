@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ArmorSmithableBase">
+    <defName>Crows_Headgear_DragonHelm</defName>
+    <label>dragon helm</label>
+    <description>An intricately crafted helm with sharp, angular features. Two elegant wings sprout from the top, embodying the power and grace of dragons. Lightweight yet durable, it offers both protection and a striking, commanding presence.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/DragonHelm/DragonHelm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <recipeMaker>
+      <researchPrerequisite>PlateArmor</researchPrerequisite>
+      <recipeUsers/>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <stuffCategories>
+      <li>DragonScale</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>80</costStuffCount>
+    <statBases>
+      <WorkToMake>25000</WorkToMake>
+      <MaxHitPoints>755</MaxHitPoints>
+      <Mass>3.5</Mass>
+      <ArmorRating_Sharp>2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.04</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <EquipDelay>10</EquipDelay>
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>-3</ShootingAccuracyPawn>
+      <PainShockThreshold>0.15</PainShockThreshold>
+      <SocialImpact>0.35</SocialImpact>
+    </equippedStatOffsets>
+    <costList>
+      <HardScale>80</HardScale>    
+  </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/DragonHelm/DragonHelm</wornGraphicPath>
+      <tags>
+        <li>Crows_DragonRider</li>
+      </tags>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Anything</li>
+        <li>Worker</li>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel"/>
+  </ThingDef>
+</Defs>

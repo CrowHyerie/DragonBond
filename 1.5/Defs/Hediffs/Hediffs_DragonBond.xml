@@ -1,0 +1,542 @@
+  <Defs>
+    <!-- Base Hediff that other dragon bond effects will inherit -->
+    <HediffDef>
+      <defName>Crows_DragonBondHediff</defName>
+      <label>psychic bond with dragon</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>This psychic bond connects the pawn to their dragon, granting benefits when the dragon is nearby but causing distress if the dragon dies.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statOffsets>
+            <PsychicSensitivity>0.1</PsychicSensitivity>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Dragon Bond (distance)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <statOffsets>
+            <PsychicSensitivity>0.05</PsychicSensitivity>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+
+      <!-- Special Dragon Bond Effects -->
+
+    <!-- Blue Dragon -->
+    <HediffDef>
+      <defName>Crows_DragonBondBlue</defName>
+      <label>Dragon Bond (Blue)</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>Boosts work speed and crafting efficiency.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Blue)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statFactors>
+            <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
+            <ConstructionSpeed>0.2</ConstructionSpeed>
+          </statFactors>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Blue)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+
+    <!-- Green Dragon -->
+    <HediffDef>
+      <defName>Crows_DragonBondGreen</defName>
+      <label>Dragon Bond (Green)</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>Increases medical skill, speeds up recovery from injuries and infections.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Green)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statOffsets>
+            <MedicalTendQuality>0.2</MedicalTendQuality>
+            <ImmunityGainSpeed>0.30</ImmunityGainSpeed>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Green)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+
+    <!-- Purple Dragon -->
+    <HediffDef>
+      <defName>Crows_DragonBondPurple</defName>
+      <label>Dragon Bond (Purple)</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>Provides a mood boost and reduces mental break risk.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Purple)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statOffsets>
+            <JoyGainFactor>0.2</JoyGainFactor>
+            <MentalBreakThreshold>-0.18</MentalBreakThreshold>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Purple)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+
+    <!-- Red Dragon -->
+    <HediffDef>
+      <defName>Crows_DragonBondRed</defName>
+      <label>Dragon Bond (Red)</label>
+      <hediffClass>Verse.HediffWithComps</hediffClass>
+      <comps>
+        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <targetRelation>Crows_DragonRiderBond</targetRelation>
+        </li>
+      </comps>
+      <description>Enhances ranged combat abilities.</description>
+      <stages>
+        <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Red)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+          <statOffsets>
+            <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+            <AimingDelayFactor>-0.15</AimingDelayFactor>
+          </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Red)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+      </stages>
+    </HediffDef>
+
+    <!-- White Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondWhite</defName>
+        <label>Dragon Bond (White)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Raises taming chances and animal training success.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (White)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <TameAnimalChance>1.2</TameAnimalChance>
+              <TrainAnimalChance>1.2</TrainAnimalChance>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Dragon Bond (distance)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- Yellow Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondYellow</defName>
+        <label>Dragon Bond (Yellow)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Increases yield from resource gathering.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Yellow)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
+              <AnimalGatherYield>0.2</AnimalGatherYield>
+              <PlantHarvestYield>0.2</PlantHarvestYield>
+              <MiningYield>0.2</MiningYield>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Yellow)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- Black Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondBlack</defName>
+        <label>Dragon Bond (Black)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Increases melee damage and defense.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Black)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+              <MeleeHitChance>2</MeleeHitChance>
+              <MeleeDodgeChance>2</MeleeDodgeChance>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Black)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- Jade Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondJade</defName>
+        <label>Dragon Bond (Jade)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Increases Psychic sensitivity and neural heat capacity.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Jade)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <PsychicSensitivity>0.8</PsychicSensitivity>
+              <PsychicEntropyMax>0.2</PsychicEntropyMax>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Jade)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- Gold Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondGold</defName>
+        <label>Dragon Bond (Gold)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Enhances social interactions, trade deals, and negotiations.</description>
+        <stages>
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Gold)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <NegotiationAbility>0.25</NegotiationAbility>
+              <ArrestSuccessChance>0.25</ArrestSuccessChance>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Gold)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- Silver Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondSilver</defName>
+        <label>Dragon Bond (Silver)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Increases movement speed and dodge chance in combat.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (Silver)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <MoveSpeed>0.4</MoveSpeed>
+              <MeleeDodgeChance>15</MeleeDodgeChance>
+            </statOffsets>
+          <statFactors>
+            <PawnTrapSpringChance>0.1</PawnTrapSpringChance>
+          </statFactors>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (Silver)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+
+    <!-- True Dragon -->
+      <HediffDef>
+        <defName>Crows_DragonBondTrue</defName>
+        <label>Dragon Bond (True)</label>
+        <hediffClass>Verse.HediffWithComps</hediffClass>
+        <comps>
+          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+            <targetRelation>Crows_DragonRiderBond</targetRelation>
+          </li>
+        </comps>
+        <description>Increases pawn global learning factor and research speed.</description>
+        <stages>
+
+                <!-- Base stage for bond -->
+        <li>
+          <overrideLabel>Dragon Bond (True)</overrideLabel>
+          <minSeverity>0</minSeverity>
+          <painFactor>0.5</painFactor>
+            <statOffsets>
+              <GlobalLearningFactor>0.75</GlobalLearningFactor>
+              <ResearchSpeed>1.15</ResearchSpeed>
+            </statOffsets>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+        </li>
+
+        <!-- Bond Distance stage -->
+        <li>
+          <overrideLabel>Distant Dragon Bond (True)</overrideLabel>
+          <minSeverity>1</minSeverity>
+          <capMods>
+            <li>
+              <capacity>Consciousness</capacity>
+              <offset>-0.25</offset>
+            </li>
+          </capMods>
+        </li>
+        </stages>
+      </HediffDef>
+  
+  <HediffDef>
+    <defName>Crows_DragonBondTorn</defName>
+    <label>dragon bond torn</label>
+    <description>This person had a psychic bond with a dragon, but the bond was torn when their partner died.</description>
+    <hediffClass>Hediff_PsychicBondTorn</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+  </HediffDef>
+
+</Defs>

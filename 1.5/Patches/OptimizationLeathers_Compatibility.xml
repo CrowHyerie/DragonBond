@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Scorpio.OptimizationLeathers</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Squire Armor Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_Headgear_DragonHelm"]/costList]</xpath>
+          <value>
+            <Leather_DragonScale>50</Leather_DragonScale>
+          </value>
+        </li>
+
+        <!-- Velonir Noble Apparel Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList]</xpath>
+          <value>
+            <Leather_DragonScale>20</Leather_DragonScale>
+          </value>
+        </li>
+
+        <!-- Dragon Knight Armor Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList]</xpath>
+          <value>
+            <Leather_DragonScale>100</Leather_DragonScale>
+            <Gold>10</Gold>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

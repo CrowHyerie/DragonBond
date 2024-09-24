@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Ideology Expanded - Memes and Structures</li>
+    </mods>
+  </Operation>
+  
+  <!-- Velos Enclave -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[defName="Crows_VelosEnclave"]/requiredMemes</xpath>
+    <value>
+      <li MayRequire="VanillaExpanded.VMemesE">VME_FireWorship</li>
+      <li MayRequire="VanillaExpanded.VMemesE">VME_Aristocratic</li>
+    </value>
+  </Operation>
+  
+  <!-- Ashen Dominion -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[defName="Crows_AshenDominion"]/requiredMemes</xpath>
+    <value>
+      <li MayRequire="VanillaExpanded.VMemesE">VME_FireWorship</li>
+      <li MayRequire="VanillaExpanded.VMemesE">VME_Aristocratic</li>
+    </value>
+  </Operation>
+  
+</Patch>

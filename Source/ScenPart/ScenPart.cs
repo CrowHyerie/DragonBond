@@ -1,42 +1,46 @@
-﻿using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using RimWorld;
+using System;
 using Verse;
 
 namespace CrowsDragonBond
 {
     public class ScenPart_SpawnDeadDragon : ScenPart
     {
-        public ScenPart_SpawnDeadDragon() { } // Default constructor
+        private bool dragonSpawned = false; // Ensure the dragon is spawned only once
 
         public override void PostMapGenerate(Map map)
         {
-            var center = map.Center;
-
-            // Generate ruins first
-            if (ScenarioUtils.GenerateRuins(map, center))
+            // Ensure the dragon only spawns on the starting map and hasn't been spawned before
+            if (!dragonSpawned && map.IsPlayerHome && Find.TickManager.TicksGame < 1000)
             {
-                Log.Message("Ruins generated successfully.");
-            }
-            else
-            {
-                Log.Error("Failed to generate ruins - using fallback placement.");
-            }
+                var center = map.Center;
 
-            // Generate the dead dragon
-            var dragonDef = DefDatabase<PawnKindDef>.GetNamed("White_Dragon"); // Replace with your dragon's PawnKindDef
-            var dragon = PawnGenerator.GeneratePawn(new PawnGenerationRequest(dragonDef, Faction.OfAncients, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, allowDead: true));
+                // Generate ruins first
+                if (ScenarioUtils.GenerateRuins(map, center))
+                {
+                    Log.Message("Ruins generated successfully.");
+                }
+                else
+                {
+                    Log.Error("Failed to generate ruins - using fallback placement.");
+                }
 
-            // Kill the dragon and spawn the corpse near the center (or within ruins if possible)
-            ScenarioUtils.DamageUntilDead(dragon, new List<ThingDef>());
-            ScenarioUtils.SpawnNear(dragon.Corpse, map, center);
+                // Generate the dead dragon
+                var dragonDef = DefDatabase<PawnKindDef>.GetNamed("White_Dragon"); // Replace with your dragon's PawnKindDef
+                var dragon = PawnGenerator.GeneratePawn(new PawnGenerationRequest(dragonDef, Faction.OfAncients, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, allowDead: true));
+
+                // Kill the dragon and spawn the corpse near the center (or within ruins if possible)
+                ScenarioUtils.DamageUntilDead(dragon, new List<ThingDef>());
+                ScenarioUtils.SpawnNear(dragon.Corpse, map, center);
+
+                dragonSpawned = true; // Mark that the dragon has been spawned
+            }
         }
     }
 
     public class ScenPart_SpawnDragonNestAndEgg : ScenPart
     {
-        public ScenPart_SpawnDragonNestAndEgg() { } // Default constructor
-
         public override void PostMapGenerate(Map map)
         {
             if (Find.TickManager.TicksGame > 5f) return;
@@ -100,7 +104,6 @@ namespace CrowsDragonBond
             {
                 try
                 {
-                    // Generate the ruins using the found GenStepDef
                     ruinsGenStep.genStep.Generate(map, new GenStepParams());
                     return true;
                 }

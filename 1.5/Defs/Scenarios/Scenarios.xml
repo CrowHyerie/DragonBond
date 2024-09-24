@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ScenarioDef>
+    <defName>Crows_DragonsAwakening</defName>
+    <label>Dragon Rising</label>
+    <description>Your tribe of Velonir has discovered a dormant dragon egg deep in the ruins of an ancient Velonir city, along with it's dead mother.</description>
+    <scenario>
+      <summary>Start with one Velonir and three Baseliners in the ruins of an ancient city, tasked with caring for a dragon egg.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>Crows_VeloniriPlayerFaction</factionDef>
+      </playerFaction>
+      <parts>
+
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+          <def>ConfigurePawnsXenotypes</def>
+          <pawnChoiceCount>8</pawnChoiceCount>
+          <customSummary>Start with one Velonir and three Baseliners.</customSummary>
+          <overrideKinds>
+            <li>
+              <xenotype>Crows_VelonirRace</xenotype>
+              <pawnKind>Crows_Veloniri_Player</pawnKind>
+            </li>
+          </overrideKinds>
+          <xenotypeCounts>
+            <li>
+              <xenotype>Crows_VelonirRace</xenotype>
+              <count>1</count>
+              <requiredAtStart>true</requiredAtStart>
+            </li>
+            <li>
+              <xenotype>Baseliner</xenotype>
+              <count>3</count>
+            </li>
+          </xenotypeCounts>
+        </li>
+
+        <!-- Player starting stuff spawn method -->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>Standing</method>
+        </li>
+
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Pemmican</thingDef>
+          <count>200</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MedicineHerbal</thingDef>
+          <count>10</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Bow_Recurve</thingDef>
+          <count>2</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MeleeWeapon_Gladius</thingDef>
+          <stuff>Steel</stuff>
+          <count>2</count>
+        </li>        
+        
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>WoodLog</thingDef>
+          <count>500</count>
+        </li>
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>Steel</thingDef>
+          <count>150</count>
+        </li>
+        
+         <!-- Scenario Spawns --> 
+
+        <!-- Spawn Dead Dragon -->
+        <li Class="CrowsDragonBond.ScenPart_SpawnDeadDragon">
+          <def>SpawnDeadDragon</def>
+        </li>
+
+        <!-- Spawn Dragon Nest and Egg -->
+        <li Class="CrowsDragonBond.ScenPart_SpawnDragonNestAndEgg">
+          <def>SpawnDragonNestAndEgg</def>
+        </li>
+
+        <!-- Custom Game Start Dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>As you enter the ruins, you find the remains of a once-mighty dragon. The stench of death lingers, and it is clear that something terrible has occurred here. The dragon egg it died protecting may be the last hope for your people.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>

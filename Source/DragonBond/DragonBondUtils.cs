@@ -1,9 +1,12 @@
-﻿using RimWorld;
+﻿using Crows_DragonBond;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+
 
 namespace DragonBond
 {
@@ -20,64 +23,60 @@ namespace DragonBond
         private static ThoughtDef dragonBondProximityDef = DefDatabase<ThoughtDef>.GetNamedSilentFail(THOUGHT_DRAGON_BOND_PROXIMITY_DEF_NAME);
         private static HediffDef Crows_DragonBondHediff = DefDatabase<HediffDef>.GetNamedSilentFail(HEDIFF_DRAGON_BOND_DEF_NAME);
 
-        // Stages for proximity (close and distant)
-        private static ThoughtStage dragonBondStageCloseMood = dragonBondProximityDef.stages.First(stage => stage.label == "dragon bond");
-        private static ThoughtStage dragonBondStageDistanceMood = dragonBondProximityDef.stages.First(stage => stage.label == "dragon bond distance");
+        // Ensure that dragonBondProximityDef and Crows_DragonBondHediff are not null before using them
+        private static ThoughtStage dragonBondStageCloseMood = dragonBondProximityDef?.stages?.FirstOrDefault(stage => stage.label == "dragon bond");
+        private static ThoughtStage dragonBondStageDistanceMood = dragonBondProximityDef?.stages?.FirstOrDefault(stage => stage.label == "dragon bond distance");
 
-        // Hediff stages for the bond and consciousness modification
-        private static HediffStage dragonBondStageClose = Crows_DragonBondHediff.stages.First(stage => stage.overrideLabel == "dragon bond close");
-        private static HediffStage dragonBondStageDistance = Crows_DragonBondHediff.stages.First(stage => stage.overrideLabel == "dragon bond distance");
+        private static HediffStage dragonBondStageClose = Crows_DragonBondHediff?.stages?.FirstOrDefault(stage => stage.overrideLabel == "dragon bond close");
+        private static HediffStage dragonBondStageDistance = Crows_DragonBondHediff?.stages?.FirstOrDefault(stage => stage.overrideLabel == "dragon bond distance");
 
-        private static PawnCapacityModifier dragonBondConsciousnessClose = dragonBondStageClose.capMods.First(capMod => capMod.capacity.defName == "Consciousness");
-        private static PawnCapacityModifier dragonBondConsciousnessDistance = dragonBondStageDistance.capMods.First(capMod => capMod.capacity.defName == "Consciousness");
+        // Capacity modifiers for consciousness, ensure we only reference them if their stages exist
+        private static PawnCapacityModifier dragonBondConsciousnessClose = dragonBondStageClose?.capMods?.FirstOrDefault(capMod => capMod.capacity?.defName == "Consciousness");
+        private static PawnCapacityModifier dragonBondConsciousnessDistance = dragonBondStageDistance?.capMods?.FirstOrDefault(capMod => capMod.capacity?.defName == "Consciousness");
 
         // Create a dragon bond between a pawn and their dragon
+        // Bond tracker for resurrected pawns
+        private static Dictionary<Pawn, Pawn> deadPawnBondMap = new Dictionary<Pawn, Pawn>();
+
         public static void CreateDragonBond(Pawn pawn, Pawn dragon)
         {
-            // Ensure the pawn and dragon are valid
+            // Existing bond creation logic remains the same.
             if (pawn == null || dragon == null || pawn.relations == null || dragon.relations == null)
             {
                 Log.Error("Failed to create bond: pawn or dragon or their relations tracker is null.");
                 return;
             }
 
-            // Check if a bond already exists
             if (pawn.relations.DirectRelationExists(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon))
             {
                 Log.Message($"{pawn.NameShortColored} already has a bond with {dragon.NameShortColored}.");
                 return;
             }
 
-            // Create the bond relation between the pawn and the dragon
             pawn.relations.AddDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
             dragon.relations.AddDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), pawn);
 
-            // Apply the dragon bond hediff to the pawn
             Hediff pawnBondHediff = HediffMaker.MakeHediff(HediffDef.Named("Crows_DragonBondHediff"), pawn);
             pawn.health.AddHediff(pawnBondHediff);
 
-            // Apply the dragon bond hediff to the dragon
             Hediff dragonBondHediff = HediffMaker.MakeHediff(HediffDef.Named("Crows_DragonBondHediff"), dragon);
             dragon.health.AddHediff(dragonBondHediff);
 
-            // Link the pawn's bond to the dragon
             var pawnComp = pawnBondHediff.TryGetComp<HediffComp_DragonBondLink>();
             if (pawnComp != null)
             {
                 pawnComp.SetLinkedPawn(dragon);
             }
 
-            // Link the dragon's bond back to the pawn
             var dragonComp = dragonBondHediff.TryGetComp<HediffComp_DragonBondLink>();
             if (dragonComp != null)
             {
                 dragonComp.SetLinkedPawn(pawn);
             }
         }
-
-
-        // Add the "Dragon bond distance" stage if it's missing
-        public static void AddDragonBondDistanceStage()
+    
+// Add the "Dragon bond distance" stage if it's missing
+    public static void AddDragonBondDistanceStage()
         {
             bool foundStage = false;
             foreach (HediffStage stage in Crows_DragonBondHediff.stages)
@@ -153,62 +152,172 @@ namespace DragonBond
             }
         }
 
-        // Add a "refresh stage" to recalculate bond status dynamically
-        private static void AddDragonBondRefreshStage()
+        public static void TearDragonBond(Pawn pawn, Pawn dragon, float moodDebuff = -20f, int moodDebuffDurationDays = 10)
         {
-            dragonBondStageClose.minSeverity = 0.2f;
-
-            HediffStage dragonBondRefreshStage = new HediffStage
+            if (pawn == null || dragon == null)
             {
-                overrideLabel = "dragon bond refresh",
-                minSeverity = 0.1f, // Temporarily set severity for refresh
-                painFactor = dragonBondStageClose.painFactor,
-                statOffsets = new List<StatModifier>(dragonBondStageClose.statOffsets),
-                capMods = new List<PawnCapacityModifier>(dragonBondStageClose.capMods)
-            };
+                Log.Error("TearDragonBond called with a null pawn or dragon.");
+                return;
+            }
 
-            Crows_DragonBondHediff.stages.Add(dragonBondRefreshStage);
+            Log.Message($"Tearing bond between {pawn.NameShortColored} and {dragon.NameShortColored}");
 
-            // Sort the stages by severity to avoid errors
-            Crows_DragonBondHediff.stages.Sort((HediffStage stage1, HediffStage stage2) =>
+            // Ensure we tear the bond relation from both pawns
+            if (pawn.relations != null)
             {
-                return stage1.minSeverity.CompareTo(stage2.minSeverity);
-            });
-        }
+                pawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
+            }
+            if (dragon.relations != null)
+            {
+                dragon.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), pawn);
+            }
 
-        // Method to sever a bond between a pawn and a dragon, triggering mood debuffs and possibly mental breaks
-        public static void TearDragonBond(Pawn pawn, Pawn dragon, int mentalBreakChance = 10, float moodDebuff = -20f, int moodDebuffDurationDays = 10)
-        {
-            // Remove direct relations between the pawn and the dragon
-            pawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon);
-
-            // Remove the dragon bond hediff from both the pawn and the dragon
+            // Explicitly remove the bond Hediff from both living and dead pawns
             RemoveDragonBondHediff(pawn, dragon);
             RemoveDragonBondHediff(dragon, pawn);
 
-            // Apply the torn bond mood debuff
-            ThoughtDef bondTornDef = ThoughtDef.Named("Crows_DragonBondTorn");
-            pawn.needs.mood.thoughts.memories.TryGainMemory(bondTornDef, dragon);
-
-            // Roll for mental break if the bond is strong and breaks
-            if (Rand.Chance(mentalBreakChance / 100f))
+            // If the pawn is not dead, apply mood debuff and force mental break
+            if (!pawn.Dead && pawn.needs != null && pawn.needs.mood != null)
             {
-                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
+                ThoughtDef bondTornDef = ThoughtDef.Named("Crows_DragonBondTorn");
+                pawn.needs.mood.thoughts.memories.TryGainMemory(bondTornDef, dragon);
+                ForcePawnMentalBreak(pawn);
+                SoundDefOf.PsychicPulseGlobal.PlayOneShotOnCamera();
             }
 
-            // Trigger a negative sound event (ritual sound on bond tearing)
-            SoundDefOf.PsychicPulseGlobal.PlayOneShotOnCamera();
+            // Ensure the dead pawn also has their Hediff removed
+            if (pawn.Dead)
+            {
+                RemoveDragonBondHediff(pawn, dragon);
+            }
+            if (dragon.Dead)
+            {
+                RemoveDragonBondHediff(dragon, pawn);
+            }
         }
+
 
         // Utility method to remove the DragonBond Hediff from a pawn
-        private static void RemoveDragonBondHediff(Pawn pawn, Pawn bondedPawn)
+        public static void RemoveDragonBondHediff(Pawn pawn, Pawn bondedPawn)
         {
-            Hediff dragonBondHediff = pawn.health.hediffSet.GetFirstHediffOfDef(Crows_DragonBondHediff);
-            if (dragonBondHediff != null)
+            if (pawn == null || pawn.health == null)
             {
-                pawn.health.RemoveHediff(dragonBondHediff);
+                Log.Error("Attempted to remove Dragon Bond Hediff from a null or invalid pawn.");
+                return;
+            }
+
+            // Get the specific Hediff for the dragon type (if the pawn is a dragon)
+            HediffDef pawnDragonBondHediff = Verb_DragonBond.GetDragonBondHediffForDragon(pawn);
+
+            // Handle alive pawns first
+            if (!pawn.Dead)
+            {
+                Hediff dragonBondHediff = pawn.health.hediffSet.GetFirstHediffOfDef(pawnDragonBondHediff);
+                if (dragonBondHediff != null)
+                {
+                    pawn.health.RemoveHediff(dragonBondHediff);
+                    Log.Message($"Removed {pawnDragonBondHediff.defName} Hediff from {pawn.NameShortColored} (alive).");
+                }
+                else
+                {
+                    Log.Warning($"Could not find {pawnDragonBondHediff.defName} Hediff on {pawn.NameShortColored} to remove.");
+                }
+            }
+            else // Handle dead pawns (corpses)
+            {
+                Log.Message($"Processing removal of {pawnDragonBondHediff.defName} Hediff for dead pawn {pawn.NameShortColored}.");
+
+                if (pawn.Corpse != null)
+                {
+                    Pawn corpseInnerPawn = pawn.Corpse.InnerPawn;
+
+                    // Remove bond from corpse's InnerPawn
+                    Hediff corpseBondHediff = corpseInnerPawn.health.hediffSet.GetFirstHediffOfDef(pawnDragonBondHediff);
+                    if (corpseBondHediff != null)
+                    {
+                        corpseInnerPawn.health.RemoveHediff(corpseBondHediff);
+                        Log.Message($"Removed {pawnDragonBondHediff.defName} Hediff from the corpse of {corpseInnerPawn.NameShortColored}.");
+                    }
+                    else
+                    {
+                        Log.Warning($"Could not find {pawnDragonBondHediff.defName} Hediff on the corpse of {corpseInnerPawn.NameShortColored} to remove.");
+                    }
+                }
+            }
+
+            // Handle bondedPawn (likely the rider) separately
+            if (bondedPawn != null && bondedPawn.health != null)
+            {
+                HediffDef bondedPawnDragonBondHediff = Verb_DragonBond.GetDragonBondHediffForDragon(bondedPawn); // Correct Hediff for bonded pawn (if also a dragon)
+
+                Hediff bondedPawnHediff = bondedPawn.health.hediffSet.GetFirstHediffOfDef(bondedPawnDragonBondHediff);
+                if (bondedPawnHediff != null)
+                {
+                    bondedPawn.health.RemoveHediff(bondedPawnHediff);
+                    Log.Message($"Removed {bondedPawnDragonBondHediff.defName} Hediff from bonded pawn {bondedPawn.NameShortColored}.");
+                }
+                else
+                {
+                    Log.Warning($"Could not find {bondedPawnDragonBondHediff.defName} Hediff on bonded pawn {bondedPawn.NameShortColored} to remove.");
+                }
             }
         }
+
+        public static void HandlePawnDeath(Pawn pawn)
+        {
+            Hediff dragonBondHediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Crows_DragonBondHediff"));
+            if (dragonBondHediff != null)
+            {
+                Pawn bondedDragon = dragonBondHediff.TryGetComp<HediffComp_DragonBondLink>()?.linkedPawn;
+
+                if (bondedDragon != null)
+                {
+                    Log.Message($"Pawn {pawn.NameShortColored} has died. Severing bond with {bondedDragon.NameShortColored}.");
+
+                    // Add both the dead pawn and bonded dragon to the deadPawnBondMap for resurrection tracking
+                    deadPawnBondMap[pawn] = bondedDragon;
+                    deadPawnBondMap[bondedDragon] = pawn;
+
+                    TearDragonBond(pawn, bondedDragon);
+
+                    // Also, ensure the bond is removed from the corpse of the dead pawn
+                    if (pawn.Dead)
+                    {
+                        RemoveDragonBondHediff(pawn, bondedDragon);
+                    }
+                }
+            }
+        }
+
+        // Method to restore bond if resurrected
+        public static void RestoreBondIfResurrected(Pawn resurrectedPawn)
+        {
+            if (deadPawnBondMap.TryGetValue(resurrectedPawn, out Pawn bondedPawn))
+            {
+                Log.Message($"Restoring bond between resurrected pawn {resurrectedPawn.NameShortColored} and {bondedPawn.NameShortColored}.");
+                TryCastShot(resurrectedPawn, bondedPawn);
+                deadPawnBondMap.Remove(resurrectedPawn);  // Remove from tracking after restoring
+            }
+        }
+
+        private static void TryCastShot(Pawn resurrectedPawn, Pawn bondedPawn)
+        {
+            throw new NotImplementedException();
+        }
+
+        // Force an immediate mental break on the pawn
+        private static void ForcePawnMentalBreak(Pawn pawn)
+        {
+            if (pawn.mindState.mentalStateHandler != null && !pawn.Dead)
+            {
+                // Apply the Catatonic breakdown Hediff instead of a mental state
+                Hediff catatonicBreakdown = HediffMaker.MakeHediff(HediffDefOf.CatatonicBreakdown, pawn);
+                pawn.health.AddHediff(catatonicBreakdown);
+                Log.Message($"Pawn {pawn.NameShortColored} has gone catatonic due to the torn bond.");
+            }
+        }
+
+
     }
 
     // Custom HediffComp to manage the linked dragon and bond behavior
@@ -224,52 +333,103 @@ namespace DragonBond
 
     public class HediffComp_DragonBondLink : HediffComp
     {
-        public Pawn linkedPawn; // The dragon
+        public Pawn linkedPawn; // The dragon or rider linked to this pawn
+        private Map lastPawnMap; // Store the last known map for the pawn
+        private Map lastDragonMap; // Store the last known map for the dragon
 
         public override void CompExposeData()
         {
             base.CompExposeData();
             Scribe_References.Look(ref linkedPawn, "linkedPawn");
+            Scribe_References.Look(ref lastPawnMap, "lastPawnMap");
+            Scribe_References.Look(ref lastDragonMap, "lastDragonMap");
         }
 
-        // Set the linked pawn manually (Dragon)
         public void SetLinkedPawn(Pawn pawn)
         {
             linkedPawn = pawn;
+            lastDragonMap = pawn?.Map;
         }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
 
-            // Debugging output
-            Log.Message($"Checking bond for pawn {this.Pawn.NameShortColored} and linked dragon {linkedPawn?.NameShortColored ?? "null"}.");
-
-            if (linkedPawn == null)
+            if (linkedPawn == null || Pawn.Dead || linkedPawn.Dead)
             {
-                Log.Warning($"No dragon is linked to {this.Pawn.NameShortColored}. Bonding failed.");
+                TearBond(); // Tear the bond if either the Pawn or Dragon is dead
                 return;
             }
 
-            if (linkedPawn.Dead)
+            // Check if either the Pawn or the Dragon has changed maps
+            if (Pawn.Map != lastPawnMap || linkedPawn.Map != lastDragonMap)
             {
-                Log.Message($"Dragon is dead for pawn {this.Pawn.NameShortColored}. Applying death debuff.");
-                this.parent.Severity = 1.0f;
+                // Pawn or Dragon has left or entered the map
+                UpdateBondStatus();
+                lastPawnMap = Pawn.Map; // Update the last known map for the Pawn
+                lastDragonMap = linkedPawn.Map; // Update the last known map for the Dragon
             }
-            else if (linkedPawn.Spawned && linkedPawn.Map == this.Pawn.Map)
+        }
+
+        private void UpdateBondStatus()
+        {
+            if (linkedPawn.Map == Pawn.Map)
             {
-                Log.Message($"Dragon is nearby for pawn {this.Pawn.NameShortColored}. Applying close bond.");
-                this.parent.Severity = 0.5f;
+                // Dragon and Pawn are on the same map, apply close bond
+                ApplyCloseBond();
+                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on the same map. Applying close bond.");
             }
             else
             {
-                Log.Message($"Dragon is far or off-map for pawn {this.Pawn.NameShortColored}. Applying distance debuff.");
-                this.parent.Severity = 1.0f;
+                // Dragon and Pawn are on different maps, apply distance bond
+                ApplyDistanceBond();
+                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on different maps. Applying distance bond.");
             }
         }
+
+        private void TearBond()
+        {
+            if (linkedPawn != null)
+            {
+                Log.Message($"Tearing bond between {Pawn.NameShortColored} and {linkedPawn.NameShortColored} due to death.");
+                DragonBondUtils.TearDragonBond(Pawn, linkedPawn);
+                linkedPawn = null; // Remove reference after tearing bond
+            }
+        }
+
+        private void ApplyCloseBond()
+        {
+            if (linkedPawn.Spawned && linkedPawn.Map == this.Pawn.Map)
+            
+                Log.Message($"Dragon is nearby for pawn {this.Pawn.NameShortColored}. Applying close bond.");
+                this.parent.Severity = 0.5f;  // Set severity for close bond.
+            
+        }
+
+        private void ApplyDistanceBond()
+        {
+            
+                Log.Message($"Dragon is far or off-map for pawn {this.Pawn.NameShortColored}. Applying distance debuff.");
+                this.parent.Severity = 1.0f;  // Set severity for distant bond.
+            
+        }           
+            
+        
+
+        // Called when the Hediff is removed, which often happens when the pawn dies
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+
+            // This will be called when the Hediff is removed from the pawn
+            if (linkedPawn != null && !linkedPawn.Dead)
+            {
+                Log.Message($"Bonded pawn {this.Pawn.NameShortColored} has had the bond removed, clearing bond on {linkedPawn.NameShortColored}.");
+                DragonBondUtils.RemoveDragonBondHediff(linkedPawn, this.Pawn);
+            }
+        }
+
     }
-
-
 
     public class ThoughtWorker_DragonBondedDied : ThoughtWorker
     {
@@ -294,4 +454,6 @@ namespace DragonBond
             return ThoughtState.Inactive;
         }
     }
+
+    
 }

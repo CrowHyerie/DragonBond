@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Velos Enclave -->
+  <FactionDef Name="VelosEnclaveFactionBase" ParentName="FactionBase">
+    <defName>Crows_VelosEnclave</defName>
+    <label>Velos Enclave</label>
+    <categoryTag>Medieval</categoryTag>
+    <leaderTitle>monarch</leaderTitle>
+    <pawnSingular>subject</pawnSingular>
+    <pawnsPlural>subjects</pawnsPlural>
+    <fixedLeaderKinds>
+      <li>Crows_DragonMonarch</li>
+    </fixedLeaderKinds>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+    <settlementGenerationWeight>2</settlementGenerationWeight>
+    <requiredCountAtGameStart>2</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <factionNameMaker>Crows_VeloniriFactionNames</factionNameMaker>
+    <factionIconPath>WorldObjects/VelosEnclaveBaseIcon</factionIconPath>
+    <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
+    <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
+    <allowedCultures>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Crows_VeloniriCulture</li></allowedCultures>
+    <techLevel>Medieval</techLevel>
+     <backstoryCategories>
+      <li>Tribal</li>
+      <li>Medieval</li>
+    </backstoryCategories>
+    <description>The Velos Enclave represents the noble and traditionalist Velonir who revere their ancient bond with dragons. They believe in preserving their culture, upholding the sacred rites, and using their psychic abilities to protect and nurture both their people and their dragon companions. The Enclave seeks peaceful coexistence with other races, offering their unique skills and knowledge in exchange for mutual respect and cooperation.</description>
+    <colorSpectrum>
+      <li>(75, 143, 159)</li>
+      <li>(48, 120, 137)</li>
+    </colorSpectrum>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Crows_DraconicLegacy</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+    </disallowedMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Ideological>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Animist>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistEmbodied>
+    </structureMemeWeights>
+    <caravanTraderKinds Inherit="false">
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_ArtPatron</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Armorsmith</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Weaponsmith</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_RuinsMerchant</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Scholar</li>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Crows_DraconicTrader</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds Inherit="false">
+      <li>Visitor_Neolithic_Standard</li>
+      <li>Crows_DraconicTrader</li>
+    </visitorTraderKinds>
+    <baseTraderKinds Inherit="false">
+      <li>Base_Neolithic_Standard</li>
+      <li>Crows_DraconicTrader</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+  <raidCommonalityFromPointsCurve>
+    <points>
+      <li>(0, 1.5)</li>  <!-- Early game raids -->
+      <li>(500, 2.5)</li> <!-- More mid-game raids -->
+      <li>(1000, 3.5)</li> <!-- Late-game frequent raids -->
+    </points>
+  </raidCommonalityFromPointsCurve>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <Crows_VelonirRace>0.8</Crows_VelonirRace>
+        <Baseliner>0.2</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <!-- Raid Loot Value -->
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35,     15)</li>
+        <li>(100,   120)</li>
+        <li>(1000,  500)</li>
+        <li>(2000,  800)</li>
+        <li>(4000, 1000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(300,  0.5)</li>
+        <li>(700,  1)</li>
+        <li>(1400, 1.8)</li>
+        <li>(2800, 2.2)</li>
+        <li>(3000, 2.6)</li>
+        <li>(3001, 10000)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidLootMaker>Crows_VeloniriLootMaker</raidLootMaker>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Crows_VelonirPeasant>30</Crows_VelonirPeasant>
+          <Crows_VelonirSquire>30</Crows_VelonirSquire>
+          <Crows_VelonirArcher>50</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>50</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>25</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>25</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>10</Crows_DragonMonarch>
+          <Horse>20</Horse>
+        </options>
+      </li>
+      <li>
+        <!-- breach-capable fights, breachers plus ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <Crows_VelonirPeasant>5</Crows_VelonirPeasant>
+          <Crows_VelonirSquire>50</Crows_VelonirSquire>
+          <Crows_VelonirArcher>50</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>50</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>30</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>20</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>5</Crows_DragonMonarch>
+          <Blue_Dragon>20</Blue_Dragon>
+          <Green_Dragon>20</Green_Dragon>
+          <Horse>10</Horse>
+        </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Crows_VelonirSquire>20</Crows_VelonirSquire>
+          <Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">10</Tribal_Child>
+          <Crows_VelonirArcher>20</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>20</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>5</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>3</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>1.5</Crows_DragonMonarch>
+          <Horse>3</Horse>
+        </options>
+      </li>
+      <!-- Trader -->
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Crows_VelonirMerchant>1</Crows_VelonirMerchant>
+        </traders>
+        <carriers>
+          <Muffalo>4</Muffalo>
+          <Horse>3</Horse>
+        </carriers>
+        <guards>
+          <Crows_VelonirSquire>10</Crows_VelonirSquire>
+          <Crows_VelonirPeasant>12</Crows_VelonirPeasant>
+          <Crows_VelonirArcher>8</Crows_VelonirArcher>
+        </guards>
+      </li>
+      <!-- Settlement -->
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Crows_VelonirSquire>20</Crows_VelonirSquire>
+          <Crows_VelonirArcher>30</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>30</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>40</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>50</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>60</Crows_DragonMonarch>
+          <Blue_Dragon>50</Blue_Dragon>
+          <Green_Dragon>50</Green_Dragon>
+          <Horse>5</Horse>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <!-- Ashen Dominion -->
+  <FactionDef Name="AshenDominionFactionBase" ParentName="FactionBase">
+    <defName>Crows_AshenDominion</defName>
+    <label>ashen dominion</label>
+    <categoryTag>Medieval</categoryTag>
+    <leaderTitle>monarch</leaderTitle>
+    <pawnSingular>ashen</pawnSingular>
+    <pawnsPlural>ashen</pawnsPlural>
+    <fixedLeaderKinds>
+      <li>Crows_DragonMonarch</li>
+    </fixedLeaderKinds>
+    <factionNameMaker>Crows_VeloniriFactionNames</factionNameMaker>
+    <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
+    <factionIconPath>WorldObjects/AshenDominionBaseIcon</factionIconPath>
+    <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
+    <allowedCultures><li>Crows_VeloniriCulture</li></allowedCultures>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>2</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canStageAttacks>true</canStageAttacks>
+    <canSiege>true</canSiege>
+    <techLevel>Medieval</techLevel>
+    <backstoryCategories>
+      <li>Tribal</li>
+      <li>Medieval</li>
+    </backstoryCategories>
+    <description>The Ashen Dominion is a faction of Velonir who have turned away from the old ways, seeking to dominate others through their dragons and psychic powers. They believe in Velonir superiority and view other races as inferior, fit only to serve or be conquered. The Dominion is driven by a lust for power, using their dragons as weapons of war and seeing their psychic abilities as tools to subjugate and control.</description>
+    <colorSpectrum>
+      <li>(255, 51, 51)</li>
+      <li>(255, 102, 102)</li>
+    </colorSpectrum>
+    <naturalEnemy>true</naturalEnemy>
+    <permanentEnemy>false</permanentEnemy>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Crows_DraconicLegacy</li>
+    </requiredMemes>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">HumanPrimacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FemaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+    </disallowedMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Ideological>
+      <Structure_Animist MayRequire="Ludeon.RimWorld.Ideology">2</Structure_Animist>
+      <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
+      <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistEmbodied>
+    </structureMemeWeights>
+    <caravanTraderKinds>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_ArtPatron</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Armorsmith</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Weaponsmith</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_RuinsMerchant</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Scholar</li>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Crows_DraconicTrader</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+      <li>Crows_DraconicTrader</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+      <li>Crows_DraconicTrader</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+  <raidCommonalityFromPointsCurve>
+    <points>
+      <li>(0, 2)</li>  <!-- Frequent raids even early -->
+      <li>(500, 3.5)</li> <!-- High mid-game raid frequency -->
+      <li>(1000, 5)</li> <!-- Very frequent late-game raids -->
+    </points>
+  </raidCommonalityFromPointsCurve>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <Crows_VelonirRace>0.8</Crows_VelonirRace>
+        <Baseliner>0.2</Baseliner>
+      </xenotypeChances>
+    </xenotypeSet>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <raidLootMaker>Crows_VeloniriLootMaker</raidLootMaker>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35,     15)</li>
+        <li>(100,   120)</li>
+        <li>(1000,  500)</li>
+        <li>(2000,  800)</li>
+        <li>(4000, 1000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(300,  0)</li>
+        <li>(700,  1)</li>
+        <li>(1400, 1.8)</li>
+        <li>(2800, 2.2)</li>
+        <li>(3000, 2.6)</li>
+        <li>(3001, 10000)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Crows_VelonirPeasant>30</Crows_VelonirPeasant>
+          <Crows_VelonirSquire>30</Crows_VelonirSquire>
+          <Crows_VelonirArcher>50</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>50</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>25</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>25</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>10</Crows_DragonMonarch>
+        </options>
+      </li>
+      <li>
+        <!-- breach-capable fights, breachers plus ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+          <Crows_VelonirPeasant>5</Crows_VelonirPeasant>
+          <Crows_VelonirSquire>50</Crows_VelonirSquire>
+          <Crows_VelonirArcher>50</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>50</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>30</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>20</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>5</Crows_DragonMonarch>
+          <Black_Dragon>20</Black_Dragon>
+          <Red_Dragon>20</Red_Dragon>
+        </options>
+      </li>
+      <li>
+        <!-- Peaceful -->
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Crows_VelonirSquire>20</Crows_VelonirSquire>
+          <Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">10</Tribal_Child>
+          <Crows_VelonirArcher>20</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>20</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>5</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>3</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>1.5</Crows_DragonMonarch>
+        </options>
+      </li>
+      <!-- Trader -->
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Crows_VelonirMerchant>1</Crows_VelonirMerchant>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Horse>3</Horse>
+        </carriers>
+        <guards>
+          <Crows_VelonirSquire>7</Crows_VelonirSquire>
+          <Crows_VelonirPeasant>20</Crows_VelonirPeasant>
+          <Crows_VelonirArcher>10</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>10</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>7</Crows_VelonirDragonKnight>
+          <Horse>3</Horse>
+        </guards>
+      </li>
+      <!-- Settlement -->
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Crows_VelonirSquire>20</Crows_VelonirSquire>
+          <Crows_VelonirArcher>30</Crows_VelonirArcher>
+          <Crows_VelonirFootsoldier>30</Crows_VelonirFootsoldier>
+          <Crows_VelonirDragonKnight>40</Crows_VelonirDragonKnight>
+          <Crows_VelonirDragonRider>50</Crows_VelonirDragonRider>
+          <Crows_DragonMonarch>60</Crows_DragonMonarch>
+          <Black_Dragon>20</Black_Dragon>
+          <Red_Dragon>20</Red_Dragon>
+          <Horse>5</Horse>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <!-- Faction Loot Maker -->
+  <ThingSetMakerDef>
+    <defName>Crows_VeloniriLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+            <li>MedicineHerbal</li>
+            <li>DragonsBlood</li>
+            <li>MealSurvivalPack</li>
+            <li>DraconicAmbrosia</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+</Defs>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<XenotypeDef>
+		<defName>Crows_VelonirRace</defName>
+		<label>Velonir</label>
+		<description>A noble race with white hair, red eyes, heightened psychic sensitivity and the unique ability to form a bond with a Dragon.</description>
+		<descriptionShort>A noble race with the unique ability to form a bond with a Dragon.</descriptionShort>
+		<iconPath>UI/Icons/Xenotypes/Velonir/VelonirIcon</iconPath>
+    <combatPowerFactor>1.2</combatPowerFactor>
+    <inheritable>true</inheritable>
+    <nameMaker>Crows_VeloniriNamer</nameMaker>
+    <nameMakerFemale>Crows_FemaleVeloniriNamer</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <factionlessGenerationWeight>40</factionlessGenerationWeight>
+		<genes>
+      <li>Hair_Grayless</li>
+			<li>Hair_SnowWhite</li>
+			<li>Crows_DragonBondGene</li>
+      <li>AptitudeRemarkable_Animals</li>
+      <li>AptitudeStrong_Social</li>
+			<li>AptitudeTerrible_Mining</li>
+			<li>AptitudeTerrible_Plants</li>
+      <li>PsychicAbility_Enhanced</li>
+      <li>Ears_Pointed</li>
+      <li>Eyes_Red</li>
+      <li>Crows_NobleBlood</li>
+		</genes>
+	</XenotypeDef>
+</Defs>
