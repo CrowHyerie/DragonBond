@@ -20,6 +20,7 @@
         <mustBeSelectable>true</mustBeSelectable>
       </targetParams>
     </verbProperties>
+
     <modExtensions>
       <li Class="Crows_DragonBond.ModExtension_Crows_DragonBond">
         <allowedAnimals>
@@ -36,6 +37,22 @@
           <li>True_Dragon</li>
         </allowedAnimals>
       </li>
+      <li Class="Crows_DragonBond.ModExtension_Crows_DragonEggs">
+        <allowedEggs>
+          <li>EggBlackDragonFertilized</li>
+          <li>EggBlueDragonFertilized</li>
+          <li>EggGoldDragonFertilized</li>
+          <li>EggGreenDragonFertilized</li>
+          <li>EggJadeDragonFertilized</li>
+          <li>EggPurpleDragonFertilized</li>
+          <li>EggRedDragonFertilized</li>
+          <li>EggSilverDragonFertilized</li>
+          <li>EggTrueDragonFertilized</li>
+          <li>EggWhiteDragonFertilized</li>
+          <li>EggYellowDragonFertilized</li>
+        </allowedEggs>
+      </li>
     </modExtensions>
+    
   </AbilityDef>
 </Defs>

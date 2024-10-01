@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace DragonBond
+namespace Crows_DragonBond
 {
     public class Gene_DragonBond : Gene
     {

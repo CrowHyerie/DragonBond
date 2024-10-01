@@ -2,21 +2,26 @@
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>Medieval Overhaul</li>
+      <li>DankPyon.Medieval.Overhaul</li>
     </mods>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="DD_Apparel_ScaleHelm"]/recipeMaker/recipeUsers</xpath>
-    <value>
-      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Anvil</li>
-    </value>
-  </Operation>
-  
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="DD_Apparel_DragonCrown"]/recipeMaker/recipeUsers</xpath>
-    <value>
-      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Anvil</li>
-    </value>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="DD_Apparel_ScaleHelm"]/recipeMaker/recipeUsers</xpath>
+          <value>
+            <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Anvil</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[defName="DD_Apparel_DragonCrown"]/recipeMaker/recipeUsers</xpath>
+          <value>
+            <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Anvil</li>
+          </value>
+        </li>
+      </operations>
+    </match>
   </Operation>
 </Patch>
 

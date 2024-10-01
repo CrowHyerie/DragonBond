@@ -1,0 +1,11 @@
+<Defs>
+  <HistoryEventDef>
+    <defName>Crows_SoldDragon</defName>
+    <label>sold dragon</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>Crows_SoldDragonEgg</defName>
+    <label>sold dragon egg</label>
+  </HistoryEventDef>
+</Defs>

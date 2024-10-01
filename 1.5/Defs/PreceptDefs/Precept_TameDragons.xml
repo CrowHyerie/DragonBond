@@ -3,7 +3,7 @@
   <IssueDef>
     <defName>Crows_DragonsIssue</defName>
     <label>dragons</label>
-    <iconPath>UI/Issues/AnimalConnection</iconPath>
+    <iconPath>UI/Issues/DragonsIssue</iconPath>
   </IssueDef>
   
 <PreceptDef>

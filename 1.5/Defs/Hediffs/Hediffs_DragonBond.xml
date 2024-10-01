@@ -5,7 +5,7 @@
       <label>psychic bond with dragon</label>
       <hediffClass>Verse.HediffWithComps</hediffClass>
       <comps>
-        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+        <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
@@ -52,7 +52,7 @@
       <label>Dragon Bond (Blue)</label>
       <hediffClass>Verse.HediffWithComps</hediffClass>
       <comps>
-        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+        <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
@@ -95,7 +95,7 @@
       <label>Dragon Bond (Green)</label>
       <hediffClass>Verse.HediffWithComps</hediffClass>
       <comps>
-        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+        <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
@@ -138,7 +138,7 @@
       <label>Dragon Bond (Purple)</label>
       <hediffClass>Verse.HediffWithComps</hediffClass>
       <comps>
-        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+        <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
@@ -181,7 +181,7 @@
       <label>Dragon Bond (Red)</label>
       <hediffClass>Verse.HediffWithComps</hediffClass>
       <comps>
-        <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+        <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
@@ -224,7 +224,7 @@
         <label>Dragon Bond (White)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -268,7 +268,7 @@
         <label>Dragon Bond (Yellow)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -314,7 +314,7 @@
         <label>Dragon Bond (Black)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -359,7 +359,7 @@
         <label>Dragon Bond (Jade)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -403,7 +403,7 @@
         <label>Dragon Bond (Gold)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -446,7 +446,7 @@
         <label>Dragon Bond (Silver)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>
@@ -493,7 +493,7 @@
         <label>Dragon Bond (True)</label>
         <hediffClass>Verse.HediffWithComps</hediffClass>
         <comps>
-          <li Class="DragonBond.HediffCompProperties_DragonBondLink">
+          <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
             <targetRelation>Crows_DragonRiderBond</targetRelation>
           </li>
         </comps>

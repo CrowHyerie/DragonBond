@@ -1,16 +1,9 @@
 ﻿using Verse;
 using RimWorld;
-using System.Linq;
-using System.Collections.Generic;
-using DragonBond;
 using Verse.Sound;
 
 namespace Crows_DragonBond
 {
-    public class ModExtension_Crows_DragonBond : DefModExtension
-    {
-        public List<ThingDef> allowedAnimals; // List of allowed dragon ThingDefs
-    }
 
     public class Verb_DragonBond : Verb_CastAbility
     {
@@ -22,6 +15,9 @@ namespace Crows_DragonBond
             // Ensure the extension exists and contains allowed animals
             if (extension != null && extension.allowedAnimals != null)
             {
+                // Debug log for checking target pawn's defName
+                Log.Message($"Attempting to bond with target: {target.def.defName}");
+
                 // Check if the target's ThingDef is in the allowedAnimals list
                 if (extension.allowedAnimals.Contains(target.def))
                 {
@@ -39,6 +35,13 @@ namespace Crows_DragonBond
         {
             Pawn casterPawn = CasterPawn;
             Pawn targetPawn = (Pawn)currentTarget.Thing;
+
+            // Check if the target is a valid dragon using IsValidTarget
+            if (!IsValidTarget(targetPawn))
+            {
+                // Return false if the target is invalid
+                return false;
+            }
 
             if (ValidateTarget(targetPawn))
             {
@@ -58,7 +61,7 @@ namespace Crows_DragonBond
                     if (Rand.Chance(0.2f))
                     {
                         DragonIgnoresPawn(casterPawn, targetPawn); // Custom failure behavior
-                        this.ability.StartCooldown(60000); // Apply cooldown on failure
+                        this.ability.StartCooldown(60000); // Apply cooldown 
                         return false; // Bonding failed
                     }
 
@@ -93,12 +96,13 @@ namespace Crows_DragonBond
                         targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
                     }
 
-                    this.ability.StartCooldown(60000); // Apply cooldown on failure
+                    this.ability.StartCooldown(60000); // Apply cooldown
                 }
             }
 
             return false; // Bonding failed
         }
+
 
         // Custom failure behavior where the dragon ignores the pawn
         private void DragonIgnoresPawn(Pawn pawn, Pawn dragon)
@@ -167,6 +171,8 @@ namespace Crows_DragonBond
 
         public static HediffDef GetDragonBondHediffForDragon(Pawn dragon)
         {
+            Log.Message($"Dragon Color Name {dragon.def.defName}");
+
             switch (dragon.def.defName)
             {
                 case "Blue_Dragon":

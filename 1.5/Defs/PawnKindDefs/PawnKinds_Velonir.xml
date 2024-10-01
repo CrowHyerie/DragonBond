@@ -318,6 +318,8 @@
     <apparelMoney>2500~3500</apparelMoney>
     <apparelTags>
       <li>Crows_DragonRider</li>
+      <li>Royal</li>
+      <li>RoyalTier5</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <techHediffsChance>0.15</techHediffsChance>

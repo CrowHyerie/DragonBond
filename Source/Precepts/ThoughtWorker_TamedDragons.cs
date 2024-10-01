@@ -12,9 +12,13 @@ namespace Crows_DragonBond
             if (pawn.Faction == null || !pawn.Faction.IsPlayer)
                 return ThoughtState.Inactive;
 
-            // Retrieve the ModExtension from the AbilityDef (as specified)
+            // Ensure pawn has an Ideology and check for the relevant Precept
+            if (pawn.Ideo == null || !pawn.Ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamed("Crows_DragonVeneratedPrecept")))
+                return ThoughtState.Inactive;
+
+            // Retrieve the ModExtension from the AbilityDef
             ModExtension_Crows_DragonBond modExt = DefDatabase<AbilityDef>
-                .GetNamed("Crows_DragonBondAbility") // Make sure this matches your AbilityDef name
+                .GetNamed("Crows_DragonBondAbility")
                 .GetModExtension<ModExtension_Crows_DragonBond>();
 
             // Check if the modExtension exists and if the allowedAnimals list is populated
@@ -25,7 +29,6 @@ namespace Crows_DragonBond
             bool dragonPresent = pawn.Map.mapPawns.AllPawnsSpawned
                 .Any(p => p.Faction == pawn.Faction && modExt.allowedAnimals.Contains(p.def));
 
-            // Return active thought if a dragon is present
             return dragonPresent ? ThoughtState.ActiveDefault : ThoughtState.Inactive;
         }
     }
@@ -34,8 +37,12 @@ namespace Crows_DragonBond
     {
         protected override ThoughtState CurrentStateInternal(Pawn pawn)
         {
-            // Ensure the pawn is from the player's faction
+            // Ensure pawn belongs to the player's faction
             if (pawn.Faction == null || !pawn.Faction.IsPlayer)
+                return ThoughtState.Inactive;
+
+            // Ensure pawn has an Ideology and check for the relevant Precept
+            if (pawn.Ideo == null || !pawn.Ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamed("Crows_DragonVeneratedPrecept")))
                 return ThoughtState.Inactive;
 
             // Check if there are any dragon corpses on the map
@@ -90,22 +97,22 @@ namespace Crows_DragonBond
                    && modExt.allowedAnimals.Contains(pawn.def);
         }
 
-        // Apply the dragon death mood debuff to all colonists in the player's faction
+        // Apply the dragon death mood debuff to colonists with the correct precept
         private void ApplyMoodDebuffForDragonDeath(Pawn dragon)
         {
             foreach (Pawn colonist in map.mapPawns.FreeColonists)
             {
-                // Check if the colonist has a mood system
-                if (colonist.needs?.mood != null)
+                // Ensure colonist has the correct Ideology precept
+                if (colonist.Ideo != null && colonist.Ideo.HasPrecept(DefDatabase<PreceptDef>.GetNamed("Crows_DragonVeneratedPrecept")))
                 {
-                    // Add the memory of mourning the dragon's death
-                    colonist.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("Crows_DragonDeathMoodDebuff"));
+                    // Check if the colonist has a mood system
+                    if (colonist.needs?.mood != null)
+                    {
+                        // Add the memory of mourning the dragon's death
+                        colonist.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("Crows_DragonDeathMoodDebuff"));
+                    }
                 }
             }
         }
     }
 }
-
-
-
-

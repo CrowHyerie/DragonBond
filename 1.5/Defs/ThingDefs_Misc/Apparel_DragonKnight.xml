@@ -30,7 +30,7 @@
       <li>ApparelArmor</li>
     </thingCategories>
      <costList>
-       <HardScale>10</HardScale>
+       <HardScale>250</HardScale>
      </costList>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>

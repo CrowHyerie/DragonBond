@@ -4,11 +4,16 @@
     <mods>
       <li>The Profaned</li>
     </mods>
-  </Operation>
-<Operation Class="PatchOperationAdd">
-  <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
-  <value>
-    <li MayRequire="BotchJob.Profaned">BotchJob_UndeadDragon</li>
-  </value>
-</Operation>
-</Patch>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="BotchJob.Profaned">BotchJob_UndeadDragon</li>
+          </value>
+        </li>
+      </operations>
+    </match>
+     </Operation>
+   </Patch>

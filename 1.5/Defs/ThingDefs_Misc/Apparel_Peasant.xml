@@ -58,7 +58,7 @@
         <li>Anything</li>
         <li>Worker</li>
       </defaultOutfitTags>
-     <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+     <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel"/>
   </ThingDef> 

@@ -31,8 +31,8 @@
       <li>ApparelArmor</li>
     </thingCategories>
      <costList>
-       <HardScale>100</HardScale>
-       <Gold>10</Gold>
+       <HardScale>350</HardScale>
+       <Gold>2</Gold>
      </costList>
     <statBases>
 			<WorkToMake>70000</WorkToMake>
