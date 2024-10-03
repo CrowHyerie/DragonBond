@@ -49,6 +49,18 @@
       <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
       <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistEmbodied>
     </structureMemeWeights>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Hyperweave</li>
+        <li>HardScale</li>
+        <li>Silver</li>
+        <li>Steel</li>
+        <li>Plasteel</li>
+        <li>Leather_Bluefur</li>
+        <li>Leather_Heavy</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </apparelStuffFilter>
     <caravanTraderKinds Inherit="false">
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_ArtPatron</li>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Armorsmith</li>
@@ -239,6 +251,17 @@
       <Structure_TheistAbstract MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistAbstract>
       <Structure_TheistEmbodied MayRequire="Ludeon.RimWorld.Ideology">2</Structure_TheistEmbodied>
     </structureMemeWeights>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>DevilstrandCloth</li>
+        <li>HardScale</li>
+        <li>Silver</li>
+        <li>Steel</li>
+        <li>Plasteel</li>
+        <li>Leather_Fox</li>
+        <li>Leather_Heavy</li>
+      </thingDefs>
+    </apparelStuffFilter>
     <caravanTraderKinds>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_ArtPatron</li>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Armorsmith</li>

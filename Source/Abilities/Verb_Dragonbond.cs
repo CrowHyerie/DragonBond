@@ -26,7 +26,7 @@ namespace Crows_DragonBond
             }
 
             // If the target is not valid, show a rejection message
-            Messages.Message("This ability can only be used on dragons!", MessageTypeDefOf.RejectInput, false);
+            Messages.Message("CrowsDragonBond.AbilityBlocked".Translate(), MessageTypeDefOf.RejectInput, false);
             return false;
         }
 
@@ -43,13 +43,14 @@ namespace Crows_DragonBond
                 return false;
             }
 
+            // Check if the target is valid using ValidateTarget
             if (ValidateTarget(targetPawn))
             {
                 // Check if the dragon is already bonded to another pawn
                 Pawn existingBondedPawn = targetPawn.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
                 if (existingBondedPawn != null && existingBondedPawn != casterPawn)
                 {
-                    Messages.Message($"The dragon scoffs at your attempt, it is already bonded to {existingBondedPawn.NameShortColored}.", MessageTypeDefOf.RejectInput, false);
+                    Messages.Message("CrowsDragonBond.DragonDoubleBondRejection".Translate(), MessageTypeDefOf.RejectInput, false);
                     this.ability.StartCooldown(60000); // Apply cooldown on bond rejection
                     return false; // Cancel if already bonded to someone else
                 }
@@ -57,8 +58,11 @@ namespace Crows_DragonBond
                 // Check if the dragon is already tame
                 if (targetPawn.Faction == Faction.OfPlayer)
                 {
-                    // Introduce a 20% chance for failure when the dragon is tame
-                    if (Rand.Chance(0.2f))
+                    // Retrieve the manhunter chance from mod settings
+                    float manhunterChance = DragonBondMod.settings.manhunterChance;
+
+                    // Introduce a chance for failure based on the player's slider setting
+                    if (Rand.Chance(manhunterChance))
                     {
                         DragonIgnoresPawn(casterPawn, targetPawn); // Custom failure behavior
                         this.ability.StartCooldown(60000); // Apply cooldown 
@@ -69,10 +73,9 @@ namespace Crows_DragonBond
                     if (!casterPawn.relations.DirectRelationExists(PawnRelationDefOf.Bond, targetPawn))
                     {
                         casterPawn.relations.AddDirectRelation(PawnRelationDefOf.Bond, targetPawn);
-                        Messages.Message($"{casterPawn.NameShortColored} forms a deep bond with {targetPawn.NameShortColored}.", MessageTypeDefOf.PositiveEvent, false);
                     }
 
-                    Messages.Message("The dragon nuzzles your hand back, the bond was easily formed!", MessageTypeDefOf.PositiveEvent, false);
+                    Messages.Message("CrowsDragonBond.TameBondSuccess".Translate(), MessageTypeDefOf.PositiveEvent, false);
                     ApplyDragonRiderPsychicBond(casterPawn, targetPawn); // Directly bond the already tame dragon
                     this.ability.StartCooldown(60000); // Apply cooldown on success
                     return true; // Bonding successful
@@ -81,33 +84,44 @@ namespace Crows_DragonBond
                 // Try to tame and bond the dragon
                 if (TameDragon(targetPawn, casterPawn))
                 {
-                    Messages.Message("The dragon looks at you back in recognition. It has chosen you back and the bond was formed!", MessageTypeDefOf.PositiveEvent, false);
+                    Messages.Message("CrowsDragonBond.BondSuccess".Translate(), MessageTypeDefOf.PositiveEvent, false);
                     ApplyDragonRiderPsychicBond(casterPawn, targetPawn);
                     this.ability.StartCooldown(60000); // Apply cooldown on success
                     return true; // Bonding successful
                 }
                 else
                 {
-                    Messages.Message("The dragon recoils in fury; the bond attempt has failed, and it’s now a manhunter!", MessageTypeDefOf.ThreatBig, false);
-
-                    if (targetPawn.Faction != casterPawn.Faction)
+                    // Use the player's manhunter chance from the slider
+                    if (Rand.Chance(DragonBondMod.settings.manhunterChance))
                     {
-                        // Only make the dragon a manhunter if it was untamed or in another faction
-                        targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
-                    }
+                        Messages.Message("CrowsDragonBond.DragonManhunter".Translate(), MessageTypeDefOf.ThreatBig, false);
 
-                    this.ability.StartCooldown(60000); // Apply cooldown
+                        if (targetPawn.Faction != casterPawn.Faction)
+                        {
+                            // Only make the dragon a manhunter if it was untamed or in another faction
+                            targetPawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
+                        }
+
+                        this.ability.StartCooldown(60000); // Apply cooldown
+                        return false; // Bonding failed, dragon turned into a manhunter
+                    }
+                    else
+                    {
+                        // Dragon didn't become a manhunter; apply cooldown but no manhunter state.
+                        this.ability.StartCooldown(60000);
+                        return false; // Bonding failed, but no manhunter
+                    }
                 }
             }
 
-            return false; // Bonding failed
+            // If ValidateTarget(targetPawn) is false, return false by default
+            return false;
         }
-
 
         // Custom failure behavior where the dragon ignores the pawn
         private void DragonIgnoresPawn(Pawn pawn, Pawn dragon)
         {
-            Messages.Message($"The dragon {dragon.NameShortColored} ignores {pawn.NameShortColored}'s attempt to bond.", MessageTypeDefOf.NeutralEvent, false);
+            Messages.Message("CrowsDragonBond.IgnoredBond".Translate(), MessageTypeDefOf.NeutralEvent, false);
 
             // Add a thought debuff to the pawn for being ignored
             ThoughtDef thoughtDef = ThoughtDef.Named("Crows_DragonIgnoredBondAttempt");
@@ -134,9 +148,10 @@ namespace Crows_DragonBond
                 return false; // Can't tame if it's not an animal or already part of a faction
             }
 
-            if (Rand.Value < 0.2f)
+            // Replace hardcoded 20% chance with the player-configurable manhunter chance
+            if (Rand.Value < DragonBondMod.settings.manhunterChance)
             {
-                return false; // 20% chance to fail bonding
+                return false; // Bonding failed based on the player's manhunter chance
             }
 
             // Tame the dragon by setting its faction to the player's faction

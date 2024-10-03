@@ -1,6 +1,16 @@
 <LanguageData>
-  <!-- Warning when selling dragons or dragon eggs -->
-  <CrowsDragonBond.SellingDragonWarning>Selling dragons or dragon eggs is not favored by the Velos Enclave or Ashen Dominion. This may affect your relations with them in the future.</CrowsDragonBond.SellingDragonWarning>
-  <CrowsDragonBond.EmpireAngeredTitle>Velos Enclave and Ashen Dominion angered</CrowsDragonBond.EmpireAngeredTitle>
-  <CrowsDragonBond.EmpireAngeredDesc>The Velos Enclave or Ashen Dominion has discovered that you have been selling dragons or dragon eggs. This is against their customs, and your relations have deteriorated.</CrowsDragonBond.EmpireAngeredDesc>
+  <CrowsDragonBond.SellingDragonWarning>In the eyes of the Velos Enclave and Ashen Dominion, selling dragons or their eggs to others is a grave offense. Such actions may tarnish your standing with them.</CrowsDragonBond.SellingDragonWarning>
+  <CrowsDragonBond.GiftingDragonWarning>In the eyes of the Velos Enclave and Ashen Dominion, gifting dragons or their eggs to others is a grave offense. Such actions may tarnish your standing with them.</CrowsDragonBond.GiftingDragonWarning>
+  <CrowsDragonBond.VelosAshenAngeredTitle>Relations Strained with Velos Enclave and Ashen Dominion</CrowsDragonBond.VelosAshenAngeredTitle>
+  <CrowsDragonBond.VelosAshenAngeredDesc>The Velos Enclave or Ashen Dominion has learned of your dealings in dragons or dragon eggs, violating their laws. Your relationship with them has suffered as a result.</CrowsDragonBond.VelosAshenAngeredDesc>
+  <CrowsDragonBond.PawnBondCatatonicBreak>{pawn.NameShortColored} has gone catatonic due to their dragonbond being torn!</CrowsDragonBond.PawnBondCatatonicBreak>
+  <CrowsDragonBond.DragonManhunterGrief>{dragon.NameShortColored} has been consumed by grief and rage and is now a manhunter!</CrowsDragonBond.DragonManhunterGrief>
+  <CrowsDragonBond.DragonLeaveGrief>With the loss of their bonded companion, {dragon.NameShortColored} lets out a mournful roar and proceeds to leave the map.</CrowsDragonBond.DragonLeaveGrief>
+  <CrowsDragonBond.AbilityBlocked>This ability can only be used on dragons!</CrowsDragonBond.AbilityBlocked>
+  <CrowsDragonBond.DragonDoubleBondRejection>The dragon scoffs at your attempt, it is already bonded to {existingBondedPawn.NameShortColored}.</CrowsDragonBond.DragonDoubleBondRejection>
+  <CrowsDragonBond.TameBondSuccess>The dragon nuzzles your hand back, the bond was easily formed!</CrowsDragonBond.TameBondSuccess>
+  <CrowsDragonBond.BondSuccess>The dragon looks at you back in recognition. It has chosen you back and the bond was formed!</CrowsDragonBond.BondSuccess>
+  <CrowsDragonBond.DragonManhunter>The dragon recoils in fury; the bond attempt has failed, and it’s now a manhunter!</CrowsDragonBond.DragonManhunter>
+  <CrowsDragonBond.IgnoredBond>The dragon {dragon.NameShortColored} ignores {pawn.NameShortColored}'s attempt to bond.</CrowsDragonBond.IgnoredBond>
 </LanguageData>
+

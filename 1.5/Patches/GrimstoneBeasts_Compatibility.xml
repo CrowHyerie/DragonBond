@@ -13,6 +13,14 @@
             <li MayRequire="Abrolo.Grimstone.Beasts">Grimstone_Grimshadow</li>
           </value>
         </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="Abrolo.Grimstone.Beasts">Grimstone_Grimshadow_EggFertilized</li>
+          </value>
+        </li>
+        
       </operations>
     </match>
 </Operation>
