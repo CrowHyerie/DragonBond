@@ -17,8 +17,7 @@ In this mod you'll find:
 •Dragon and dragon egg trading consequences
 
 •Dragon bond mechanic with buffs
-
-
+  
 There is integration support with:
 
 •Vanilla Ideology Expanded - Memes
