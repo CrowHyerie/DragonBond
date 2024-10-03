@@ -6,6 +6,8 @@ In this mod you'll find:
 
 •New race
 
+•A new Scenario
+
 •Two new factions
 
 •5 Armor/Apparel sets
