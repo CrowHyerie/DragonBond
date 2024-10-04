@@ -371,8 +371,6 @@ namespace Crows_DragonBond
                 return;
             }
 
-            Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
-
             IntVec3 exitPoint;
             if (RCellFinder.TryFindBestExitSpot(dragon, out exitPoint, TraverseMode.ByPawn))
             {
@@ -380,123 +378,148 @@ namespace Crows_DragonBond
                 dragon.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: true);
                 Messages.Message("CrowsDragonBond.DragonLeaveGrief".Translate().Formatted("", dragon.NameShortColored), MessageTypeDefOf.NegativeEvent);
                 SoundDef.Named("Dragon_Call").PlayOneShot(dragon); // Play a dragon sound
+                Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
+
             }
             else
             {
                 Log.Warning($"HandleDragonLeaveFaction: Could not find a suitable exit spot for {dragon.NameShortColored}.");
             }
         }
-    }
 
-    // Custom HediffComp to manage the linked dragon and bond behavior
-    public class HediffCompProperties_DragonBondLink : HediffCompProperties
-    {
-        public PawnRelationDef targetRelation;
-
-        public HediffCompProperties_DragonBondLink()
+        public static void HandleDragonSold(Pawn dragon)
         {
-            this.compClass = typeof(HediffComp_DragonBondLink);
-        }
-    }
-
-    public class HediffComp_DragonBondLink : HediffComp
-    {
-        public Pawn linkedPawn; // The dragon or rider linked to this pawn
-        private Map lastPawnMap; // Store the last known map for the pawn
-        private Map lastDragonMap; // Store the last known map for the dragon
-        private bool bondTorn = false;  // Flag to track if the bond has been torn
-
-        public override void CompExposeData()
-        {
-            base.CompExposeData();
-            Scribe_References.Look(ref linkedPawn, "linkedPawn");
-            Scribe_References.Look(ref lastPawnMap, "lastPawnMap");
-            Scribe_References.Look(ref lastDragonMap, "lastDragonMap");
-        }
-
-        public void SetLinkedPawn(Pawn pawn)
-        {
-            linkedPawn = pawn;
-            lastDragonMap = pawn?.Map;
-        }
-
-        public override void CompPostTick(ref float severityAdjustment)
-        {
-            base.CompPostTick(ref severityAdjustment);
-
-            // Tear the bond if either the Pawn (human or dragon) or the linkedPawn (bonded) is dead
-            if (linkedPawn == null || Pawn.Dead || linkedPawn.Dead)
+            if (dragon == null || dragon.Dead)
             {
-                TearBond();
+                Log.Warning("HandleDragonSold: Called with a null or dead dragon.");
                 return;
             }
 
-            // Check if either the Pawn or the Dragon has changed maps
-            if (Pawn.Map != lastPawnMap || linkedPawn.Map != lastDragonMap)
+            // Fetch the human pawn that is bonded to this dragon
+            var bondedPawn = dragon.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
+
+            if (bondedPawn == null || bondedPawn.Dead)
             {
-                UpdateBondStatus();  // Apply bond logic based on map distance
-                lastPawnMap = Pawn.Map; // Update the last known map for the Pawn
-                lastDragonMap = linkedPawn.Map; // Update the last known map for the Dragon
+                Log.Warning("HandleDragonSold: No bonded pawn found or bonded pawn is dead.");
+                return;
             }
-        }
 
-        private void UpdateBondStatus()
-        {
-            if (linkedPawn.Map == Pawn.Map)
-            {
-                // Dragon and Pawn are on the same map, apply close bond
-                ApplyCloseBond();
-                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on the same map. Applying close bond.");
-            }
-            else
-            {
-                // Dragon and Pawn are on different maps, apply distance bond
-                ApplyDistanceBond();
-                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on different maps. Applying distance bond.");
-            }
-        }
+            // Assign the "Sold My Bonded Dragon" thought to the bonded pawn
+            ThoughtDef soldDragonThought = DefDatabase<ThoughtDef>.GetNamed("Crows_SoldMyBondedDragon");
+            bondedPawn.needs?.mood?.thoughts?.memories?.TryGainMemory(soldDragonThought, dragon);
 
-
-        private void TearBond()
-        {
-            Log.Message($"TearBond: Trying to tear bond between {Pawn.NameShortColored} and {linkedPawn?.NameShortColored ?? "null"}.");
-
-            if (linkedPawn != null && !bondTorn)
-            {
-                bondTorn = true;
-                DragonBondUtils.TearDragonBond(Pawn, linkedPawn, isDeath: true);
-                linkedPawn = null;
-            }
-        }
-
-        private void ApplyCloseBond()
-        {
-            if (linkedPawn.Spawned && linkedPawn.Map == this.Pawn.Map)
-
-            this.parent.Severity = 0.5f;  // Set severity for close bond.
-
-        }
-
-        private void ApplyDistanceBond()
-        {
-
-            this.parent.Severity = 1.0f;  // Set severity for distant bond.
-
-        }
-
-        // Called when the Hediff is removed, which often happens when the pawn dies
-        public override void CompPostPostRemoved()
-        {
-            base.CompPostPostRemoved();
-
-            if (linkedPawn != null && !bondTorn)  // Check to ensure bond is not already torn
-            {
-                bondTorn = true;
-                DragonBondUtils.TearDragonBond(this.Pawn, linkedPawn);
-            }
+            Log.Message($"HandleDragonSold: {bondedPawn.NameShortColored} has received the thought of their dragon {dragon.NameShortColored} being sold.");
         }
     }
-    public class ThoughtWorker_DragonBondedDied : ThoughtWorker
+        // Custom HediffComp to manage the linked dragon and bond behavior
+        public class HediffCompProperties_DragonBondLink : HediffCompProperties
+        {
+            public PawnRelationDef targetRelation;
+
+            public HediffCompProperties_DragonBondLink()
+            {
+                this.compClass = typeof(HediffComp_DragonBondLink);
+            }
+        }
+
+        public class HediffComp_DragonBondLink : HediffComp
+        {
+            public Pawn linkedPawn; // The dragon or rider linked to this pawn
+            private Map lastPawnMap; // Store the last known map for the pawn
+            private Map lastDragonMap; // Store the last known map for the dragon
+            private bool bondTorn = false;  // Flag to track if the bond has been torn
+
+            public override void CompExposeData()
+            {
+                base.CompExposeData();
+                Scribe_References.Look(ref linkedPawn, "linkedPawn");
+                Scribe_References.Look(ref lastPawnMap, "lastPawnMap");
+                Scribe_References.Look(ref lastDragonMap, "lastDragonMap");
+            }
+
+            public void SetLinkedPawn(Pawn pawn)
+            {
+                linkedPawn = pawn;
+                lastDragonMap = pawn?.Map;
+            }
+
+            public override void CompPostTick(ref float severityAdjustment)
+            {
+                base.CompPostTick(ref severityAdjustment);
+
+                // Tear the bond if either the Pawn (human or dragon) or the linkedPawn (bonded) is dead
+                if (linkedPawn == null || Pawn.Dead || linkedPawn.Dead)
+                {
+                    TearBond();
+                    return;
+                }
+
+                // Check if either the Pawn or the Dragon has changed maps
+                if (Pawn.Map != lastPawnMap || linkedPawn.Map != lastDragonMap)
+                {
+                    UpdateBondStatus();  // Apply bond logic based on map distance
+                    lastPawnMap = Pawn.Map; // Update the last known map for the Pawn
+                    lastDragonMap = linkedPawn.Map; // Update the last known map for the Dragon
+                }
+            }
+
+            private void UpdateBondStatus()
+            {
+                if (linkedPawn.Map == Pawn.Map)
+                {
+                    // Dragon and Pawn are on the same map, apply close bond
+                    ApplyCloseBond();
+                    Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on the same map. Applying close bond.");
+                }
+                else
+                {
+                    // Dragon and Pawn are on different maps, apply distance bond
+                    ApplyDistanceBond();
+                    Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on different maps. Applying distance bond.");
+                }
+            }
+
+
+            private void TearBond()
+            {
+                Log.Message($"TearBond: Trying to tear bond between {Pawn.NameShortColored} and {linkedPawn?.NameShortColored ?? "null"}.");
+
+                if (linkedPawn != null && !bondTorn)
+                {
+                    bondTorn = true;
+                    DragonBondUtils.TearDragonBond(Pawn, linkedPawn, isDeath: true);
+                    linkedPawn = null;
+                }
+            }
+
+            private void ApplyCloseBond()
+            {
+                if (linkedPawn.Spawned && linkedPawn.Map == this.Pawn.Map)
+
+                    this.parent.Severity = 0.5f;  // Set severity for close bond.
+
+            }
+
+            private void ApplyDistanceBond()
+            {
+
+                this.parent.Severity = 1.0f;  // Set severity for distant bond.
+
+            }
+
+            // Called when the Hediff is removed, which often happens when the pawn dies
+            public override void CompPostPostRemoved()
+            {
+                base.CompPostPostRemoved();
+
+                if (linkedPawn != null && !bondTorn)  // Check to ensure bond is not already torn
+                {
+                    bondTorn = true;
+                    DragonBondUtils.TearDragonBond(this.Pawn, linkedPawn);
+                }
+            }
+        }
+        public class ThoughtWorker_DragonBondedDied : ThoughtWorker
         {
             protected override ThoughtState CurrentStateInternal(Pawn pawn)
             {
@@ -523,6 +546,7 @@ namespace Crows_DragonBond
             }
         }
     }
+
 
 
 
