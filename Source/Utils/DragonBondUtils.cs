@@ -329,6 +329,12 @@ namespace Crows_DragonBond
                 // Apply a catatonic breakdown to the human pawn
                 Hediff catatonicBreakdown = HediffMaker.MakeHediff(HediffDefOf.CatatonicBreakdown, pawn);
                 pawn.health.AddHediff(catatonicBreakdown);
+
+                // Example: If the pawn goes catatonic due to the bond being torn
+                if (pawn.health.hediffSet.HasHediff(HediffDefOf.CatatonicBreakdown))
+                {
+                    Messages.Message("CrowsDragonBond.PawnBondCatatonicBreak".Translate().Formatted(pawn.NameShortColored), MessageTypeDefOf.NegativeEvent);
+                }
             }
         }
         private static void HandleDragonLeaveFaction(Pawn dragon)
@@ -336,6 +342,13 @@ namespace Crows_DragonBond
             if (dragon == null || dragon.Dead)
             {
                 Log.Warning("HandleDragonLeaveFaction: Called with a null or dead dragon.");
+                return;
+            }
+
+            // Guard clause to ensure the dragon is not already in the intended final state
+            if (dragon.mindState.mentalStateHandler.CurStateDef == MentalStateDefOf.ManhunterPermanent || dragon.mindState.duty?.def == DutyDefOf.ExitMapBestAndDefendSelf)
+            {
+                Log.Message($"HandleDragonLeaveFaction: {dragon.NameShortColored} is already a manhunter or exiting the map. Aborting further processing.");
                 return;
             }
 
@@ -349,40 +362,28 @@ namespace Crows_DragonBond
 
             if (chance <= 0.2f)
             {
-                // 20% chance to become a Manhunter
                 Log.Message($"{dragon.NameShortColored} has become a Manhunter after losing their bond.");
                 dragon.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
-
-                // Display a message to the player
-                Messages.Message($"{dragon.NameShortColored} has been consumed by grief and rage and is now a manhunter!", dragon, MessageTypeDefOf.ThreatBig, historical: false);
+                Messages.Message("CrowsDragonBond.DragonManhunterGrief".Translate().Formatted("", dragon.NameShortColored), MessageTypeDefOf.NegativeEvent);
                 SoundDef.Named("Dragon_Angry").PlayOneShot(dragon); // Play a dragon sound
+
+                // Skip exit map logic if the dragon becomes a manhunter
+                return;
+            }
+
+            Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
+
+            IntVec3 exitPoint;
+            if (RCellFinder.TryFindBestExitSpot(dragon, out exitPoint, TraverseMode.ByPawn))
+            {
+                Job job = new Job(JobDefOf.Goto, exitPoint) { exitMapOnArrival = true };
+                dragon.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: true);
+                Messages.Message("CrowsDragonBond.DragonLeaveGrief".Translate().Formatted("", dragon.NameShortColored), MessageTypeDefOf.NegativeEvent);
+                SoundDef.Named("Dragon_Call").PlayOneShot(dragon); // Play a dragon sound
             }
             else
             {
-                // 80% chance to leave the map
-                Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
-
-                // Find the best exit spot for the dragon
-                IntVec3 exitPoint;
-                if (RCellFinder.TryFindBestExitSpot(dragon, out exitPoint, TraverseMode.ByPawn))
-                {
-                    // Create a job for the dragon to exit the map at the best location
-                    Job job = new Job(JobDefOf.Goto, exitPoint)
-                    {
-                        // After reaching the map edge, exit the map
-                        exitMapOnArrival = true
-                    };
-
-                    dragon.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: true);
-
-                    // Notify the player that the dragon is leaving
-                    Messages.Message($"With the loss of their bonded companion, {dragon.NameShortColored} lets out a mournful roar and proceeds to leave the map.", MessageTypeDefOf.NeutralEvent);
-                    SoundDef.Named("Dragon_Call").PlayOneShot(dragon); // Play a dragon sound
-                }            
-                else
-                {
-                    Log.Warning($"HandleDragonLeaveFaction: Could not find a suitable exit spot for {dragon.NameShortColored}.");
-                }
+                Log.Warning($"HandleDragonLeaveFaction: Could not find a suitable exit spot for {dragon.NameShortColored}.");
             }
         }
     }
