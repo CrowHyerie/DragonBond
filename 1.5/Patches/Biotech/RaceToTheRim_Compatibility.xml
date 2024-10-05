@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Race to the Rim</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Dragons -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Flightmare</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Fury</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Gronckle</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Hotburple</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Nadder</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Nightmare</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Razorwhip</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Rumblehorn</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Scauldron</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Skrill</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Stormcutter</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_TerribleTerror</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_TripleStryke</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_Zippleback</li>
+          </value>
+        </li>
+
+        <!-- Eggs -->
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggFlightmareFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggFuryFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggGronckleFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggHotburpleFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggNadderFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggNightmareFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggRazorwhipFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggRumblehornFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggScauldronFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggSkrillFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggStormcutterFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggTerribleTerrorFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggTripleStrykeFertilized</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+          <value>
+            <li MayRequire="sargoskar.racetotherim">RttR_EggZipplebackFertilized</li>
+          </value>
+        </li>
+
+      </operations>
+    </match>
+  </Operation>
+</Patch>
