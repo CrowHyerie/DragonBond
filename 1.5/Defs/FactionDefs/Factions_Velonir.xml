@@ -19,8 +19,6 @@
     <factionIconPath>WorldObjects/VelosEnclaveBaseIcon</factionIconPath>
     <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
     <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
-    <allowedCultures>
-      <li MayRequire="Ludeon.RimWorld.Ideology">Crows_VeloniriCulture</li></allowedCultures>
     <techLevel>Medieval</techLevel>
      <backstoryCategories>
       <li>Tribal</li>
@@ -90,8 +88,8 @@
   </raidCommonalityFromPointsCurve>
     <xenotypeSet Inherit="False">
       <xenotypeChances>
-        <Crows_VelonirRace>0.8</Crows_VelonirRace>
-        <Baseliner>0.2</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.2</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
@@ -213,7 +211,6 @@
     <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
     <factionIconPath>WorldObjects/AshenDominionBaseIcon</factionIconPath>
     <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
-    <allowedCultures><li>Crows_VeloniriCulture</li></allowedCultures>
     <configurationListOrderPriority>60</configurationListOrderPriority>
     <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>2</requiredCountAtGameStart>
@@ -292,8 +289,8 @@
   </raidCommonalityFromPointsCurve>
     <xenotypeSet Inherit="False">
       <xenotypeChances>
-        <Crows_VelonirRace>0.8</Crows_VelonirRace>
-        <Baseliner>0.2</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.2</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
     <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>

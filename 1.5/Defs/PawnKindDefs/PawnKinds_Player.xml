@@ -35,7 +35,7 @@
     <initialResistanceRange>13~21</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>

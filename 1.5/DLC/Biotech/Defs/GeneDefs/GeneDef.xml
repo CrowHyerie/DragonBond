@@ -1,0 +1,73 @@
+<Defs>
+  <GeneDef>
+    <defName>Crows_DragonBondGene</defName>
+    <label>Dragon Bond</label>
+    <description>Grants the ability to form a psychic bond with a Dragon. Risk of provoking the Dragon if the bond fails.</description>
+    <iconPath>Things/GeneIcons/DragonBond</iconPath>
+    <displayCategory>Psychic</displayCategory>
+    <abilities>
+      <li>Crows_DragonBondAbility</li>
+    </abilities>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>aggro</symbol>
+        </li>
+        <li>
+          <symbol>hate</symbol>
+        </li>
+        <li>
+          <symbol>fight</symbol>
+        </li>
+        <li>
+          <symbol>destro</symbol>
+        </li>
+        <li>
+          <symbol>barb</symbol>
+        </li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li>
+          <symbol>fighter</symbol>
+        </li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneAggressionBase">
+    <defName>Crows_NobleBlood</defName>
+    <label>noble blood</label>
+    <description>Carriers of this gene are part of a noble bloodline. They tend to be snobbish and can cause conflict where there is cause for none.</description>
+    <iconPath>Things/GeneIcons/Gene_NobleBlood</iconPath>
+    <socialFightChanceFactor>1.5</socialFightChanceFactor>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <biostatMet>2</biostatMet>
+    <exclusionTags>
+      <li>Aggressive</li>
+    </exclusionTags>
+    <symbolPack>
+      <prefixSymbols>
+        <li>
+          <symbol>noble</symbol>
+        </li>
+        <li>
+          <symbol>snob</symbol>
+        </li>
+        <li>
+          <symbol>blood</symbol>
+        </li>
+        <li>
+          <symbol>line</symbol>
+        </li>
+        <li>
+          <symbol>blooded</symbol>
+        </li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li>
+          <symbol>noble</symbol>
+        </li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+</Defs>

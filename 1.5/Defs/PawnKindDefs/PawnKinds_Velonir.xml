@@ -55,8 +55,8 @@
     <initialResistanceRange>14~22</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>0.5</Crows_VelonirRace>
-        <Baseliner>0.5</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.5</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.5</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -90,7 +90,7 @@
     <initialResistanceRange>14~22</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -125,8 +125,8 @@
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>0.8</Crows_VelonirRace>
-        <Baseliner>0.2</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.2</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -163,8 +163,8 @@
     <initialResistanceRange>14~22</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>0.8</Crows_VelonirRace>
-        <Baseliner>0.2</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.2</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -199,8 +199,8 @@
     <initialResistanceRange>14~22</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>0.8</Crows_VelonirRace>
-        <Baseliner>0.2</Baseliner>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
+        <Baseliner MayRequire="Ludeon.RimWorld.Biotech">0.2</Baseliner>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -229,7 +229,7 @@
     <initialResistanceRange>14~22</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -265,7 +265,7 @@
     <initialResistanceRange>22~33</initialResistanceRange>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -293,10 +293,10 @@
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <initialWillRange>6~8</initialWillRange>
     <initialResistanceRange>33~44</initialResistanceRange>
-    <biocodeWeaponChance>0.3</biocodeWeaponChance>
+    <biocodeWeaponChance MayRequire="Ludeon.RimWorld.Biotech">0.3</biocodeWeaponChance>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>
@@ -318,18 +318,18 @@
     <apparelMoney>2500~3500</apparelMoney>
     <apparelTags>
       <li>Crows_DragonRider</li>
-      <li>Royal</li>
-      <li>RoyalTier5</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>
+      <li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier5</li>
     </apparelTags>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <techHediffsChance>0.15</techHediffsChance>
     <techHediffsMoney>600~1500</techHediffsMoney>
     <initialWillRange>3~5</initialWillRange>
     <initialResistanceRange>24~35</initialResistanceRange>
-    <biocodeWeaponChance>0.3</biocodeWeaponChance>
+    <biocodeWeaponChance MayRequire="Ludeon.RimWorld.Biotech">0.3</biocodeWeaponChance>
     <xenotypeSet>
       <xenotypeChances>
-        <Crows_VelonirRace>999</Crows_VelonirRace>
+        <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">999</Crows_VelonirRace>
       </xenotypeChances>
     </xenotypeSet>
   </PawnKindDef>

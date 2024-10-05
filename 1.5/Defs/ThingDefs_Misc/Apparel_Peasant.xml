@@ -57,7 +57,7 @@
         <li>Anything</li>
         <li>Worker</li>
       </defaultOutfitTags>
-     <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+     <canBeDesiredForIdeo MayRequire="Ludeon.RimWorld.Ideology">false</canBeDesiredForIdeo>
     </apparel>
     <colorGenerator Class="ColorGenerator_StandardApparel"/>
   </ThingDef> 

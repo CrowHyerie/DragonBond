@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Leader Title -->
+  <RulePackDef>
+    <defName>Crows_LeaderTitleMakerVelonir</defName>
+    <include>
+      <li>LeaderTitleMaker_GlobalStructure</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_leaderTitle(p=6)->[memeLeaderAdjective] [memeLeaderNoun]</li>
+        <li>r_leaderTitle(p=3)->[cultureLeaderAdjective] [memeLeaderNoun]</li>
+        <li>r_leaderTitle(p=1)->[memeLeaderAdjective] [cultureLeaderNoun]</li>
+        <li>r_leaderTitle(p=1)->[cultureLeaderTitle]</li>
+
+        <!-- Leader Adjectives -->
+        <li>memeLeaderAdjective->celestial</li>
+        <li>memeLeaderAdjective->dragonborn</li>
+        <li>memeLeaderAdjective->grand</li>
+        <li>memeLeaderAdjective->eternal</li>
+        <li>memeLeaderAdjective->supreme</li>
+
+        <!-- Leader Nouns -->
+        <li>memeLeaderNoun->warden</li>
+        <li>memeLeaderNoun->highlord</li>
+        <li>memeLeaderNoun->guardian</li>
+        <li>memeLeaderNoun->sovereign</li>
+        <li>memeLeaderNoun->keeper</li>
+
+        <!-- Culture-Specific Leader Titles -->
+        <li>cultureLeaderTitle->[cultureLeaderAdjective] [cultureLeaderNoun]</li>
+
+        <!-- Culture Adjectives -->
+        <li>cultureLeaderAdjective->celestial</li>
+        <li>cultureLeaderAdjective->dragonborn</li>
+        <li>cultureLeaderAdjective->grand</li>
+        <li>cultureLeaderAdjective->eternal</li>
+        <li>cultureLeaderAdjective->supreme</li>
+
+        <!-- Culture Nouns -->
+        <li>cultureLeaderNoun->warden</li>
+        <li>cultureLeaderNoun->highlord</li>
+        <li>cultureLeaderNoun->guardian</li>
+        <li>cultureLeaderNoun->sovereign</li>
+        <li>cultureLeaderNoun->keeper</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+
+</Defs>

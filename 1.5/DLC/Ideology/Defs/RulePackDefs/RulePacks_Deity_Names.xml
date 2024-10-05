@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Deity Name -->
+  <RulePackDef>
+    <defName>Crows_NamerDeityVelonir</defName>
+    <include>
+      <li>NamerDeityGlobal</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[start][middle][end]</li>
+
+        <!-- Start options for Velonir gods -->
+        <li>start->drac</li>
+        <li>start->vel</li>
+        <li>start->lith</li>
+        <li>start->azur</li>
+        <li>start->tar</li>
+
+        <!-- Middle options -->
+        <li>middle->aer</li>
+        <li>middle->ion</li>
+        <li>middle->el</li>
+        <li>middle->or</li>
+        <li>middle->an</li>
+
+        <!-- End options -->
+        <li>end->ius</li>
+        <li>end->ar</li>
+        <li>end->on</li>
+        <li>end->us</li>
+        <li>end->ith</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

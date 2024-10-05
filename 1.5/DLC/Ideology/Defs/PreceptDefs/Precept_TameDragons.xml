@@ -1,0 +1,89 @@
+<Defs>
+  
+  <IssueDef>
+    <defName>Crows_DragonsIssue</defName>
+    <label>dragons</label>
+    <iconPath>UI/Issues/DragonsIssue</iconPath>
+  </IssueDef>
+  
+<PreceptDef>
+  <defName>Crows_DragonVeneratedPrecept</defName>
+  <issue>Crows_DragonsIssue</issue>
+  <label>Venerated</label>
+  <description>Dragons are divine, their presence is a blessing that inspires us.</description>
+  <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+  <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+  <impact>Medium</impact>
+  <comps>
+    <li Class="PreceptComp_SituationalThought">
+      <thought>Crows_DragonTamedMoodBuff</thought>
+    </li>
+  </comps>
+  <statFactors>
+    <TameAnimalChance>1.5</TameAnimalChance>
+    <BondAnimalChanceFactor>1.5</BondAnimalChanceFactor>
+  </statFactors>
+  <requiredMemes>
+    <li>Crows_DraconicLegacy</li>
+  </requiredMemes>
+</PreceptDef>
+
+  <!-- Thoughts -->
+<ThoughtDef>
+  <defName>Crows_DragonTamedMoodBuff</defName>
+  <workerClass>Crows_DragonBond.ThoughtWorker_DragonBond</workerClass>
+  <thoughtClass>Thought_Situational</thoughtClass>
+  <stages>
+    <li>
+      <baseMoodEffect>10</baseMoodEffect>
+      <label>Divine dragons</label>
+      <description>With a Dragon by our side we are unstoppable!</description>
+    </li>
+  </stages>
+</ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Crows_DragonDeathMoodDebuff</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>5</durationDays>
+    <stages>
+      <li>
+        <baseMoodEffect>-20</baseMoodEffect>
+        <label>Mourning the loss of a dragon</label>
+        <description>A dragon is dead, how can this be? Can gods truly die?</description>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+<ThoughtDef>
+  <defName>Crows_DragonKilledMoodDebuff</defName>
+  <thoughtClass>Thought_Memory</thoughtClass>
+  <durationDays>5</durationDays> 
+  <stages>
+    <li>
+      <baseMoodEffect>-20</baseMoodEffect> 
+      <label>despair for killing a dragon</label>
+      <description>W-What have I done?</description>
+    </li>
+  </stages>
+</ThoughtDef>
+  
+<!-- Social -->
+
+<ThoughtDef>
+  <defName>Crows_SocialDragonKilledDebuff</defName>
+  <thoughtClass>Thought_MemorySocial</thoughtClass> 
+  <durationDays>10</durationDays> 
+  <label>killed a dragon</label> 
+  <stages>
+    <li>
+      <baseOpinionOffset>-30</baseOpinionOffset> 
+      <baseMoodEffect>-10</baseMoodEffect>
+      <label>dragon killed</label>
+      <description>{1} killed a dragon! How could they commit such an act?!</description>
+    </li>
+  </stages>
+</ThoughtDef>
+
+
+</Defs>
