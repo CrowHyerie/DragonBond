@@ -3,14 +3,14 @@
   <CrowsDragonBond.GiftingDragonWarning>In the eyes of the Velos Enclave and Ashen Dominion, gifting dragons or their eggs to others is a grave offense. Such actions may tarnish your standing with them.</CrowsDragonBond.GiftingDragonWarning>
   <CrowsDragonBond.VelosAshenAngeredTitle>Relations Strained with Velos Enclave and Ashen Dominion</CrowsDragonBond.VelosAshenAngeredTitle>
   <CrowsDragonBond.VelosAshenAngeredDesc>The Velos Enclave or Ashen Dominion has learned of your dealings in dragons or dragon eggs, violating their laws. Your relationship with them has suffered as a result.</CrowsDragonBond.VelosAshenAngeredDesc>
-  <CrowsDragonBond.PawnBondCatatonicBreak>{pawn.NameShortColored} has gone catatonic due to their dragonbond being torn!</CrowsDragonBond.PawnBondCatatonicBreak>
-  <CrowsDragonBond.DragonManhunterGrief>{dragon.NameShortColored} has been consumed by grief and rage and is now a manhunter!</CrowsDragonBond.DragonManhunterGrief>
-  <CrowsDragonBond.DragonLeaveGrief>With the loss of their bonded companion, {dragon.NameShortColored} lets out a mournful roar and proceeds to leave the map.</CrowsDragonBond.DragonLeaveGrief>
+  <CrowsDragonBond.PawnBondCatatonicBreak>{0} has gone catatonic due to their dragonbond being torn!</CrowsDragonBond.PawnBondCatatonicBreak>
+  <CrowsDragonBond.DragonManhunterGrief>{1} has been consumed by grief and rage and is now a manhunter!</CrowsDragonBond.DragonManhunterGrief>
+  <CrowsDragonBond.DragonLeaveGrief>With the loss of their bonded companion, {1} lets out a mournful roar and proceeds to leave the map.</CrowsDragonBond.DragonLeaveGrief>
   <CrowsDragonBond.AbilityBlocked>This ability can only be used on dragons!</CrowsDragonBond.AbilityBlocked>
-  <CrowsDragonBond.DragonDoubleBondRejection>The dragon scoffs at your attempt, it is already bonded to {existingBondedPawn.NameShortColored}.</CrowsDragonBond.DragonDoubleBondRejection>
+  <CrowsDragonBond.DragonDoubleBondRejection>The dragon scoffs at your attempt, it is already bonded to another.</CrowsDragonBond.DragonDoubleBondRejection>
   <CrowsDragonBond.TameBondSuccess>The dragon nuzzles your hand back, the bond was easily formed!</CrowsDragonBond.TameBondSuccess>
-  <CrowsDragonBond.BondSuccess>The dragon looks at you back in recognition. It has chosen you back and the bond was formed!</CrowsDragonBond.BondSuccess>
+  <CrowsDragonBond.BondSuccess>The dragon looks back at you in recognition. It has chosen you and a bond was formed!</CrowsDragonBond.BondSuccess>
   <CrowsDragonBond.DragonManhunter>The dragon recoils in fury; the bond attempt has failed, and it’s now a manhunter!</CrowsDragonBond.DragonManhunter>
-  <CrowsDragonBond.IgnoredBond>The dragon {dragon.NameShortColored} ignores {pawn.NameShortColored}'s attempt to bond.</CrowsDragonBond.IgnoredBond>
+  <CrowsDragonBond.IgnoredBond>The dragon {1} ignores {0}'s attempt to bond.</CrowsDragonBond.IgnoredBond>
 </LanguageData>
 

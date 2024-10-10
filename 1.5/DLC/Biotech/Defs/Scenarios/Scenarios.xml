@@ -4,7 +4,7 @@
   <ScenarioDef>
     <defName>Crows_DragonsAwakening</defName>
     <label>Dragon Rising</label>
-    <description>Your tribe of Velonir has discovered a dormant dragon egg deep in the ruins of an ancient Velonir city, along with it's dead mother.</description>
+    <description>Your house of Velonir has discovered a dragon egg deep in the ruins of an ancient Velonir city, along with it's dead mother.</description>
     <scenario>
       <summary>Start with one Velonir and three Baseliners in the ruins of an ancient city, tasked with caring for a dragon egg.</summary>
       <playerFaction>
@@ -93,7 +93,7 @@
         <!-- Custom Game Start Dialog -->
         <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>As you enter the ruins, you find the remains of a once-mighty dragon. The stench of death lingers, and it is clear that something terrible has occurred here. The dragon egg it died protecting may be the last hope for your people.</text>
+          <text>As you enter the ruins, you find the remains of a once-mighty dragon. The stench of death lingers, and it is clear that something terrible has occurred here. The dragon egg it died protecting may be the last hope for your House.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
 

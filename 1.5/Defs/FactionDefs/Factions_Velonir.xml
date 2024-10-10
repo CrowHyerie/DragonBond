@@ -250,6 +250,7 @@
     </structureMemeWeights>
     <apparelStuffFilter>
       <thingDefs>
+        <li>Cloth</li>
         <li>DevilstrandCloth</li>
         <li>HardScale</li>
         <li>Silver</li>

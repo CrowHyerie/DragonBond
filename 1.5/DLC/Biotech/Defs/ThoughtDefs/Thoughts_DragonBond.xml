@@ -11,10 +11,9 @@
     <lerpMoodToZero>true</lerpMoodToZero>
     <stages>
       <li>
-        <label>bonded dragon died</label>
+        <label>bonded dragon {1} died</label>
         <baseMoodEffect>-20</baseMoodEffect>
-        <!-- Severe mood debuff when dragon dies -->
-        <description>My dragon bond with my dragon was torn apart. I feel like part of my mind and emotions are missing.</description>
+        <description>The bond is gone. I can feel the emptiness like a wound, deeper than any cut.</description>
       </li>
     </stages>
   </ThoughtDef>
@@ -31,8 +30,8 @@
     </nullifyingTraits>
     <stages>
       <li>
-        <label>bonded dragon {0} lost</label>
-        <description>My bonded dragon is lost. I must find it.</description>
+        <label>bonded dragon lost</label>
+        <description>I lost them… they're out there somewhere, and the silence in my mind feels unbearable.</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
@@ -48,8 +47,8 @@
     <stackLimit>1</stackLimit>
     <stages>
       <li>
-        <label>bonded dragon {0} sold</label>
-        <description>My bonded Dragon was sold!</description>
+        <label>bonded dragon sold</label>
+        <description>I sold my dragon... I can still feel the bond, but it’s distant now—like a part of me is missing, forever out of reach. I’ll never see them again.</description>
         <baseMoodEffect>-20</baseMoodEffect>
       </li>
     </stages>
@@ -62,8 +61,8 @@
     <description>This pawn is furious after their bonded dragon was killed.</description>
     <stages>
       <li>
-        <label>bonded dragon {0} killed</label>
-        <description>They killed my dragon. I will show them.</description>
+        <label>bonded dragon killed</label>
+        <description>They took everything from me. They killed my dragon, and with it, a part of my soul.</description>
         <baseMoodEffect>-50</baseMoodEffect>
       </li>
     </stages>
@@ -80,8 +79,8 @@
   <stages>
     <li>
       <baseMoodEffect>-8</baseMoodEffect>
-      <description>I attempted a Dragon Bond and it just scoffed at me!</description>
-      <label>humiliated</label>
+      <description>The dragon didn’t even flinch. It looked at me, almost amused… Like I wasn’t even worth its time!</description>
+      <label>humiliated by dragon</label>
     </li>
   </stages>
 </ThoughtDef>
