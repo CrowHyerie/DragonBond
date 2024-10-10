@@ -2,7 +2,7 @@
   <GeneDef>
     <defName>Crows_DragonBondGene</defName>
     <label>Dragon Bond</label>
-    <description>Grants the ability to form a psychic bond with a Dragon. Risk of provoking the Dragon if the bond fails.</description>
+    <description>Grants the ability to forge a psychic bond with a dragon. However, failure may insult the dragon’s pride, turning it hostile.</description>
     <iconPath>Things/GeneIcons/DragonBond</iconPath>
     <displayCategory>Psychic</displayCategory>
     <abilities>
@@ -37,7 +37,7 @@
   <GeneDef ParentName="GeneAggressionBase">
     <defName>Crows_NobleBlood</defName>
     <label>noble blood</label>
-    <description>Carriers of this gene are part of a noble bloodline. They tend to be snobbish and can cause conflict where there is cause for none.</description>
+    <description>Carriers of this gene hail from noble blood, often viewing others with disdain. Their pride can spark conflicts without reason.</description>
     <iconPath>Things/GeneIcons/Gene_NobleBlood</iconPath>
     <socialFightChanceFactor>1.5</socialFightChanceFactor>
     <displayOrderInCategory>10</displayOrderInCategory>

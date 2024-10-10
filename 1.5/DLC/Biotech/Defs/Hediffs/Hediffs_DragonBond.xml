@@ -9,7 +9,7 @@
           <targetRelation>Crows_DragonRiderBond</targetRelation>
         </li>
       </comps>
-      <description>This psychic bond connects the pawn to their dragon, granting benefits when the dragon is nearby but causing distress if the dragon dies.</description>
+      <description>This psychic bond connects the pawn to their dragon, granting benefits when the dragon is nearby but causing distress if the dragon is far away.</description>
       <stages>
         <!-- Base stage for bond -->
         <li>

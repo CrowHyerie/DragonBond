@@ -1,20 +1,33 @@
 <Defs>
-<!-- Dragon Proximity -->
-<ThoughtDef>
-  <defName>Crows_DragonBondProximity</defName>
-  <workerClass>ThoughtWorker_HediffWithTarget</workerClass>
-  <validWhileDespawned>true</validWhileDespawned>
-  <stages>
-    <li>
-      <description>The bond brings us together, sharing feelings and thoughts. It's like a friend who is always with me.</description>
-      <label>dragon bond</label>
-      <baseMoodEffect>12</baseMoodEffect>
-    </li>
-    <li>
-      <description>The distance makes it so hard to hear. I feel alone, like standing in a dark, silent cavern.</description>
-      <label>dragon bond distance</label>
-      <baseMoodEffect>-10</baseMoodEffect>
-    </li>
-  </stages>
-</ThoughtDef>
+  <!-- Dragon Proximity Thought -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondClose</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>Crows_DragonBond.ThoughtWorker_DragonBondClose</workerClass>
+    <!-- Link to the custom ThoughtWorker -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <description>The bond between us is powerful and unwavering, like a flame that never dims. I feel their strength within me.</description>
+        <label>dragon bond</label>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Dragon Distant Thought -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondDistant</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>Crows_DragonBond.ThoughtWorker_DragonBondDistant</workerClass>
+    <!-- Link to the custom ThoughtWorker -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <description>The distance dulls our connection, leaving me hollow, as if a part of me has vanished into the shadows.</description>
+        <label>dragon bond distance</label>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>
