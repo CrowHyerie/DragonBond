@@ -216,8 +216,8 @@
       <min>1</min>
       <max>1</max>
     </gearHealthRange>
-    <apparelMoney>400~600</apparelMoney>
-    <weaponMoney>250~400</weaponMoney>
+    <weaponMoney>1100~3500</weaponMoney>
+    <apparelMoney>1250~2500</apparelMoney>
     <weaponTags>
       <li>NeolithicRangedBasic</li>
       <li>MedievalMeleeDecent</li>
@@ -311,11 +311,11 @@
     <isFighter>false</isFighter>
     <gearHealthRange>2.0</gearHealthRange>
     <itemQuality>Masterwork</itemQuality>
-    <weaponMoney>500~1400</weaponMoney>
+    <weaponMoney>500~5000</weaponMoney>
     <weaponTags>
       <li>MedievalMeleeAdvanced</li>
     </weaponTags>
-    <apparelMoney>2500~3500</apparelMoney>
+    <apparelMoney>2500~5000</apparelMoney>
     <apparelTags>
       <li>Crows_DragonRider</li>
       <li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>

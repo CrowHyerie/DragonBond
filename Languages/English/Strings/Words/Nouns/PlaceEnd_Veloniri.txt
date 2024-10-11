@@ -4,17 +4,13 @@ Garrison
 Outpost
 Redoubt
 Stronghold
-Fortification
 Tower
-Manor
 Barricade
 Citadel
-Palisade
 Watchtower
 Enclave
 Haven
 Sanctum
-Sentry
 Keep
 Bulwark
 Holdfast
@@ -23,8 +19,6 @@ Holdout
 Enclosure
 Defence
 Garrison
-Armory
-Shelter
 Redoubt
 Fortress
 Citadel
