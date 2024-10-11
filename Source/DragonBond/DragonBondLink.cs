@@ -68,19 +68,28 @@ namespace Crows_DragonBond
             {
                 // Dragon and Pawn are on the same map, apply close bond
                 ApplyCloseBond();
-                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on the same map. Applying close bond.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on the same map. Applying close bond.");
+                }
             }
             else
             {
                 // Dragon and Pawn are on different maps, apply distance bond
                 ApplyDistanceBond();
-                Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on different maps. Applying distance bond.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"Dragon {linkedPawn.NameShortColored} and pawn {Pawn.NameShortColored} are on different maps. Applying distance bond.");
+                }
             }
         }
 
         private void TearBond()
         {
-            Log.Message($"[DragonBond] TearBond: Trying to tear bond between {Pawn.NameShortColored} and {linkedPawn?.NameShortColored ?? "null"}.");
+            if (Prefs.DevMode)
+            {
+                Log.Message($"[DragonBond] TearBond: Trying to tear bond between {Pawn.NameShortColored} and {linkedPawn?.NameShortColored ?? "null"}.");
+            }
 
             if (linkedPawn != null && !bondTorn)
             {

@@ -33,7 +33,10 @@ namespace Crows_DragonBond
 
             if (pawn.relations.DirectRelationExists(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), dragon))
             {
-                Log.Message($"{pawn.NameShortColored} already has a bond with {dragon.NameShortColored}.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"{pawn.NameShortColored} already has a bond with {dragon.NameShortColored}.");
+                }
                 return;
             }
 

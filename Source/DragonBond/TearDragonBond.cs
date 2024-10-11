@@ -34,9 +34,10 @@ namespace Crows_DragonBond
                 Log.Warning("TearDragonBond: Called without a death condition.");
                 return;
             }
-
-            Log.Message($"TearDragonBond: Called for Pawn: {pawn.NameShortColored}, Dragon: {dragon.NameShortColored}, Pawn Dead: {pawn.Dead}, Dragon Dead: {dragon.Dead}, isDeath: {isDeath}");
-
+            if (Prefs.DevMode)
+            {
+                Log.Message($"TearDragonBond: Called for Pawn: {pawn.NameShortColored}, Dragon: {dragon.NameShortColored}, Pawn Dead: {pawn.Dead}, Dragon Dead: {dragon.Dead}, isDeath: {isDeath}");
+            }
             if (HasBondAlreadyBeenTorn(pawn, dragon))
             {
                 Log.Warning("TearDragonBond: Bond has already been torn. Exiting to prevent duplicate handling.");
@@ -45,7 +46,10 @@ namespace Crows_DragonBond
 
             if (dragon.Dead && !pawn.Dead)
             {
-                Log.Message($"TearDragonBond: Handling dragon death for {dragon.NameShortColored}. Human pawn is still alive.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"TearDragonBond: Handling dragon death for {dragon.NameShortColored}. Human pawn is still alive.");
+                }
                 HandleDragonDeath(pawn, dragon);
                 MarkBondAsTorn(pawn, dragon);
                 return;
@@ -53,7 +57,10 @@ namespace Crows_DragonBond
 
             if (pawn.Dead && !dragon.Dead)
             {
-                Log.Message($"TearDragonBond: Handling human death for {pawn.NameShortColored}. Dragon is still alive.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"TearDragonBond: Handling human death for {pawn.NameShortColored}. Dragon is still alive.");
+                }
                 HandleHumanDeath(pawn, dragon);
                 MarkBondAsTorn(pawn, dragon);
                 return;
@@ -61,7 +68,10 @@ namespace Crows_DragonBond
 
             if (pawn.Dead && dragon.Dead)
             {
-                Log.Message($"TearDragonBond: Handling both deaths for {pawn.NameShortColored} (human) and {dragon.NameShortColored} (dragon).");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"TearDragonBond: Handling both deaths for {pawn.NameShortColored} (human) and {dragon.NameShortColored} (dragon).");
+                }
                 HandleHumanDeath(pawn, dragon);
                 HandleDragonDeath(pawn, dragon);
                 MarkBondAsTorn(pawn, dragon);
@@ -79,14 +89,19 @@ namespace Crows_DragonBond
         // Mark bond as torn to prevent re-triggering
         private static void MarkBondAsTorn(Pawn pawn, Pawn dragon)
         {
-            Log.Message($"Marking bond as torn between {pawn.NameShortColored} and {dragon.NameShortColored}.");
+            if (Prefs.DevMode)
+            {
+                Log.Message($"Marking bond as torn between {pawn.NameShortColored} and {dragon.NameShortColored}.");
+            }
             // This could involve setting a custom flag or using a state-tracking dictionary if necessary
         }
 
         public static void HandleDragonDeath(Pawn pawn, Pawn dragon)
         {
-            Log.Message($"TearDragonBond: Dragon {dragon.NameShortColored} has died. Removing bond and handling human's reaction.");
-
+            if (Prefs.DevMode)
+            {
+                Log.Message($"TearDragonBond: Dragon {dragon.NameShortColored} has died. Removing bond and handling human's reaction.");
+            }
             // Remove bond from the dragon's corpse
             RemoveBondHediffFromCorpse(dragon);
 
@@ -102,8 +117,10 @@ namespace Crows_DragonBond
 
         public static void HandleHumanDeath(Pawn pawn, Pawn dragon)
         {
-            Log.Message($"TearDragonBond: Human pawn {pawn.NameShortColored} has died. Removing bond and handling dragon's reaction.");
-
+            if (Prefs.DevMode)
+            {
+                Log.Message($"TearDragonBond: Human pawn {pawn.NameShortColored} has died. Removing bond and handling dragon's reaction.");
+            }
             // Remove bond from the human's corpse
             RemoveBondHediffFromCorpse(pawn);
 
@@ -168,11 +185,17 @@ namespace Crows_DragonBond
             {
                 // Set the mood need level to zero
                 pawn.needs.mood.CurLevel = 0f;
-                Log.Message($"SetPawnMoodToZero: Pawn {pawn.NameShortColored}'s mood has been set to zero due to bond being torn.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"SetPawnMoodToZero: Pawn {pawn.NameShortColored}'s mood has been set to zero due to bond being torn.");
+                }
             }
             else
             {
-                Log.Warning($"SetPawnMoodToZero: Pawn {pawn.NameShortColored} does not have a mood need. No change applied.");
+                if (Prefs.DevMode)
+                {
+                    Log.Warning($"SetPawnMoodToZero: Pawn {pawn.NameShortColored} does not have a mood need. No change applied.");
+                }
             }
         }
 
@@ -181,8 +204,10 @@ namespace Crows_DragonBond
         {
             if (pawn != null && !pawn.Dead && pawn.needs != null && pawn.needs.mood != null)
             {
-                Log.Message($"Applying catatonic breakdown to {pawn.NameShortColored} due to bond tear.");
-
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"Applying catatonic breakdown to {pawn.NameShortColored} due to bond tear.");
+                }
                 // Apply a catatonic breakdown to the human pawn
                 Hediff catatonicBreakdown = HediffMaker.MakeHediff(HediffDefOf.CatatonicBreakdown, pawn);
                 pawn.health.AddHediff(catatonicBreakdown);
@@ -213,11 +238,16 @@ namespace Crows_DragonBond
             if (dragon.mindState.mentalStateHandler.CurStateDef == MentalStateDefOf.ManhunterPermanent ||
                 dragon.mindState.duty?.def == DutyDefOf.ExitMapBestAndDefendSelf)
             {
-                Log.Message($"HandleDragonLeaveFaction: {dragon.NameShortColored} is already a manhunter or exiting the map. Aborting further processing.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"HandleDragonLeaveFaction: {dragon.NameShortColored} is already a manhunter or exiting the map. Aborting further processing.");
+                }
                 return;
             }
-
-            Log.Message($"{dragon.NameShortColored} is leaving the faction due to the death of their bonded pawn.");
+            if (Prefs.DevMode)
+            {
+                Log.Message($"{dragon.NameShortColored} is leaving the faction due to the death of their bonded pawn.");
+            }
 
             // Remove the dragon from the faction and set it as wild
             dragon.SetFaction(null);  // Set faction to null, making the dragon wild
@@ -227,7 +257,10 @@ namespace Crows_DragonBond
 
             if (chance <= 0.2f)
             {
-                Log.Message($"{dragon.NameShortColored} has become a Manhunter after losing their bond.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"{dragon.NameShortColored} has become a Manhunter after losing their bond.");
+                }
                 dragon.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.ManhunterPermanent);
                 Messages.Message("CrowsDragonBond.DragonManhunterGrief".Translate().Formatted("", dragon.NameShortColored), MessageTypeDefOf.NegativeEvent);
                 SoundDef.Named("Dragon_Angry").PlayOneShot(dragon); // Play a dragon sound
@@ -243,7 +276,10 @@ namespace Crows_DragonBond
                 dragon.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: true);
                 Messages.Message("CrowsDragonBond.DragonLeaveGrief".Translate().Formatted("", dragon.NameShortColored), MessageTypeDefOf.NegativeEvent);
                 SoundDef.Named("Dragon_Call").PlayOneShot(dragon); // Play a dragon sound
-                Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"{dragon.NameShortColored} is leaving the map after losing their bond.");
+                }
             }
             else
             {
