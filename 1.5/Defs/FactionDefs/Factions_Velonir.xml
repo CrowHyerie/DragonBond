@@ -20,7 +20,7 @@
     <settlementNameMaker>Crows_VeloniriSettlementNames</settlementNameMaker>
     <settlementTexturePath>WorldObjects/VelonirSettlement</settlementTexturePath>
     <techLevel>Medieval</techLevel>
-     <backstoryCategories>
+    <backstoryCategories>
       <li>Tribal</li>
       <li>Medieval</li>
     </backstoryCategories>
@@ -59,7 +59,7 @@
         <li>Cloth</li>
       </thingDefs>
     </apparelStuffFilter>
-    <caravanTraderKinds Inherit="false">
+    <caravanTraderKinds>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_ArtPatron</li>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Armorsmith</li>
       <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Caravan_Medieval_Weaponsmith</li>
@@ -70,22 +70,22 @@
       <li>Crows_DraconicTrader</li>
       <li>Caravan_Neolithic_ShamanMerchant</li>
     </caravanTraderKinds>
-    <visitorTraderKinds Inherit="false">
+    <visitorTraderKinds>
       <li>Visitor_Neolithic_Standard</li>
       <li>Crows_DraconicTrader</li>
     </visitorTraderKinds>
-    <baseTraderKinds Inherit="false">
+    <baseTraderKinds>
       <li>Base_Neolithic_Standard</li>
       <li>Crows_DraconicTrader</li>
     </baseTraderKinds>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
-  <raidCommonalityFromPointsCurve>
-    <points>
-      <li>(0, 1.5)</li>  <!-- Early game raids -->
-      <li>(500, 2.5)</li> <!-- More mid-game raids -->
-      <li>(1000, 3.5)</li> <!-- Late-game frequent raids -->
-    </points>
-  </raidCommonalityFromPointsCurve>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 1.5)</li>
+        <li>(500, 2.5)</li>
+        <li>(1000, 3.5)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
     <xenotypeSet Inherit="False">
       <xenotypeChances>
         <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>
@@ -105,11 +105,11 @@
     </raidLootValueFromPointsCurve>
     <maxPawnCostPerTotalPointsCurve>
       <points>
-        <li>(300,  0.5)</li>
-        <li>(700,  1)</li>
-        <li>(1400, 1.8)</li>
-        <li>(2800, 2.2)</li>
-        <li>(3000, 2.6)</li>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(800, 100)</li>
+        <li>(1400, 2.0)</li>
+        <li>(2800, 2.5)</li>
         <li>(3001, 10000)</li>
         <li>(100000, 10000)</li>
       </points>
@@ -169,13 +169,12 @@
           <Crows_VelonirMerchant>1</Crows_VelonirMerchant>
         </traders>
         <carriers>
-          <Muffalo>4</Muffalo>
-          <Horse>3</Horse>
+          <Muffalo>1</Muffalo>
         </carriers>
         <guards>
-          <Crows_VelonirSquire>10</Crows_VelonirSquire>
-          <Crows_VelonirPeasant>12</Crows_VelonirPeasant>
-          <Crows_VelonirArcher>8</Crows_VelonirArcher>
+          <Crows_VelonirSquire>30</Crows_VelonirSquire>
+          <Crows_VelonirPeasant>50</Crows_VelonirPeasant>
+          <Crows_VelonirArcher>30</Crows_VelonirArcher>
         </guards>
       </li>
       <!-- Settlement -->
@@ -281,13 +280,16 @@
       <li>Crows_DraconicTrader</li>
     </baseTraderKinds>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
-  <raidCommonalityFromPointsCurve>
-    <points>
-      <li>(0, 2)</li>  <!-- Frequent raids even early -->
-      <li>(500, 3.5)</li> <!-- High mid-game raid frequency -->
-      <li>(1000, 5)</li> <!-- Very frequent late-game raids -->
-    </points>
-  </raidCommonalityFromPointsCurve>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 2)</li>
+        <!-- Frequent raids even early -->
+        <li>(500, 3.5)</li>
+        <!-- High mid-game raid frequency -->
+        <li>(1000, 5)</li>
+        <!-- Very frequent late-game raids -->
+      </points>
+    </raidCommonalityFromPointsCurve>
     <xenotypeSet Inherit="False">
       <xenotypeChances>
         <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.8</Crows_VelonirRace>

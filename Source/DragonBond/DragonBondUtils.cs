@@ -66,6 +66,7 @@ namespace Crows_DragonBond
             {
                 dragonComp.SetLinkedPawn(pawn);
             }
+
         }
 
         // Add this part to fetch the appropriate bond stage dynamically based on the dragon

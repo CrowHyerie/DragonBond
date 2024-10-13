@@ -21,7 +21,7 @@
     </stuffCategories>
     <costStuffCount>80</costStuffCount>
     <statBases>
-      <WorkToMake>25000</WorkToMake>
+      <WorkToMake>1500</WorkToMake>
       <MaxHitPoints>755</MaxHitPoints>
       <Mass>3.5</Mass>
       <ArmorRating_Sharp>2</ArmorRating_Sharp>

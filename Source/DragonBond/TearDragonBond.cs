@@ -113,6 +113,7 @@ namespace Crows_DragonBond
 
             // Remove bond from the living human only if it hasn't been removed yet
             RemoveBondHediffFromLiving(pawn);
+
         }
 
         public static void HandleHumanDeath(Pawn pawn, Pawn dragon)
@@ -129,6 +130,7 @@ namespace Crows_DragonBond
 
             // Remove bond from the living dragon only if it hasn't been removed yet
             RemoveBondHediffFromLiving(dragon);
+
         }
 
         private static void RemoveBondHediffFromLiving(Pawn pawn)

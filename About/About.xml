@@ -4,7 +4,6 @@
   <supportedVersions>
     <li>1.5</li>
   </supportedVersions>
-  <description>Discover the Velonir in the DragonBond mod for RimWorld! Inspired by legendary dragonlords from the A Song of Ice and Fire series, the Velonir are a race of noble humanoids with white hair, red eyes and the mysterious ability to form a bond with the Dragons from the Dragons Descent mod!</description>
   <packageId>Crows.DragonBond</packageId>
   <url>https://github.com/CrowHyerie/DragonBond</url>
   <modDependencies>
@@ -34,4 +33,26 @@
     <li>BotchJob.Profaned</li>
     <li>Abrolo.Grimstone.Beasts</li>
   </loadAfter>
+  <description>Discover the Velonir in the DragonBond mod for RimWorld! Inspired by legendary dragonlords from the A Song of Ice and Fire series, the Velonir are a race of noble humanoids with white hair, red eyes and the mysterious ability to form a bond with the Dragons!
+
+    In this mod you'll find:
+
+    •Two new genes
+
+    •New race
+
+    •A new Scenario
+
+    •Two new factions
+
+    •5 Armor/Apparel sets
+
+    •6 body and face tattoos
+
+    •Dragon focused Ideology
+
+    •Dragon and dragon egg trading consequences
+
+    •Dragon bond mechanic with buffs</description>
+
 </ModMetaData>

@@ -58,25 +58,11 @@
       </li>
 
       <!-- Weapons -->
-      <!-- <li Class="StockGenerator_WeaponsRanged">
-        <countRange>0~4</countRange>
-      </li> -->
       <li Class="StockGenerator_Category">
         <categoryDef>WeaponsMelee</categoryDef>
         <thingDefCountRange>2~3</thingDefCountRange>
         <countRange>0~4</countRange>
       </li>
-
-      <!-- Apparel -->
-      <!-- <li Class="StockGenerator_Armor">
-        <countRange>2~5</countRange>
-      </li> -->
-
-      <!-- Implants -->
-      <!-- none -->
-
-      <!-- Buildings -->
-      <!-- none -->
 
       <!-- Exotic -->
       <li Class="StockGenerator_Tag">
@@ -84,9 +70,6 @@
         <thingDefCountRange>0~4</thingDefCountRange>
         <countRange>0~2</countRange>
       </li>
-
-      <!-- Slaves -->
-      <!-- none -->
 
       <!-- Animals -->
       <li Class="StockGenerator_Animals">

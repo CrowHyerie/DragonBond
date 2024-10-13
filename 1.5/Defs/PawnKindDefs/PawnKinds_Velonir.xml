@@ -18,8 +18,10 @@
     <disallowedTraits>
       <li>Wimp</li>
       <li>Nudist</li>
+      <li>Transhumanist</li>
     </disallowedTraits>
     <backstoryCategories>
+      <li>Medieval</li>
       <li>Tribal</li>
     </backstoryCategories>
     <useFactionXenotypes>false</useFactionXenotypes>
@@ -216,8 +218,8 @@
       <min>1</min>
       <max>1</max>
     </gearHealthRange>
-    <weaponMoney>1100~3500</weaponMoney>
-    <apparelMoney>1250~2500</apparelMoney>
+    <weaponMoney>500~1500</weaponMoney>
+    <apparelMoney>500~1500</apparelMoney>
     <weaponTags>
       <li>NeolithicRangedBasic</li>
       <li>MedievalMeleeDecent</li>

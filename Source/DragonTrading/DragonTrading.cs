@@ -4,6 +4,7 @@ using Crows_DragonBond.Crows_DragonBond;
 using HarmonyLib;
 using RimWorld;
 using Verse;
+using static Crows_DragonBond.DragonTradingUtility;
 
 namespace Crows_DragonBond
 {
@@ -14,7 +15,10 @@ namespace Crows_DragonBond
         {
             var harmony = new Harmony("com.crows.dragonbond");
             harmony.PatchAll();
-            Log.Message("[DragonBond] Harmony patches applied.");
+            if (Prefs.DevMode)
+            {
+                Log.Message("[DragonBond] Harmony patches applied.");
+            }
         }
     }
 
@@ -28,14 +32,20 @@ namespace Crows_DragonBond
         // Prefix to count dragon eggs or dragons being sold before the trade is executed
         public static void Prefix(List<Tradeable> ___tradeables, out int __state)
         {
-            Log.Message("[DragonBond] TradeDeal.TryExecute_Patch Prefix called.");
+            if (Prefs.DevMode)
+            {
+                Log.Message("[DragonBond] TradeDeal.TryExecute_Patch Prefix called.");
+            }
             __state = 0;
             dragonItemCount = 0;
 
             // Skip the entire block if the goodwill penalties are disabled
             if (!DragonBondMod.settings.goodwillPenaltyEnabled)
             {
-                Log.Message("[DragonBond] Goodwill penalties are disabled, skipping warnings and penalty calculations.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message("[DragonBond] Goodwill penalties are disabled, skipping warnings and penalty calculations.");
+                }
                 return; // Exit early if the feature is disabled
             }
 
@@ -43,9 +53,12 @@ namespace Crows_DragonBond
             Faction tradingFaction = TradeSession.trader.Faction;
 
             // Skip the entire block if trading with Velos Enclave or Ashen Dominion
-            if (DragonTradingUtility.IsVelosOrAshenFaction(tradingFaction))
+            if (FactionCheckLogger.IsVelosOrAshenFaction(tradingFaction))
             {
-                Log.Message($"[DragonBond] Trading with favored faction: {tradingFaction.Name}. Skipping warnings.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message($"[DragonBond] Trading with favored faction: {tradingFaction.Name}. Skipping warnings.");
+                }
                 return; // Exit early if trading with Velos Enclave or Ashen Dominion
             }
 
@@ -55,7 +68,10 @@ namespace Crows_DragonBond
                 {
                     __state += tradeable.CountToTransferToDestination;
                     dragonItemCount += tradeable.CountToTransferToDestination;
-                    Log.Message($"[DragonBond] Found {tradeable.CountToTransferToDestination} {tradeable.ThingDef.label} selected for sale.");
+                    if (Prefs.DevMode)
+                    {
+                        Log.Message($"[DragonBond] Found {tradeable.CountToTransferToDestination} {tradeable.ThingDef.label} selected for sale.");
+                    }
 
                     // Show warning when selling/gifting dragons or dragon eggs, but only if not trading with favored factions
                     if (TradeSession.giftMode)
@@ -68,36 +84,53 @@ namespace Crows_DragonBond
                     }
                 }
             }
-
-            Log.Message($"[DragonBond] Total dragon items selected for sale: {dragonItemCount}");
+            if (Prefs.DevMode)
+            {
+                Log.Message($"[DragonBond] Total dragon items selected for sale: {dragonItemCount}");
+            }
         }
 
         // Postfix to apply goodwill penalties after the trade is executed
         public static void Postfix(int __state, bool __result)
         {
-            Log.Message("[DragonBond] TradeDeal.TryExecute_Patch Postfix called.");
-            Log.Message($"[DragonBond] Trade result: {__result}, Dragon items traded: {__state}");
+            if (Prefs.DevMode)
+            {
+                Log.Message("[DragonBond] TradeDeal.TryExecute_Patch Postfix called.");
+                Log.Message($"[DragonBond] Trade result: {__result}, Dragon items traded: {__state}");
+            }
 
             // If items were sold and the trade executed successfully
             if (__state > 0 && __result)
             {
                 Faction tradingFaction = TradeSession.trader.Faction;
-                Log.Message($"[DragonBond] Trading with faction: {tradingFaction?.Name ?? "Null"}");
-
-                if (tradingFaction != null && !DragonTradingUtility.IsVelosOrAshenFaction(tradingFaction))
+                if (Prefs.DevMode)
                 {
-                    Log.Message($"[DragonBond] Trade completed with non-favored faction: {tradingFaction.Name}. Applying goodwill penalty.");
+                    Log.Message($"[DragonBond] Trading with faction: {tradingFaction?.Name ?? "Null"}");
+                }
+
+                if (tradingFaction != null && !FactionCheckLogger.IsVelosOrAshenFaction(tradingFaction))
+                {
+                    if (Prefs.DevMode)
+                    {
+                        Log.Message($"[DragonBond] Trade completed with non-favored faction: {tradingFaction.Name}. Applying goodwill penalty.");
+                    }
                     AdjustGoodwillForDragonSale();
 
                 }
                 else
                 {
-                    Log.Message("[DragonBond] Trade completed with favored faction or no faction detected.");
+                    if (Prefs.DevMode)
+                    {
+                        Log.Message("[DragonBond] Trade completed with favored faction or no faction detected.");
+                    }
                 }
             }
             else
             {
-                Log.Message("[DragonBond] Trade not executed or no dragon items were sold.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message("[DragonBond] Trade not executed or no dragon items were sold.");
+                }
             }
         }
 
@@ -107,11 +140,16 @@ namespace Crows_DragonBond
         {
             if (!DragonBondMod.settings.goodwillPenaltyEnabled)
             {
-                Log.Message("[DragonBond] Goodwill penalties are disabled by mod settings.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message("[DragonBond] Goodwill penalties are disabled by mod settings.");
+                }
                 return; // If the setting is disabled, skip the penalty logic.
             }
-
-            Log.Message("[DragonBond] Adjusting goodwill for Velos Enclave and Ashen Dominion.");
+            if (Prefs.DevMode)
+            {
+                Log.Message("[DragonBond] Adjusting goodwill for Velos Enclave and Ashen Dominion.");
+            }
 
             Faction velosEnclave = Find.FactionManager.FirstFactionOfDef(FactionDef.Named("Crows_VelosEnclave"));
             Faction ashenDominion = Find.FactionManager.FirstFactionOfDef(FactionDef.Named("Crows_AshenDominion"));
@@ -127,7 +165,10 @@ namespace Crows_DragonBond
 
             if (velosEnclave != null)
             {
-                Log.Message("[DragonBond] Scheduling delayed goodwill penalty for Velos Enclave.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message("[DragonBond] Scheduling delayed goodwill penalty for Velos Enclave.");
+                }
                 dragonBondManager.AddGoodwillImpact(velosEnclave, -20, 60000); // Delayed by 60000 ticks (1 in-game day)
             }
             else
@@ -137,7 +178,10 @@ namespace Crows_DragonBond
 
             if (ashenDominion != null)
             {
-                Log.Message("[DragonBond] Scheduling delayed goodwill penalty for Ashen Dominion.");
+                if (Prefs.DevMode)
+                {
+                    Log.Message("[DragonBond] Scheduling delayed goodwill penalty for Ashen Dominion.");
+                }
                 dragonBondManager.AddGoodwillImpact(ashenDominion, -20, 60000); // Delayed by 60000 ticks (1 in-game day)
             }
             else

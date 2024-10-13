@@ -31,7 +31,7 @@
      </costList>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
-      <WorkToMake>1600</WorkToMake>
+      <WorkToMake>900</WorkToMake>
       <Mass>0.25</Mass>
       <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.22</StuffEffectMultiplierInsulation_Cold>

@@ -12,5 +12,6 @@
   <CrowsDragonBond.BondSuccess>The dragon looks back at you in recognition. It has chosen you and a bond was formed!</CrowsDragonBond.BondSuccess>
   <CrowsDragonBond.DragonManhunter>The dragon recoils in fury; the bond attempt has failed, and it’s now a manhunter!</CrowsDragonBond.DragonManhunter>
   <CrowsDragonBond.IgnoredBond>The dragon {1} ignores {0}'s attempt to bond.</CrowsDragonBond.IgnoredBond>
+  <CrowsDragonBond.BondExists>You are already bonded to a Dragon!</CrowsDragonBond.BondExists>
 </LanguageData>
 
