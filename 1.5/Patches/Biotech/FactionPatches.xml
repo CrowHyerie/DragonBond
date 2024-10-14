@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[@Name="PirateBandBase"]/xenotypeSet/xenotypeChances</xpath>
+    <value>
+      <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.02</Crows_VelonirRace>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/xenotypeSet/xenotypeChances</xpath>
+    <value>
+      <Crows_VelonirRace MayRequire="Ludeon.RimWorld.Biotech">0.02</Crows_VelonirRace>
+    </value>
+  </Operation>
+</Patch>

@@ -12,22 +12,29 @@ namespace Crows_DragonBond
 
         public static void Postfix(Transferable __instance, ref AcceptanceReport __result)
         {
-            // Get the trading faction
-            Faction tradingFaction = TradeSession.trader.Faction;
+            // Avoid interference if another mod has already shown a warning (e.g., VanillaPsycastsExpanded)
+            if (__instance.CountToTransferToDestination <= 0 || __result.Accepted == false)
+            {
+                // If nothing is being transferred or adjustment is rejected, skip processing
+                return;
+            }
 
-            // Skip the entire block if trading with Velos Enclave or Ashen Dominion
+            // Get the trading faction
+            Faction tradingFaction = TradeSession.trader?.Faction;
+            if (tradingFaction == null) return; // Ensure a valid trader is present
+
+            // Skip if trading with Velos Enclave or Ashen Dominion
             if (FactionCheckLogger.IsVelosOrAshenFaction(tradingFaction))
             {
                 if (Prefs.DevMode)
                 {
                     Log.Message($"[DragonBond] Trading with favored faction: {tradingFaction.Name}. Skipping warnings.");
                 }
-                return; // Exit early if trading with Velos Enclave or Ashen Dominion
+                return; // Exit early for Velos Enclave or Ashen Dominion
             }
-            // Ensure this is a trade window and a valid trader is present
-            if (Find.WindowStack.IsOpen<Dialog_Trade>() && TradeSession.trader != null
-                && DragonTradingUtility.IsDragonEggOrDragon(__instance.ThingDef) && TradeSession.trader.Faction != null
-                && __instance.CountToTransferToDestination > 0)
+
+            // Only process dragon-related items
+            if (DragonTradingUtility.IsDragonEggOrDragon(__instance.ThingDef))
             {
                 // Prevent showing the warning multiple times for the same item
                 if (lastWarnedTransferable != __instance)
@@ -44,7 +51,7 @@ namespace Crows_DragonBond
                         return;
                     }
 
-                    // Determine whether it's a gifting session or a normal trade
+                    // Show appropriate warning depending on trade mode (gifting or selling)
                     if (TradeSession.giftMode)
                     {
                         Messages.Message("CrowsDragonBond.GiftingDragonWarning".Translate(), MessageTypeDefOf.CautionInput);
@@ -53,6 +60,7 @@ namespace Crows_DragonBond
                     {
                         Messages.Message("CrowsDragonBond.SellingDragonWarning".Translate(), MessageTypeDefOf.CautionInput);
                     }
+
                     if (Prefs.DevMode)
                     {
                         Log.Message($"[DragonBond] Warning shown for trading {__instance.CountToTransferToDestination} {__instance.ThingDef.label}");

@@ -169,7 +169,10 @@
           <Crows_VelonirMerchant>1</Crows_VelonirMerchant>
         </traders>
         <carriers>
-          <Muffalo>1</Muffalo>
+          <Muffalo>3</Muffalo>
+          <Horse>3</Horse>
+          <AA_MeadowAve MayRequire="sarg.alphaanimals">1</AA_MeadowAve>
+          <AA_RoyalAve MayRequire="sarg.alphaanimals">1</AA_RoyalAve>
         </carriers>
         <guards>
           <Crows_VelonirSquire>30</Crows_VelonirSquire>

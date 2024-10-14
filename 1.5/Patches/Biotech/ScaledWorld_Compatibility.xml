@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Scaled World</li>
+    </mods>
+    
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationFindMod">
+          <mods>
+            <li>Biotech</li>
+          </mods>
+          <match Class="PatchOperationSequence">
+            <operations>
+              <!-- Dragons -->
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Triple_Stryke</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Thunderdrum</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Stormcutter</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Speed_Stinger</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Snow_Wraith</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Snafflefang</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Sandwraith</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Skrill</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Rumblehorn</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Ruby_Razorwhip</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Rockstomper</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Razorwhip</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Primal_Snafflefang</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Monstrous_Nightmare</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Monarch_Deathgripper</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">MagmaSkrill</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">LightningSkrill</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Hideous_Zippleback</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Fury</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Exotic_Stinger</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Dreadstrider</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Dramillion</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Deathgripper</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Death_Song</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Deadly_Nadder</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Changewing</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">Boneknapper</li>
+                </value>
+              </li>
+              
+              <!-- Eggs -->
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggFuryFertilized</li>
+                </value>
+              </li>
+
+                          <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggStormcutterFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggNightmareFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggNadderFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggStingerFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggDramillionFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggStrykeFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggBoneknapperFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggThunderdrumFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggDreadstriderFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggDeathgripperFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggRumblehornFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggWraithFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggSongFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggSnafflefangFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggMonarchgripperFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggMagmaSkrillFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggLightningSkrillFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggSandwraithFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggExoticStingerFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggPrimalSnafflefangFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggRockstomperFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggRazorwhipFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Scaled.World">EggRubyFertilized</li>
+                </value>
+              </li>
+            </operations>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
