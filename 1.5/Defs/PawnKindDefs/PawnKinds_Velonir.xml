@@ -24,6 +24,9 @@
       <li>Medieval</li>
       <li>Tribal</li>
     </backstoryCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
     <useFactionXenotypes>false</useFactionXenotypes>
     <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
   </PawnKindDef>

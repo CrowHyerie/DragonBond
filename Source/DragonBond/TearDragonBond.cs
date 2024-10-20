@@ -114,6 +114,9 @@ namespace Crows_DragonBond
             // Remove bond from the living human only if it hasn't been removed yet
             RemoveBondHediffFromLiving(pawn);
 
+            // Remove the Draconic Regeneration gene from the rider pawn
+            RemoveDraconicRegenerationGene(pawn);
+
         }
 
         public static void HandleHumanDeath(Pawn pawn, Pawn dragon)
@@ -177,6 +180,24 @@ namespace Crows_DragonBond
             }
             else
             {
+            }
+        }
+
+        public static void RemoveDraconicRegenerationGene(Pawn pawn)
+        {
+            if (pawn.genes != null)
+            {
+                // Find the Draconic Regeneration gene by defName
+                Gene draconicGene = pawn.genes.GetGene(DefDatabase<GeneDef>.GetNamed("Crows_DraconicRegenerationGene", false));
+
+                if (draconicGene != null)
+                {
+                    if (Prefs.DevMode)
+                    {
+                        Log.Message($"Removing Draconic Regeneration gene from {pawn.NameShortColored}.");
+                    }
+                    pawn.genes.RemoveGene(draconicGene);
+                }
             }
         }
 

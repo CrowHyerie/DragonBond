@@ -39,6 +39,7 @@
     <label>noble blood</label>
     <description>Carriers of this gene hail from noble blood, often viewing others with disdain. Their pride can spark conflicts without reason.</description>
     <iconPath>Things/GeneIcons/Gene_NobleBlood</iconPath>
+    <displayCategory>Psychic</displayCategory>
     <socialFightChanceFactor>1.5</socialFightChanceFactor>
     <displayOrderInCategory>10</displayOrderInCategory>
     <biostatMet>2</biostatMet>
@@ -70,4 +71,16 @@
       </suffixSymbols>
     </symbolPack>
   </GeneDef>
+  
+  <GeneDef>
+    <defName>Crows_DraconicRegenerationGene</defName>
+    <label>Draconic Regeneration</label>
+    <description>This gene allows bonded Velonir to recover from injuries over time, reflecting the connection they share with their dragon.</description>
+    <displayOrderInCategory>10</displayOrderInCategory>
+    <biostatMet>2</biostatMet>
+    <iconPath>Things/GeneIcons/DraconicRegen</iconPath>
+    <displayCategory>Healing</displayCategory>
+    <geneClass>Crows_DragonBond.Gene_DragonBondRegeneration</geneClass>
+  </GeneDef>
+  
 </Defs>

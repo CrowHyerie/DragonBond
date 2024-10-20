@@ -7,7 +7,7 @@
     <description>Finely tailored garments woven from luxurious fabrics, designed to exude elegance and status. Embellished with intricate patterns and gold thread, it symbolizes the nobility’s grace and power.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/VelonirNoble/VelonirNoble</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>

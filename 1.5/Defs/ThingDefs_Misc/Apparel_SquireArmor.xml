@@ -7,7 +7,7 @@
     <description>A lightweight leather armor set designed for agility and protection. Crafted from sturdy leathers and featuring reinforced shoulder pads, this armor is both durable and flexible.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/SquireArmor/SquireArmor</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>

@@ -1,7 +1,6 @@
 ﻿using Verse;
 using RimWorld;
 using Verse.Sound;
-using System.Collections.Generic;
 
 namespace Crows_DragonBond
 {
@@ -39,14 +38,6 @@ namespace Crows_DragonBond
         {
             Pawn casterPawn = CasterPawn;
             Pawn targetPawn = (Pawn)currentTarget.Thing;
-
-            // Check if the caster already has a bond, and disable the ability if true
-            if (HasExistingBond(casterPawn))
-            {
-                Messages.Message("CrowsDragonBond.BondExists".Translate(), MessageTypeDefOf.RejectInput, false);
-                this.ability.StartCooldown(60000); // Apply cooldown on success
-                return false; // Block casting if already bonded
-            }
 
             // Check if the target is a valid dragon using IsValidTarget
             if (!IsValidTarget(targetPawn))
@@ -125,28 +116,6 @@ namespace Crows_DragonBond
             return false;
         }
 
-        // Check if the caster already has a bond (disables ability if true)
-        private bool HasExistingBond(Pawn casterPawn)
-        {
-            // Retrieve the first bonded dragon (if any)
-            Pawn bondedDragon = casterPawn.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
-
-            // Check if the bonded dragon is null (no bond exists) or if the dragon is dead
-            if (bondedDragon == null || bondedDragon.Dead)
-            {
-                // Optionally, remove the dead dragon bond relation
-                if (bondedDragon != null && bondedDragon.Dead)
-                {
-                    casterPawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), bondedDragon);
-                }
-                return false; // No valid bond exists
-            }
-
-            // Return true if a bond exists with a living dragon
-            return true;
-        }
-
-
         // Custom failure behavior where the dragon ignores the pawn
         private void DragonIgnoresPawn(Pawn pawn, Pawn dragon)
         {
@@ -159,6 +128,7 @@ namespace Crows_DragonBond
             // Optional: Make the dragon perform some "mocking" action, like playing a sound or walking away
             SoundDef.Named("Dragon_Hit").PlayOneShot(dragon); // Play a dragon sound (mocking or a hiss)
             this.ability.StartCooldown(60000); // Apply cooldown on success
+
         }
 
         private bool TameDragon(Pawn dragon, Pawn tamer)
@@ -191,34 +161,19 @@ namespace Crows_DragonBond
 
         private void ApplyDragonRiderPsychicBond(Pawn rider, Pawn dragon)
         {
-            // Ensure rider is a humanlike pawn before applying bond
             if (rider.RaceProps.Humanlike)
             {
-                // Add the bond Hediff to the rider
+                // Get the specific Hediff for the rider based on the dragon type
                 Hediff riderHediff = HediffMaker.MakeHediff(GetDragonBondHediffForDragon(dragon), rider);
                 rider.health.AddHediff(riderHediff);
 
                 var riderBondComp = riderHediff.TryGetComp<HediffComp_DragonBondLink>();
                 riderBondComp?.SetLinkedPawn(dragon);
-
-                // Check if rider can have genes (i.e., has a GeneSet)
-                if (rider.genes != null)
-                {
-                    // Get the gene definition for the Draconic Regeneration gene
-                    GeneDef geneDef = DefDatabase<GeneDef>.GetNamed("Crows_DraconicRegenerationGene", true);
-
-                    // Add the Draconic Regeneration gene to the rider as a Xenogene
-                    rider.genes.AddGene(geneDef, true);  // 'true' indicates this is a Xenogene
-                }
-                else
-                {
-                    Log.Error($"Tried to apply a gene to {rider.Name}, but they do not have a gene set.");
-                }
             }
 
-            // Apply the bond Hediff to the dragon
             if (dragon.RaceProps.Animal)
             {
+                // Get the specific Hediff for the dragon based on its type
                 Hediff dragonHediff = HediffMaker.MakeHediff(GetDragonBondHediffForDragon(dragon), dragon);
                 dragon.health.AddHediff(dragonHediff);
 

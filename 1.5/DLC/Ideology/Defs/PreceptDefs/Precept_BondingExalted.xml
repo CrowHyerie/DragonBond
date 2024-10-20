@@ -1,0 +1,41 @@
+<Defs>
+
+  <IssueDef>
+    <defName>Crows_DragonBondingIssue</defName>
+    <label>dragon bonding</label>
+    <iconPath>UI/Issues/DraconBond</iconPath>
+  </IssueDef>
+
+  <PreceptDef>
+    <defName>Crows_DragonBondingExaltedPrecept</defName>
+    <issue>Crows_DragonBondingIssue</issue>
+    <label>Exalted</label>
+    <description>Dragons are divine, their presence is a blessing that inspires us.</description>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <impact>Medium</impact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>Crows_DragonBondSocial</thought>
+      </li>
+    </comps>
+    <requiredMemes>
+      <li>Crows_DraconicLegacy</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <!-- Social -->
+  <ThoughtDef>
+    <defName>Crows_DragonBondSocial</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Crows_DragonBond.ThoughtWorker_DragonVenerated</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Has a dragon bond</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

@@ -7,7 +7,7 @@
     <description>Simple and practical clothing made from sturdy, rough-spun fabric. Built to endure hard labor, it offers enough protection and comfort for daily tasks.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/VelonirPeasant/VelonirPeasant</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <techLevel>Medieval</techLevel>

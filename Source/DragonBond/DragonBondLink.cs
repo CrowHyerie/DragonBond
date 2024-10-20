@@ -25,6 +25,8 @@ namespace Crows_DragonBond
         public bool isDragonClose = false;
         public bool isDragonDistant = false;
 
+        public ThingDef BondedPawn { get; internal set; }
+
         public override void CompExposeData()
         {
             base.CompExposeData();
