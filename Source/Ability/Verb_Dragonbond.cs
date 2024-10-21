@@ -235,10 +235,9 @@ namespace Crows_DragonBond
             }
 
             // Check if the mod with the packageId is loaded.
-            bool isDragonModXLoaded = ModLister.GetActiveModWithIdentifier("aurorankingslayer.asoiafdd") != null;
+            bool isDragonModLoaded = ModLister.GetActiveModWithIdentifier("aurorankingslayer.asoiafdd") != null;
 
-            // If the mod is loaded, return the appropriate Hediff for its dragons.
-            if (isDragonModXLoaded)
+            if (isDragonModLoaded)
             {
                 // Assuming DragonModX has specific dragon types:
                 switch (dragon.def.defName)
@@ -269,6 +268,12 @@ namespace Crows_DragonBond
                         return HediffDef.Named("Crows_DragonBondBronzeZaldrizes");
                     case "ArgentumZaldrizes":
                         return HediffDef.Named("Crows_DragonBondArgentumZaldrizes");
+                    case "DawnZaldrizes":
+                        return HediffDef.Named("Crows_DragonBondDawnZaldrizes");
+                    case "CopperZaldrizes":
+                        return HediffDef.Named("Crows_DragonBondCopperZaldrizes");
+                    case "PyriteZaldrizes":
+                        return HediffDef.Named("Crows_DragonBondPyriteZaldrizes");
                 }
             }
 
