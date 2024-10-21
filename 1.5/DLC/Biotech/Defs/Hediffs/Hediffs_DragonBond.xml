@@ -15,7 +15,7 @@
         <li>
           <overrideLabel>Dragon Bond</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
           <statOffsets>
             <PsychicSensitivity>0.1</PsychicSensitivity>
           </statOffsets>
@@ -62,7 +62,7 @@
         <li>
           <overrideLabel>Dragon Bond (Blue)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
           <statFactors>
             <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
             <ConstructionSpeed>0.2</ConstructionSpeed>
@@ -105,7 +105,7 @@
         <li>
           <overrideLabel>Dragon Bond (Green)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
           <statOffsets>
             <MedicalTendQuality>0.2</MedicalTendQuality>
             <ImmunityGainSpeed>0.30</ImmunityGainSpeed>
@@ -148,7 +148,7 @@
         <li>
           <overrideLabel>Dragon Bond (Purple)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
           <statOffsets>
             <JoyGainFactor>0.2</JoyGainFactor>
             <MentalBreakThreshold>-0.18</MentalBreakThreshold>
@@ -191,7 +191,7 @@
         <li>
           <overrideLabel>Dragon Bond (Red)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
           <statOffsets>
             <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
             <AimingDelayFactor>-0.15</AimingDelayFactor>
@@ -235,7 +235,7 @@
         <li>
           <overrideLabel>Dragon Bond (White)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <TameAnimalChance>1.2</TameAnimalChance>
               <TrainAnimalChance>1.2</TrainAnimalChance>
@@ -279,7 +279,7 @@
         <li>
           <overrideLabel>Dragon Bond (Yellow)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
               <AnimalGatherYield>0.2</AnimalGatherYield>
@@ -325,7 +325,7 @@
         <li>
           <overrideLabel>Dragon Bond (Black)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <IncomingDamageFactor>-0.10</IncomingDamageFactor>
               <MeleeHitChance>2</MeleeHitChance>
@@ -370,7 +370,7 @@
         <li>
           <overrideLabel>Dragon Bond (Jade)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <PsychicSensitivity>0.8</PsychicSensitivity>
               <PsychicEntropyMax>0.2</PsychicEntropyMax>
@@ -413,7 +413,7 @@
         <li>
           <overrideLabel>Dragon Bond (Gold)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <NegotiationAbility>0.25</NegotiationAbility>
               <ArrestSuccessChance>0.25</ArrestSuccessChance>
@@ -457,7 +457,7 @@
         <li>
           <overrideLabel>Dragon Bond (Silver)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <MoveSpeed>0.4</MoveSpeed>
               <MeleeDodgeChance>15</MeleeDodgeChance>
@@ -504,7 +504,7 @@
         <li>
           <overrideLabel>Dragon Bond (True)</overrideLabel>
           <minSeverity>0</minSeverity>
-          <painFactor>0.5</painFactor>
+          <painFactor>-0.5</painFactor>
             <statOffsets>
               <GlobalLearningFactor>0.75</GlobalLearningFactor>
               <ResearchSpeed>1.15</ResearchSpeed>

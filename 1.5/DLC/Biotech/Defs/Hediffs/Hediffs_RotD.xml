@@ -15,7 +15,7 @@
       <li>
         <overrideLabel>Dragon Bond (Lapis Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statFactors>
           <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
           <ConstructionSpeed>0.2</ConstructionSpeed>
@@ -58,10 +58,11 @@
       <li>
         <overrideLabel>Dragon Bond (Verdant Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
           <MedicalTendQuality>0.2</MedicalTendQuality>
           <ImmunityGainSpeed>0.30</ImmunityGainSpeed>
+          <ToxicResistance>1.5</ToxicResistance>
         </statOffsets>
         <capMods>
           <li>
@@ -101,9 +102,9 @@
       <li>
         <overrideLabel>Dragon Bond (Auric Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <JoyGainFactor>0.2</JoyGainFactor>
+          <JoyGainFactor>0.5</JoyGainFactor>
           <MentalBreakThreshold>-0.18</MentalBreakThreshold>
         </statOffsets>
         <capMods>
@@ -138,16 +139,16 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Enhances ranged combat abilities.</description>
+    <description>Enhances speed and combat abilities.</description>
     <stages>
       <!-- Base stage for bond -->
       <li>
         <overrideLabel>Dragon Bond (Bloodwyrm)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
-          <AimingDelayFactor>-0.15</AimingDelayFactor>
+          <MoveSpeed>0.5</MoveSpeed>
+          <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
         <capMods>
           <li>
@@ -188,10 +189,11 @@
       <li>
         <overrideLabel>Dragon Bond (Ivory Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
+          <MoveSpeed>3</MoveSpeed>
+          <MeleeDodgeChance>1.5</MeleeDodgeChance>
           <TameAnimalChance>1.2</TameAnimalChance>
-          <TrainAnimalChance>1.2</TrainAnimalChance>
         </statOffsets>
         <capMods>
           <li>
@@ -232,7 +234,7 @@
       <li>
         <overrideLabel>Dragon Bond (Argentum Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
           <ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
           <AnimalGatherYield>0.2</AnimalGatherYield>
@@ -278,11 +280,9 @@
       <li>
         <overrideLabel>Dragon Bond (Bloodstone Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <IncomingDamageFactor>-0.10</IncomingDamageFactor>
           <MeleeHitChance>2</MeleeHitChance>
-          <MeleeDodgeChance>2</MeleeDodgeChance>
         </statOffsets>
         <capMods>
           <li>
@@ -323,10 +323,10 @@
       <li>
         <overrideLabel>Dragon Bond (Kunzite Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <PsychicSensitivity>0.8</PsychicSensitivity>
-          <PsychicEntropyMax>0.2</PsychicEntropyMax>
+          <PsychicSensitivity>1</PsychicSensitivity>
+          <PsychicEntropyMax>0.5</PsychicEntropyMax>
         </statOffsets>
         <capMods>
           <li>
@@ -366,10 +366,11 @@
       <li>
         <overrideLabel>Dragon Bond (Topaz Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
+          <Beauty>3</Beauty>
           <NegotiationAbility>0.25</NegotiationAbility>
-          <ArrestSuccessChance>0.25</ArrestSuccessChance>
+          <SocialImpact>0.25</SocialImpact>
         </statOffsets>
         <capMods>
           <li>
@@ -410,9 +411,9 @@
       <li>
         <overrideLabel>Dragon Bond (Agate Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <MoveSpeed>0.4</MoveSpeed>
+          <MoveSpeed>1</MoveSpeed>
           <MeleeDodgeChance>15</MeleeDodgeChance>
         </statOffsets>
         <statFactors>
@@ -457,10 +458,10 @@
       <li>
         <overrideLabel>Dragon Bond (Bronze Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <GlobalLearningFactor>0.75</GlobalLearningFactor>
-          <ResearchSpeed>1.15</ResearchSpeed>
+          <IncomingDamageFactor>-2</IncomingDamageFactor>
+          <AimingDelayFactor>-2</AimingDelayFactor>
         </statOffsets>
         <capMods>
           <li>
@@ -501,9 +502,10 @@
       <li>
         <overrideLabel>Dragon Bond (Ruby Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <GlobalLearningFactor>3</GlobalLearningFactor>
+          <MoveSpeed>2</MoveSpeed>
+          <SocialImpact>2</SocialImpact>
         </statOffsets>
         <capMods>
           <li>
@@ -544,12 +546,10 @@
       <li>
         <overrideLabel>Dragon Bond (Goliath Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <MeleeHitChance>2</MeleeHitChance>
-          <MeleeDodgeChance>2</MeleeDodgeChance>
-          <AimingDelayFactor>-2</AimingDelayFactor>
-          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <IncomingDamageFactor>-0.15</IncomingDamageFactor>
+          <MeleeDodgeChance>-0.15</MeleeDodgeChance>
         </statOffsets>
         <capMods>
           <li>
@@ -590,12 +590,9 @@
       <li>
         <overrideLabel>Dragon Bond (Dawn Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
-          <MeleeHitChance>2</MeleeHitChance>
-          <MeleeDodgeChance>2</MeleeDodgeChance>
-          <AimingDelayFactor>-2</AimingDelayFactor>
-          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <SocialImpact>2</SocialImpact>
         </statOffsets>
         <capMods>
           <li>
@@ -636,7 +633,7 @@
       <li>
         <overrideLabel>Dragon Bond (Copper Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
           <MeleeHitChance>2</MeleeHitChance>
           <MeleeDodgeChance>2</MeleeDodgeChance>
@@ -677,12 +674,11 @@
     </comps>
     <description>Increases pawn global learning factor and research speed.</description>
     <stages>
-
       <!-- Base stage for bond -->
       <li>
         <overrideLabel>Dragon Bond (Pyrite Zaldrizes)</overrideLabel>
         <minSeverity>0</minSeverity>
-        <painFactor>0.5</painFactor>
+        <painFactor>-0.5</painFactor>
         <statOffsets>
           <MeleeHitChance>2</MeleeHitChance>
           <MeleeDodgeChance>2</MeleeDodgeChance>
@@ -700,6 +696,49 @@
       <!-- Bond Distance stage -->
       <li>
         <overrideLabel>Distant Dragon Bond (Pyrite Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Regal Zaldrizes (Silverwing) -->
+  <HediffDef>
+    <defName>Crows_DragonBondRegalZaldrizes</defName>
+    <label>Dragon Bond (Regal Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Regal Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>-0.5</painFactor>
+        <statOffsets>
+          <MedicalTendSpeed>2</MedicalTendSpeed>
+          <SurgerySuccessChanceFactor>2</SurgerySuccessChanceFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Regal Zaldrizes)</overrideLabel>
         <minSeverity>1</minSeverity>
         <capMods>
           <li>

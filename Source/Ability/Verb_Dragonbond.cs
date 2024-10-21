@@ -234,49 +234,6 @@ namespace Crows_DragonBond
                 Log.Message($"Dragon Color Name {dragon.def.defName}");
             }
 
-            // Check if the mod with the packageId is loaded.
-            bool isDragonModLoaded = ModLister.GetActiveModWithIdentifier("aurorankingslayer.asoiafdd") != null;
-
-            if (isDragonModLoaded)
-            {
-                // Assuming DragonModX has specific dragon types:
-                switch (dragon.def.defName)
-                {
-                    case "Bloodwyrm":
-                        return HediffDef.Named("Crows_DragonBondBloodwyrm");
-                    case "GoliathZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondGoliathZaldrizes");
-                    case "TopazZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondTopazZaldrizes");
-                    case "IvoryZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondIvoryZaldrizes");
-                    case "VerdantZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondVerdantZaldrizes");
-                    case "KunziteZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondKunziteZaldrizes");
-                    case "BloodstoneZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondBloodstoneZaldrizes");
-                    case "AuricZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondAuricZaldrizes");
-                    case "RubyZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondRubyZaldrizes");
-                    case "AgateZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondAgateZaldrizes");
-                    case "LapisZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondLapisZaldrizes");
-                    case "BronzeZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondBronzeZaldrizes");
-                    case "ArgentumZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondArgentumZaldrizes");
-                    case "DawnZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondDawnZaldrizes");
-                    case "CopperZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondCopperZaldrizes");
-                    case "PyriteZaldrizes":
-                        return HediffDef.Named("Crows_DragonBondPyriteZaldrizes");
-                }
-            }
-
             // Default switch for your original dragons
             switch (dragon.def.defName)
             {
@@ -304,6 +261,38 @@ namespace Crows_DragonBond
                     return HediffDef.Named("Crows_DragonBondTrue");
                 default:
                     return HediffDef.Named("Crows_DragonBondHediff");
+                case "Bloodwyrm":
+                    return HediffDef.Named("Crows_DragonBondBloodwyrm");
+                case "GoliathZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondGoliathZaldrizes");
+                case "TopazZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondTopazZaldrizes");
+                case "IvoryZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondIvoryZaldrizes");
+                case "VerdantZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondVerdantZaldrizes");
+                case "KunziteZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondKunziteZaldrizes");
+                case "BloodstoneZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondBloodstoneZaldrizes");
+                case "AuricZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondAuricZaldrizes");
+                case "RubyZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondRubyZaldrizes");
+                case "AgateZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondAgateZaldrizes");
+                case "LapisZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondLapisZaldrizes");
+                case "BronzeZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondBronzeZaldrizes");
+                case "ArgentumZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondArgentumZaldrizes");
+                case "DawnZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondDawnZaldrizes");
+                case "CopperZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondCopperZaldrizes");
+                case "PyriteZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondPyriteZaldrizes");
             }
         }
     }

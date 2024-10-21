@@ -17,9 +17,10 @@
         <Crafting>4</Crafting>
       </skillRequirements>
       <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
         <li>CraftingSpot</li>
       </recipeUsers>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <useIngredientsForColor>true</useIngredientsForColor>
     </recipeMaker>
     <costStuffCount>40</costStuffCount>

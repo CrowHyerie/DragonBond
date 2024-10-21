@@ -2,7 +2,7 @@
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>AuroranKingslayer's RimWorld of the Dragon (Addon for Dragon's Descent)</li>
+      <li>AuroranKingslayer's RimWorld of the Dragon</li>
     </mods>
 
     <match Class="PatchOperationSequence">
@@ -106,6 +106,33 @@
                 </value>
               </li>
 
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">DawnZaldrizes</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">CopperZaldrizes</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">PyriteZaldrizes</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">RegalZaldrizes</li>
+                </value>
+              </li>
 
               <!-- Eggs -->
               <li Class="PatchOperationAdd">
@@ -196,6 +223,27 @@
                 <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
                 <value>
                   <li MayRequire="aurorankingslayer.asoiafdd">EggArgentumZaldrizesFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">EggDawnZaldrizesFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">EggCopperZaldrizesFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">EggPyriteZaldrizesFertilized</li>
                 </value>
               </li>
             </operations>
