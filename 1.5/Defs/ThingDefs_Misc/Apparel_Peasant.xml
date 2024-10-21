@@ -16,10 +16,13 @@
       <skillRequirements>
         <Crafting>4</Crafting>
       </skillRequirements>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+      </recipeUsers>
       <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <useIngredientsForColor>true</useIngredientsForColor>
     </recipeMaker>
-    <costStuffCount>75</costStuffCount>
+    <costStuffCount>40</costStuffCount>
     <stuffCategories>
       <li>Fabric</li>
     </stuffCategories>
@@ -28,11 +31,11 @@
     </thingCategories>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
-      <WorkToMake>800</WorkToMake>
+      <WorkToMake>1600</WorkToMake>
       <Mass>0.25</Mass>
-      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.22</StuffEffectMultiplierInsulation_Cold>
-      <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
+      <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.5</EquipDelay>
     </statBases>
     <equippedStatOffsets>

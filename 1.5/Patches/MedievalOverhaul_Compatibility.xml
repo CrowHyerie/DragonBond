@@ -2,11 +2,11 @@
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>DankPyon.Medieval.Overhaul</li> <!-- Use the correct packageId from Medieval Overhaul -->
+      <li>Medieval Overhaul</li>
     </mods>
 
-    <!-- Match block with multiple operations -->
     <match Class="PatchOperationSequence">
+      <success>Always</success>
       <operations>
         <!-- Squire Armor Patch -->
         <li Class="PatchOperationReplace">
@@ -28,7 +28,7 @@
         <li Class="PatchOperationReplace">
           <xpath>Defs/ThingDef[defName="Crows_PeasantApparel"]/researchPrerequisites/li[text()="ComplexClothing"]</xpath>
           <value>
-            <li>DankPyon_Tailoring</li>
+            <li>DankPyon_LeatherTanning</li>
           </value>
         </li>
 

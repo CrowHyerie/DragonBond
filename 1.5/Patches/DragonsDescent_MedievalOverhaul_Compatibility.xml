@@ -2,7 +2,7 @@
 <Patch>
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>DankPyon.Medieval.Overhaul</li>
+      <li>Medieval Overhaul</li>
     </mods>
 
     <match Class="PatchOperationSequence">

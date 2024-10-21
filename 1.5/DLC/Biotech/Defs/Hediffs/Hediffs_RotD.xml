@@ -1,0 +1,713 @@
+<Defs>
+  <!-- Lapis Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondLapisZaldrizes</defName>
+    <label>Dragon Bond (Lapis Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Boosts work speed and crafting efficiency.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Lapis Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statFactors>
+          <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
+          <ConstructionSpeed>0.2</ConstructionSpeed>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Lapis Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Verdant Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondVerdantZaldrizes</defName>
+    <label>Dragon Bond (Verdant Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases medical skill, speeds up recovery from injuries and infections.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Verdant Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MedicalTendQuality>0.2</MedicalTendQuality>
+          <ImmunityGainSpeed>0.30</ImmunityGainSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Verdant Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Auric Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondAuricZaldrizes</defName>
+    <label>Dragon Bond (Auric Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Provides a mood boost and reduces mental break risk.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Auric Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <JoyGainFactor>0.2</JoyGainFactor>
+          <MentalBreakThreshold>-0.18</MentalBreakThreshold>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Auric Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Bloodwyrm -->
+  <HediffDef>
+    <defName>Crows_DragonBondBloodwyrm</defName>
+    <label>Dragon Bond (Bloodwyrm)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Enhances ranged combat abilities.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Bloodwyrm)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.15</AimingDelayFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Bloodwyrm)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Ivory Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondIvoryZaldrizes</defName>
+    <label>Dragon Bond (Ivory Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Raises taming chances and animal training success.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Ivory Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <TameAnimalChance>1.2</TameAnimalChance>
+          <TrainAnimalChance>1.2</TrainAnimalChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Dragon Bond (Ivory Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Argentum Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondArgentumZaldrizes</defName>
+    <label>Dragon Bond (Argentum Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases yield from resource gathering.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Argentum Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
+          <AnimalGatherYield>0.2</AnimalGatherYield>
+          <PlantHarvestYield>0.2</PlantHarvestYield>
+          <MiningYield>0.2</MiningYield>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Argentum Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Bloodstone Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondBloodstoneZaldrizes</defName>
+    <label>Dragon Bond (Bloodstone Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases melee damage and defense.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Bloodstone Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Bloodstone Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Kunzite Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondKunziteZaldrizes</defName>
+    <label>Dragon Bond (Kunzite Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases Psychic sensitivity and neural heat capacity.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Kunzite Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <PsychicSensitivity>0.8</PsychicSensitivity>
+          <PsychicEntropyMax>0.2</PsychicEntropyMax>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Kunzite Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Topaz Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondTopazZaldrizes</defName>
+    <label>Dragon Bond (Topaz Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Enhances social interactions, trade deals, and negotiations.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Topaz Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <NegotiationAbility>0.25</NegotiationAbility>
+          <ArrestSuccessChance>0.25</ArrestSuccessChance>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Topaz Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Agate Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondAgateZaldrizes</defName>
+    <label>Dragon Bond (Agate Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases movement speed and dodge chance in combat.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Agate Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MoveSpeed>0.4</MoveSpeed>
+          <MeleeDodgeChance>15</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Agate Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Bronze Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondBronzeZaldrizes</defName>
+    <label>Dragon Bond (Bronze Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Bronze Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <GlobalLearningFactor>0.75</GlobalLearningFactor>
+          <ResearchSpeed>1.15</ResearchSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Bronze Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Ruby Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondRubyZaldrizes</defName>
+    <label>Dragon Bond (Ruby Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Decreases pawn's need to eat and sleep.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Ruby Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <GlobalLearningFactor>3</GlobalLearningFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Ruby Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Goliath Zaldrizes -->
+  <HediffDef>
+    <defName>Crows_DragonBondGoliathZaldrizes</defName>
+    <label>Dragon Bond (Goliath Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Goliath Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+          <AimingDelayFactor>-2</AimingDelayFactor>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Goliath Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Dawn Zaldrizes (Morning) -->
+  <HediffDef>
+    <defName>Crows_DragonBondDawnZaldrizes</defName>
+    <label>Dragon Bond (Dawn Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Dawn Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+          <AimingDelayFactor>-2</AimingDelayFactor>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Dawn Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Copper Zaldrizes (Rhaegal) -->
+  <HediffDef>
+    <defName>Crows_DragonBondCopperZaldrizes</defName>
+    <label>Dragon Bond (Copper Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Copper Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+          <AimingDelayFactor>-2</AimingDelayFactor>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Copper Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Pyrite Zaldrizes (Viserion) -->
+  <HediffDef>
+    <defName>Crows_DragonBondPyriteZaldrizes</defName>
+    <label>Dragon Bond (Pyrite Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases pawn global learning factor and research speed.</description>
+    <stages>
+
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Pyrite Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>0.5</painFactor>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+          <AimingDelayFactor>-2</AimingDelayFactor>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Pyrite Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
