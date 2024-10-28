@@ -17,8 +17,8 @@
         <minSeverity>0</minSeverity>
         <painFactor>-0.5</painFactor>
         <statFactors>
-          <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
-          <ConstructionSpeed>0.2</ConstructionSpeed>
+          <WorkSpeedGlobal>-0.35</WorkSpeedGlobal>
+          <ConstructionSpeed>-0.2</ConstructionSpeed>
         </statFactors>
         <capMods>
           <li>
@@ -182,7 +182,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Raises taming chances and animal training success.</description>
+    <description>Raises taming chances, animal training success and speed.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -273,7 +273,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases melee damage and defense.</description>
+    <description>Increases melee hit chance.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -394,7 +394,7 @@
     </stages>
   </HediffDef>
 
-  <!-- Agate Zaldrizes -->
+  <!-- Agate Zaldrizes (Seasmoke)-->
   <HediffDef>
     <defName>Crows_DragonBondAgateZaldrizes</defName>
     <label>Dragon Bond (Agate Zaldrizes)</label>
@@ -451,7 +451,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's defense and reduces aiming delay factor.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -495,7 +495,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Decreases pawn's need to eat and sleep.</description>
+    <description>Decreases pawn's movement speed and social impact.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -539,7 +539,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's defense and dodging chance.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -583,7 +583,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's social impact.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -626,7 +626,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's combat abilities.</description>
     <stages>
 
       <!-- Base stage for bond -->
@@ -672,7 +672,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's combat abilities.</description>
     <stages>
       <!-- Base stage for bond -->
       <li>
@@ -717,7 +717,7 @@
         <targetRelation>Crows_DragonRiderBond</targetRelation>
       </li>
     </comps>
-    <description>Increases pawn global learning factor and research speed.</description>
+    <description>Increases pawn's medical tend speed and surgery success factor.</description>
     <stages>
       <!-- Base stage for bond -->
       <li>
@@ -727,6 +727,95 @@
         <statOffsets>
           <MedicalTendSpeed>2</MedicalTendSpeed>
           <SurgerySuccessChanceFactor>2</SurgerySuccessChanceFactor>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Regal Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Mist Zaldrizes (Iconic Seasmoke) -->  
+  <HediffDef>
+    <defName>Crows_DragonBondMistZaldrizes</defName>
+    <label>Dragon Bond (Mist Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Increases movement speed and dodge chance in combat.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Mist Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>-0.5</painFactor>
+        <statOffsets>
+          <MoveSpeed>1</MoveSpeed>
+          <MeleeDodgeChance>15</MeleeDodgeChance>
+        </statOffsets>
+        <statFactors>
+          <PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.15</offset>
+          </li>
+        </capMods>
+      </li>
+
+      <!-- Bond Distance stage -->
+      <li>
+        <overrideLabel>Distant Dragon Bond (Regal Zaldrizes)</overrideLabel>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Jade Zaldrizes (Moondancer) -->
+  <HediffDef>
+    <defName>Crows_DragonBondJadeZaldrizes</defName>
+    <label>Dragon Bond (Jade Zaldrizes)</label>
+    <hediffClass>Verse.HediffWithComps</hediffClass>
+    <comps>
+      <li Class="Crows_DragonBond.HediffCompProperties_DragonBondLink">
+        <targetRelation>Crows_DragonRiderBond</targetRelation>
+      </li>
+    </comps>
+    <description>Enhances speed and combat abilities.</description>
+    <stages>
+      <!-- Base stage for bond -->
+      <li>
+        <overrideLabel>Dragon Bond (Mist Zaldrizes)</overrideLabel>
+        <minSeverity>0</minSeverity>
+        <painFactor>-0.5</painFactor>
+        <statOffsets>
+          <MoveSpeed>0.5</MoveSpeed>
+          <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
         <capMods>
           <li>

@@ -215,7 +215,6 @@ namespace Crows_DragonBond
                     Log.Error($"Tried to apply a gene to {rider.Name}, but they do not have a gene set.");
                 }
             }
-
             // Apply the bond Hediff to the dragon
             if (dragon.RaceProps.Animal)
             {
@@ -261,6 +260,7 @@ namespace Crows_DragonBond
                     return HediffDef.Named("Crows_DragonBondTrue");
                 default:
                     return HediffDef.Named("Crows_DragonBondHediff");
+                //Rimworld of the Dragon
                 case "Bloodwyrm":
                     return HediffDef.Named("Crows_DragonBondBloodwyrm");
                 case "GoliathZaldrizes":
@@ -293,7 +293,96 @@ namespace Crows_DragonBond
                     return HediffDef.Named("Crows_DragonBondCopperZaldrizes");
                 case "PyriteZaldrizes":
                     return HediffDef.Named("Crows_DragonBondPyriteZaldrizes");
+                case "RegalZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondPyriteZaldrizes");
+                case "MistZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondMistZaldrizes");
+                case "JadeZaldrizes":
+                    return HediffDef.Named("Crows_DragonBondJadeZaldrizes");
             }
         }
+
+        //Dragon Bond Abilities
+        public static AbilityDef GetDragonBondAbilityForPawn(Pawn dragon)
+        {
+            if (Prefs.DevMode)
+            {
+                Log.Message($"Dragon Color Name {dragon.def.defName}");
+            }
+
+            // Check if the mod with the packageId is loaded.
+            bool isDragonModLoaded = ModLister.HasActiveModWithName("aurorankingslayer.asoiafdd");
+
+            if (isDragonModLoaded)
+            {
+                switch (dragon.def.defName)
+                {
+                    case "Bloodwyrm":
+                        return DefDatabase<AbilityDef>.GetNamed("DD_DragonSpit_Fire");
+                    case "GoliathZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlack");
+                    case "TopazZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityGold");
+                    case "IvoryZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityWhite");
+                    case "VerdantZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityGreen");
+                    case "KunziteZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityJade");
+                    case "BloodstoneZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlack");
+                    case "AuricZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityGold");
+                    case "RubyZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("DD_DragonBreath_Fire");
+                    case "AgateZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilitySilver");
+                    case "LapisZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlue");
+                    case "BronzeZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityTrue");
+                    case "ArgentumZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilitySilver");
+                    case "DawnZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityPurple");
+                    case "CopperZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlue");
+                    case "PyriteZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityYellow");
+                    case "RegalZaldrizes":
+                        return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityPurple");
+                }
+            }
+
+            // Default switch for your original dragons
+            switch (dragon.def.defName)
+            {
+                case "Blue_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlue");
+                case "Green_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityGreen");
+                case "Purple_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityPurple");
+                case "Red_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("DD_DragonSpit_Fire");
+                case "White_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityWhite");
+                case "Yellow_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityYellow");
+                case "Black_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityBlack");
+                case "Jade_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityJade");
+                case "Gold_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityGold");
+                case "Silver_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilitySilver");
+                case "True_Dragon":
+                    return DefDatabase<AbilityDef>.GetNamed("Crows_DragonBondAbilityTrue");
+                default:
+                    return DefDatabase<AbilityDef>.GetNamed("DD_DragonBreath_Fire");
+            }
+        }
+
     }
 }

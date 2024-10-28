@@ -75,7 +75,6 @@
       <li>Crows_DraconicTrader</li>
     </visitorTraderKinds>
     <baseTraderKinds>
-      <li>Base_Neolithic_Standard</li>
       <li>Crows_DraconicTrader</li>
     </baseTraderKinds>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
@@ -283,7 +282,6 @@
       <li>Crows_DraconicTrader</li>
     </visitorTraderKinds>
     <baseTraderKinds>
-      <li>Base_Neolithic_Standard</li>
       <li>Crows_DraconicTrader</li>
     </baseTraderKinds>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>

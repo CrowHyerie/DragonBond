@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using RimWorld;
-using Verse;
-
-namespace Crows_DragonBond
-{
-    using System;
+﻿    using System;
     using System.Collections.Generic;
     using RimWorld;
     using Verse;
@@ -56,7 +49,7 @@ namespace Crows_DragonBond
             }
         }
     }
-}
+
 
 
 // Class to handle delayed goodwill impacts for factions.

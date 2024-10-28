@@ -64,8 +64,8 @@
           <minSeverity>0</minSeverity>
           <painFactor>-0.5</painFactor>
           <statFactors>
-            <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
-            <ConstructionSpeed>0.2</ConstructionSpeed>
+            <WorkSpeedGlobal>-0.35</WorkSpeedGlobal>
+            <ConstructionSpeed>-0.2</ConstructionSpeed>
           </statFactors>
           <capMods>
             <li>

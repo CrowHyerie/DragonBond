@@ -102,21 +102,27 @@ namespace Crows_DragonBond
             {
                 Log.Message($"TearDragonBond: Dragon {dragon.NameShortColored} has died. Removing bond and handling human's reaction.");
             }
+
             // Remove bond from the dragon's corpse
             RemoveBondHediffFromCorpse(dragon);
 
-            // Apply the catatonic breakdown to the human pawn due to the bond tear
-            ApplyCatatonicBreakdownToPawn(pawn);
+            // Apply the catatonic breakdown to the human pawn if the setting is enabled
+            if (DragonBondMod.settings.applyCatatonicBreakdown)
+            {
+                ApplyCatatonicBreakdownToPawn(pawn);
+            }
 
-            // Set the human's mood to zero
-            SetPawnMoodToZero(pawn);
+            // Set the human's mood to zero if the setting is enabled
+            if (DragonBondMod.settings.setPawnMoodToZero)
+            {
+                SetPawnMoodToZero(pawn);
+            }
 
             // Remove bond from the living human only if it hasn't been removed yet
             RemoveBondHediffFromLiving(pawn);
 
             // Remove the Draconic Regeneration gene from the rider pawn
             RemoveDraconicRegenerationGene(pawn);
-
         }
 
         public static void HandleHumanDeath(Pawn pawn, Pawn dragon)
@@ -125,16 +131,20 @@ namespace Crows_DragonBond
             {
                 Log.Message($"TearDragonBond: Human pawn {pawn.NameShortColored} has died. Removing bond and handling dragon's reaction.");
             }
+
             // Remove bond from the human's corpse
             RemoveBondHediffFromCorpse(pawn);
 
-            // Handle dragon leaving the faction
-            HandleDragonLeaveFaction(dragon);
+            // Handle dragon leaving the faction if the setting is enabled
+            if (DragonBondMod.settings.handleDragonLeaveFaction)
+            {
+                HandleDragonLeaveFaction(dragon);
+            }
 
             // Remove bond from the living dragon only if it hasn't been removed yet
             RemoveBondHediffFromLiving(dragon);
-
         }
+
 
         private static void RemoveBondHediffFromLiving(Pawn pawn)
         {

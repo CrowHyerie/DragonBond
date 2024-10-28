@@ -13,8 +13,13 @@ public class DragonBondGeneUpdater : MapComponent
         ApplyDraconicRegenerationGeneToAllBondedPawns();
     }
 
-    private void ApplyDraconicRegenerationGeneToAllBondedPawns()
+    public void ApplyDraconicRegenerationGeneToAllBondedPawns()
     {
+        if (!Crows_DragonBond.DragonBondMod.settings.applyDraconicRegenerationGene) // Check setting before applying gene
+        {
+            return;
+        }
+
         if (Prefs.DevMode)
         {
             Log.Message("DragonBondGeneUpdater: Checking all pawns for DragonBond...");
@@ -51,18 +56,9 @@ public class DragonBondGeneUpdater : MapComponent
                     pawn.genes.AddGene(geneDef, true); // true for Xenogene
                     if (Prefs.DevMode)
                     {
-                        if (Prefs.DevMode)
-                        {
-                            Log.Message($"DragonBondGeneUpdater: Added Draconic Regeneration gene to {pawn.Name}.");
-                        }
+                        Log.Message($"DragonBondGeneUpdater: Added Draconic Regeneration gene to {pawn.Name}.");
                     }
                 }
-                else
-                {
-                }
-            }
-            else
-            {
             }
         }
 

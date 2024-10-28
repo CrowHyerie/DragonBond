@@ -18,6 +18,11 @@
       </skillRequirements>
       <researchPrerequisite>ComplexClothing</researchPrerequisite>
       <useIngredientsForColor>true</useIngredientsForColor>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
     </recipeMaker>
     <costStuffCount>120</costStuffCount>
     <stuffCategories>

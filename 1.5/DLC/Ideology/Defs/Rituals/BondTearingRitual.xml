@@ -1,0 +1,125 @@
+<Defs>
+  <!-- Precept -->
+  <PreceptDef>
+    <defName>Crows_TearDragonBondPrecept</defName>
+    <label>dragon bond tearing ritual</label>
+    <description>This ritual forcebly tears a bond between a Dragon and a Pawn.</description>
+    <iconPath>UI/Rituals/TearRitual</iconPath>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>Crows_TearDragonBondPattern</ritualPatternBase>
+    <classic>true</classic>
+    <visible>true</visible>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <useRepeatPenalty>false</useRepeatPenalty>
+    <selectionWeight>1.0</selectionWeight>
+    <capitalizeAsTitle>false</capitalizeAsTitle>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+  </PreceptDef>
+
+  <!-- Pattern -->
+  <RitualPatternDef>
+    <defName>Crows_TearDragonBondPattern</defName>
+    <ritualBehavior>Crows_TearDragonBondBehavior</ritualBehavior>
+    <ritualTargetFilter>AltarOrRitualSpot</ritualTargetFilter>
+    <ritualObligationTargetFilter>RitualSpotOrAltar</ritualObligationTargetFilter>
+    <ritualExplanation>Ritual will increase the participants' corruption need by 10%. If the need gets over 100%, they risk going mad from the eldritch incantations.</ritualExplanation>
+    <ritualOutcomeEffect>Crows_TearDragonBondOutcome</ritualOutcomeEffect>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+
+  <!-- Behavior -->
+  <RitualBehaviorDef>
+    <defName>Crows_TearDragonBondBehavior</defName>
+    <durationTicks>5000</durationTicks>
+    <preceptRequirements>
+      <li Class="PreceptRequirement_Altar"/>
+    </preceptRequirements>
+    <roles Inherit="False">
+      <li Class="RitualRoleTag">
+        <label>speaker</label>
+        <id>leader</id>
+        <tag>Leader</tag>
+        <precept>IdeoRole_Leader</precept>
+        <required>True</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>False</countsAsParticipant>
+      </li>
+      <li Class="Crows_DragonBond.RitualRole_BondedPawn">
+        <label>bonded pawn</label>
+        <categoryLabel>bonded pawn</categoryLabel>
+        <missingDesc>bonded pawn</missingDesc>
+        <id>bondedPawn</id>
+        <mergeId>bondedPawn</mergeId>
+        <required>True</required>
+        <maxCount>20</maxCount>
+        <ignoreBleeding>true</ignoreBleeding>
+        <countsAsParticipant>true</countsAsParticipant>
+      </li>
+    </roles>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <spectateDistanceOverride>3~5</spectateDistanceOverride>
+        <essential>True</essential>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>leader</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_DateRitual</speakerInteraction>
+            <customPositions>
+
+              <li Class="RitualPosition_BesideThing" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+  
+  <!-- Outcome -->
+  <RitualOutcomeEffectDef>
+    <defName>Crows_TearDragonBondOutcome</defName>
+    <description>The bonded Pawn will lose their bond after this Ritual.</description>
+    <workerClass>Crows_DragonBond.RitualOutcomeEffectWorker_DragonBondTear</workerClass>
+    <outcomeChances>
+      <li>
+        <label>Painful</label>
+        <chance>0.05</chance>
+        <memory>Crows_PainfulSeverance</memory>
+        <description>To witness the bond torn so cruelly felt like a wound shared by all. There was a somber silence as if even the air around us held its breath in sorrow.</description>
+        <positivityIndex>-5</positivityIndex>
+      </li>
+      <li>
+        <label>Mediocre</label>
+        <chance>0.15</chance>
+        <memory>Crows_MediocreParting</memory>
+        <description>The ritual felt incomplete, as if the bond had slipped away rather than been properly honored. There’s a lingering unease, like the loss was half-hearted and unresolved.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Bittersweet</label>
+        <chance>0.6</chance>
+        <memory>Crows_BittersweetRelease</memory>
+        <description>Though the bond has been parted, there’s a sense of peace in the air. We feel both the pain of loss and the gratitude for a bond cherished, leaving us quietly contemplative.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+      <li>
+        <label>Reverent</label>
+        <chance>0.2</chance>
+        <memory>Crows_SacredFarewell</memory>
+        <description>As the bond dissolved, we were enveloped by a deep reverence. There is a sacred beauty in this farewell, one that fills us with awe and respect for the strength of their connection.</description>
+        <positivityIndex>5</positivityIndex>
+      </li>
+    </outcomeChances>
+
+  </RitualOutcomeEffectDef>
+
+</Defs>

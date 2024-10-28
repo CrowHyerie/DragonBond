@@ -1,0 +1,57 @@
+<Defs>
+<ThoughtDef>
+  <defName>Crows_PainfulSeverance</defName>
+  <thoughtClass>Thought_AttendedRitual</thoughtClass>
+  <durationDays>6</durationDays>
+  <stackLimit>3</stackLimit>
+  <stages>
+    <li>
+      <label>painful bond tearing</label>
+      <description>To witness the bond torn so cruelly felt like a wound shared by all. There was a somber silence as if even the air around us held its breath in sorrow.</description>
+      <baseMoodEffect>-5</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+<ThoughtDef>
+  <defName>Crows_MediocreParting</defName>
+  <thoughtClass>Thought_AttendedRitual</thoughtClass>
+  <durationDays>6</durationDays>
+  <stackLimit>3</stackLimit>
+  <stages>
+    <li>
+      <label>mediocre bond tearing</label>
+      <description>The ritual felt incomplete, as if the bond had slipped away rather than been properly honored. There’s a lingering unease, like the loss was half-hearted and unresolved.</description>
+      <baseMoodEffect>-2</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+<ThoughtDef>
+  <defName>Crows_BittersweetRelease</defName>
+  <thoughtClass>Thought_AttendedRitual</thoughtClass>
+  <durationDays>6</durationDays>
+  <stackLimit>3</stackLimit>
+  <stages>
+    <li>
+      <label>bittersweet bond tearing</label>
+      <description>Though the bond has been parted, there’s a sense of peace in the air. We feel both the pain of loss and the gratitude for a bond cherished, leaving us quietly contemplative.</description>
+      <baseMoodEffect>2</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+
+<ThoughtDef>
+  <defName>Crows_SacredFarewell</defName>
+  <thoughtClass>Thought_AttendedRitual</thoughtClass>
+  <durationDays>6</durationDays>
+  <stackLimit>3</stackLimit>
+  <stages>
+    <li>
+      <label>reverent bond tearing</label>
+      <description>As the bond dissolved, we were enveloped by a deep reverence. There is a sacred beauty in this farewell, one that fills us with awe and respect for the strength of their connection.</description>
+      <baseMoodEffect>5</baseMoodEffect>
+    </li>
+  </stages>
+</ThoughtDef>
+</Defs>

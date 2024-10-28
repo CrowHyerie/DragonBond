@@ -13,5 +13,6 @@
   <CrowsDragonBond.DragonManhunter>The dragon recoils in fury; the bond attempt has failed, and it’s now a manhunter!</CrowsDragonBond.DragonManhunter>
   <CrowsDragonBond.IgnoredBond>The dragon {1} ignores {0}'s attempt to bond.</CrowsDragonBond.IgnoredBond>
   <CrowsDragonBond.BondExists>You are already bonded to a Dragon!</CrowsDragonBond.BondExists>
+  <CrowsDragonBond.RitualRoleBondedPawn>Pawn must be Dragon-bonded to participate in this ritual.</CrowsDragonBond.RitualRoleBondedPawn>
 </LanguageData>
 

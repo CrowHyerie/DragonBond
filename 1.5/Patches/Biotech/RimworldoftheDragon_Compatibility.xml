@@ -134,6 +134,20 @@
                 </value>
               </li>
 
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">MistZaldrizes</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">JadeZaldrizes</li>
+                </value>
+              </li>
+              
               <!-- Eggs -->
               <li Class="PatchOperationAdd">
                 <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
@@ -244,6 +258,20 @@
                 <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
                 <value>
                   <li MayRequire="aurorankingslayer.asoiafdd">EggPyriteZaldrizesFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">EggMistZaldrizesFertilized</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="aurorankingslayer.asoiafdd">EggJadeZaldrizesFertilized</li>
                 </value>
               </li>
             </operations>
