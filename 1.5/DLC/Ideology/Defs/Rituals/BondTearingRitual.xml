@@ -2,8 +2,8 @@
   <!-- Precept -->
   <PreceptDef>
     <defName>Crows_TearDragonBondPrecept</defName>
-    <label>dragon bond tearing ritual</label>
-    <description>This ritual forcebly tears a bond between a Dragon and a Pawn.</description>
+    <label>bond tearing ritual</label>
+    <description>This ritual tears a bond between a Dragon and a Pawn.</description>
     <iconPath>UI/Rituals/TearRitual</iconPath>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
@@ -13,8 +13,11 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <useRepeatPenalty>false</useRepeatPenalty>
     <selectionWeight>1.0</selectionWeight>
-    <capitalizeAsTitle>false</capitalizeAsTitle>
+    <capitalizeAsTitle>true</capitalizeAsTitle>
     <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <requiredMemes>
+      <li>Crows_DraconicLegacy</li>
+    </requiredMemes>
   </PreceptDef>
 
   <!-- Pattern -->
@@ -23,7 +26,7 @@
     <ritualBehavior>Crows_TearDragonBondBehavior</ritualBehavior>
     <ritualTargetFilter>AltarOrRitualSpot</ritualTargetFilter>
     <ritualObligationTargetFilter>RitualSpotOrAltar</ritualObligationTargetFilter>
-    <ritualExplanation>Ritual will increase the participants' corruption need by 10%. If the need gets over 100%, they risk going mad from the eldritch incantations.</ritualExplanation>
+    <ritualExplanation>Ritual tears a bond between a Dragon and a Pawn without any of the regular side effects.</ritualExplanation>
     <ritualOutcomeEffect>Crows_TearDragonBondOutcome</ritualOutcomeEffect>
     <alwaysStartAnytime>true</alwaysStartAnytime>
   </RitualPatternDef>
@@ -41,7 +44,7 @@
         <id>leader</id>
         <tag>Leader</tag>
         <precept>IdeoRole_Leader</precept>
-        <required>True</required>
+        <required>false</required>
         <maxCount>1</maxCount>
         <countsAsParticipant>False</countsAsParticipant>
       </li>
@@ -53,7 +56,6 @@
         <mergeId>bondedPawn</mergeId>
         <required>True</required>
         <maxCount>20</maxCount>
-        <ignoreBleeding>true</ignoreBleeding>
         <countsAsParticipant>true</countsAsParticipant>
       </li>
     </roles>
@@ -75,8 +77,14 @@
             <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
             <speakerInteraction>Speech_DateRitual</speakerInteraction>
             <customPositions>
-
               <li Class="RitualPosition_BesideThing" />
+            </customPositions>
+          </li>
+          <li>
+            <roleId>bondedPawn</roleId>
+            <dutyDef>ArriveToCell</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_InFrontThingCenter"/>
             </customPositions>
           </li>
         </roleBehaviors>
@@ -87,7 +95,44 @@
   <!-- Outcome -->
   <RitualOutcomeEffectDef>
     <defName>Crows_TearDragonBondOutcome</defName>
-    <description>The bonded Pawn will lose their bond after this Ritual.</description>
+    <description>The bonded Pawn and their Dragon will lose their bond after this Ritual.</description>
+    <comps>
+      <li Class="RitualOutcomeComp_RoomStat">
+        <label>room impressiveness</label>
+        <statDef>Impressiveness</statDef>
+        <curve>
+          <points>
+            <li>0,  0</li>
+            <li>50,  0.1</li>
+            <li>120, 0.2</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.3)</li>
+            <li>(10, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnStatScaled">
+        <label>{PAWN_labelShort}'s social impact</label>
+        <labelAbstract>speaker's social impact</labelAbstract>
+        <roleId>leader</roleId>
+        <statDef>SocialImpact</statDef>
+        <curve>
+          <points>
+            <li>(0.2,  0.0)</li>
+            <li>(0.6,  0.18)</li>
+            <li>(1.0, 0.25)</li>
+            <li>(1.5, 0.3)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
     <workerClass>Crows_DragonBond.RitualOutcomeEffectWorker_DragonBondTear</workerClass>
     <outcomeChances>
       <li>

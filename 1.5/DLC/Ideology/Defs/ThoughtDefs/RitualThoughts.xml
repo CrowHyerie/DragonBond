@@ -1,4 +1,5 @@
 <Defs>
+  <!-- Bond Tearing Ritual -->
 <ThoughtDef>
   <defName>Crows_PainfulSeverance</defName>
   <thoughtClass>Thought_AttendedRitual</thoughtClass>
@@ -54,4 +55,62 @@
     </li>
   </stages>
 </ThoughtDef>
+  
+  <!-- Pyre Funeral -->
+
+  <ThoughtDef>
+    <defName>Crows_SorrowfulPyreFuneral</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>sorrowful pyre funeral</label>
+        <description>A disappointing, empty ceremony; the flames barely touched the departed’s memory, and whispers of discontent linger in the air. Few felt any peace from the farewell.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Crows_MutedPyreFuneral</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>muted pyre funeral</label>
+        <description>A quiet, unremarkable ceremony; the fire held steady, yet there was no special spark or blessing. A respectful farewell, though the memory feels incomplete.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Crows_HonoredPyreFuneral</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>honored pyre funeral</label>
+        <description>A dignified, respectful farewell; the flames rose with grace, and there was a sense that the departed’s spirit left in calm and honor. Many left feeling at peace with the passing.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Crows_RadiantPyreFuneral</defName>
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <stages>
+      <li>
+        <label>radiant pyre funeral</label>
+        <description>A deeply moving, unforgettable send-off; the flames roared with a beauty only dragons could inspire, and warmth lingered in the hearts of those present. The departed’s memory feels enshrined in fire, as it should be.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

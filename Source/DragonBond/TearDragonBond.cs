@@ -145,6 +145,21 @@ namespace Crows_DragonBond
             RemoveBondHediffFromLiving(dragon);
         }
 
+        public static void HandleRitualBond(Pawn pawn, Pawn dragon)
+        {
+            if (Prefs.DevMode)
+            {
+                Log.Message($"TearDragonBond: Ritual was started. Removing bond from both Pawn and Dragon.");
+            }
+
+            RemoveBondHediffFromLiving(pawn);
+
+            RemoveBondHediffFromLiving(dragon);
+
+            RemoveDraconicRegenerationGene(pawn);
+
+            MarkBondAsTorn(pawn, dragon);
+        }
 
         private static void RemoveBondHediffFromLiving(Pawn pawn)
         {

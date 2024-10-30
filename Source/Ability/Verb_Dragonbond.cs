@@ -2,6 +2,7 @@
 using RimWorld;
 using Verse.Sound;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Crows_DragonBond
 {
@@ -41,7 +42,7 @@ namespace Crows_DragonBond
             Pawn targetPawn = (Pawn)currentTarget.Thing;
 
             // Check if the caster already has a bond, and disable the ability if true
-            if (HasExistingBond(casterPawn))
+            if (HasDragonBond(casterPawn))
             {
                 Messages.Message("CrowsDragonBond.BondExists".Translate(), MessageTypeDefOf.RejectInput, false);
                 this.ability.StartCooldown(60000); // Apply cooldown on success
@@ -126,26 +127,34 @@ namespace Crows_DragonBond
         }
 
         // Check if the caster already has a bond (disables ability if true)
-        private bool HasExistingBond(Pawn casterPawn)
+        private bool HasDragonBond(Pawn pawn)
         {
-            // Retrieve the first bonded dragon (if any)
-            Pawn bondedDragon = casterPawn.relations.GetFirstDirectRelationPawn(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"));
+            // Retrieve the ModExtension from AbilityDef to check dragon bonding status
+            ModExtension_Crows_DragonBond modExt = DefDatabase<AbilityDef>
+                .GetNamed("Crows_DragonBondAbility")
+                .GetModExtension<ModExtension_Crows_DragonBond>();
 
-            // Check if the bonded dragon is null (no bond exists) or if the dragon is dead
-            if (bondedDragon == null || bondedDragon.Dead)
-            {
-                // Optionally, remove the dead dragon bond relation
-                if (bondedDragon != null && bondedDragon.Dead)
-                {
-                    casterPawn.relations.RemoveDirectRelation(DefDatabase<PawnRelationDef>.GetNamed("Crows_DragonRiderBond"), bondedDragon);
-                }
-                return false; // No valid bond exists
-            }
+            if (modExt == null || modExt.allowedAnimals == null)
+                return false;
 
-            // Return true if a bond exists with a living dragon
+            // Check if the pawn has a bonded dragon in their relations
+            bool hasBondedDragon = pawn.relations.DirectRelations
+                .Any(rel => rel.def == PawnRelationDefOf.Bond && modExt.allowedAnimals.Contains(rel.otherPawn.def));
+
+            if (!hasBondedDragon)
+                return false;
+
+            // Check if the pawn still has the Dragon Bond HediffComp (bond could have been broken)
+            HediffComp_DragonBondLink bondComp = pawn.health?.hediffSet?.GetAllComps()
+                .OfType<HediffComp_DragonBondLink>()
+                .FirstOrDefault();
+
+            // If the bondComp is null, the bond has been severed
+            if (bondComp == null)
+                return false;
+
             return true;
         }
-
 
         // Custom failure behavior where the dragon ignores the pawn
         private void DragonIgnoresPawn(Pawn pawn, Pawn dragon)
@@ -233,7 +242,7 @@ namespace Crows_DragonBond
                 Log.Message($"Dragon Color Name {dragon.def.defName}");
             }
 
-            // Default switch for your original dragons
+            // Default switch for dragons
             switch (dragon.def.defName)
             {
                 case "Blue_Dragon":

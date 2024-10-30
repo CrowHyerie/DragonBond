@@ -1,0 +1,290 @@
+<Defs>
+
+  <!-- Precept -->
+  <PreceptDef>
+    <defName>Crows_PyreFuneralPrecept</defName>
+    <label>pyre funeral</label>
+    <description>A gathering to witness the cremation of a beloved friend.</description>
+    <iconPath>UI/Rituals/PyreFuneral</iconPath>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <ritualPatternBase>Crows_PyreFuneralPattern</ritualPatternBase>
+		<allowDuplicates>false</allowDuplicates>
+		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+		<ignoreNameUniqueness>true</ignoreNameUniqueness>
+		<selectionWeight>1.0</selectionWeight>
+		<displayOrderInImpact>100</displayOrderInImpact>
+		<impact>Medium</impact>
+		<ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+		<receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <extraTextPawnDeathLetter>{PAWN_nameDef} should be cremated and their dust scattered so {PAWN_possessive} friends and family can move on.</extraTextPawnDeathLetter>
+  		<modExtensions>
+		<li Class="AlphaMemes.FuneralPreceptExtension">
+			<isColonistFuneral>true</isColonistFuneral>
+			<addNoCorpseFuneral>true</addNoCorpseFuneral>
+			<_weighting>100</_weighting>
+      <associatedMemes>
+        <li>
+          <key>Crows_DraconicLegacy</key>
+          <value>100</value>
+        </li>
+      </associatedMemes>
+			<allowAnimals>true</allowAnimals>			
+			<animalObligationTrigger Class="AlphaMemes.RitualObiligationTrigger_Animals">
+				<bondedAnimals>true</bondedAnimals>
+				<veneratedAnimals>true</veneratedAnimals>
+				<namedanimals>false</namedanimals>
+				<allAnimals>false</allAnimals>
+				<animalConflicts Class="AlphaMemes.FuneralFramework_SpecialConflicts">
+					<conflictingMemes>
+						<li>HumanPrimacy</li>
+					</conflictingMemes>
+				</animalConflicts>
+			</animalObligationTrigger>
+		</li>
+		</modExtensions>
+	</PreceptDef>
+
+  <!-- Ritual Pattern -->
+  <RitualPatternDef>
+    <defName>Crows_PyreFuneralPattern</defName>
+    <nameMaker>Crows_NamerPyreFuneral</nameMaker>
+    <ritualExpectedDesc>You can hold a {IDEOLIGION_adjective} funeral for {PAWN_nameDef}.</ritualExpectedDesc>
+    <ritualExpectedDescNoAdjective>You can hold a funeral for {PAWN_nameDef}.</ritualExpectedDescNoAdjective>
+    <ritualObligationTriggers>
+      <li Class="RitualObligationTrigger_MemberDiedProperties">
+        <mustBePlayerIdeo>true</mustBePlayerIdeo>
+      </li>
+    </ritualObligationTriggers>
+    <ritualObligationTargetFilter>Crows_PyreFuneralObligation</ritualObligationTargetFilter>
+    <ritualBehavior>Crows_PyreFuneralBehavior</ritualBehavior>
+    <ritualOutcomeEffect>Crows_PyreFuneralOutcome</ritualOutcomeEffect>
+    <playsIdeoMusic>true</playsIdeoMusic>
+  </RitualPatternDef>
+
+  <!-- Behavior -->
+  <RitualBehaviorDef>
+    <defName>Crows_PyreFuneralBehavior</defName>
+    <durationTicks>5000</durationTicks>
+    <workerClass>AlphaMemes.RitualBehaviorWorker_FuneralFramework</workerClass>
+    <spectatorFilter Class="AlphaMemes.RitualRoleFuneralCorpse_RitualSpectatorFilterNotCorpse">
+      <description>Spectators must be alive.</description>
+    </spectatorFilter>
+    <roles>
+      <li Class="AlphaMemes.RitualRoleFuneralCorpse">
+        <label>Corpse</label>
+        <id>AM_RitualRoleCorpse</id>
+        <maxCount>1</maxCount>
+        <allowOtherIdeos>false</allowOtherIdeos>
+        <allowNonAggroMentalState>true</allowNonAggroMentalState>
+        <required>True</required>
+        <corpse>True</corpse>
+        <countsAsParticipant>False</countsAsParticipant>
+      </li>
+      <li Class="RitualRoleTag">
+        <label>speaker</label>
+        <id>moralist</id>
+        <precept>IdeoRole_Moralist</precept>
+        <tag>Moralist</tag>
+        <maxCount>1</maxCount>
+        <substitutable>true</substitutable>
+        <required>True</required>
+        <countsAsParticipant>False</countsAsParticipant>
+        <allowChild>true</allowChild>
+        <mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
+      </li>
+      <!-- <li Class="Crows_DragonBond.RitualRole_BondedDragon">
+        <label>dragon</label>
+        <categoryLabel>dragon</categoryLabel>
+        <missingDesc>dragon</missingDesc>
+        <id>dragon</id>
+        <mergeId>dragon</mergeId>
+        <required>True</required>
+        <maxCount>20</maxCount>
+        <countsAsParticipant>false</countsAsParticipant>
+        <mustBeAbleToReachTarget>True</mustBeAbleToReachTarget>
+      </li>  -->
+      <li Class="RitualRoleColonist">
+        <label>crafter</label>
+        <id>AM_Crafter</id>
+        <maxCount>1</maxCount>
+        <allowOtherIdeos>false</allowOtherIdeos>
+        <required>false</required>
+        <countsAsParticipant>true</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <defaultDuty>Spectate</defaultDuty>
+        <targetId>AM_RitualRoleCorpse</targetId>
+        <failTriggers>
+          <li Class="AlphaMemes.StageFailTrigger_StuffNotReachable">
+            <takerId>AM_Crafter</takerId>
+            <desc>Selected stuff is not reachable</desc>
+            <allowanceTicks>500</allowanceTicks>
+          </li>
+        </failTriggers>
+        <endTriggers>
+          <li Class="StageEndTrigger_RolesArrived">
+            <roleIds>
+              <li>moralist</li>
+              <li>AM_Crafter</li>
+            </roleIds>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>moralist</roleId>
+            <dutyDef>AM_DeliverCorpseToCellDuty</dutyDef>
+          </li>
+          <li>
+            <roleId>AM_Crafter</roleId>
+            <dutyDef>AM_DeliverStuffToCellDuty</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>moralist</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <speakerInteraction>Speech_Funeral</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_BesideThing" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+        <visualEffectDef>Funeral</visualEffectDef>
+        <postAction Class="RitualStageAction_Message">
+          <text>{0}: The speech is over, and the cremation is beginning.</text>
+          <messageTypeDef>NeutralEvent</messageTypeDef>
+        </postAction>
+        <preAction Class="AlphaMemes.RitualStageAction_FuneralEffectSound">
+          <sound>Recipe_Cremate</sound>
+          <effect>Cremate</effect>
+          <roleID>moralist</roleID>
+        </preAction>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <!-- Outcome -->
+  <RitualOutcomeEffectDef>
+    <defName>Crows_PyreFuneralOutcome</defName>
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <workerClass>AlphaMemes.RitualOutcomeEffectWorker_FuneralFramework</workerClass>
+    <allowAttachableOutcome>false</allowAttachableOutcome>
+    <outcomeChances>
+      <li>
+        <label>Sorrowful Pyre Funeral</label>
+        <chance>0.05</chance>
+        <memory>Crows_SorrowfulPyreFuneral</memory>
+        <description>A disappointing, empty ceremony; the flames barely touched the departed’s memory, and whispers of discontent linger in the air. Few felt any peace from the farewell.</description>
+        <positivityIndex>-5</positivityIndex>
+      </li>
+      <li>
+        <label>Muted Pyre Funeral</label>
+        <chance>0.15</chance>
+        <memory>Crows_MutedPyreFuneral</memory>
+        <description>A quiet, unremarkable ceremony; the fire held steady, yet there was no special spark or blessing. A respectful farewell, though the memory feels incomplete.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Honored Pyre Funeral</label>
+        <chance>0.6</chance>
+        <memory>Crows_HonoredPyreFuneral</memory>
+        <description>A dignified, respectful farewell; the flames rose with grace, and there was a sense that the departed’s spirit left in calm and honor. Many left feeling at peace with the passing.</description>
+        <positivityIndex>2</positivityIndex>
+      </li>
+      <li>
+        <label>Radiant Pyre Funeral</label>
+        <chance>0.2</chance>
+        <memory>Crows_RadiantPyreFuneral</memory>
+        <description>A deeply moving, unforgettable send-off; the flames roared with a beauty only dragons could inspire, and warmth lingered in the hearts of those present. The departed’s memory feels enshrined in fire, as it should be.</description>
+        <positivityIndex>5</positivityIndex>
+      </li>
+    </outcomeChances>
+    <comps>
+      <li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+        <roleId>moralist</roleId>
+        <label>moral guide present</label>
+        <qualityOffset>0.2</qualityOffset>
+        <disableInClassicMode>true</disableInClassicMode>
+      </li>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(5,  0.2)</li>
+            <li>(10, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="AlphaMemes.RitualOutcomeComp_Crafter">
+        <roleId>AM_Crafter</roleId>
+        <label>Artist</label>
+        <skill>Artistic</skill>
+        <curve>
+          <points>
+            <li>(1,  0.0)</li>
+            <li>(10, 0.15)</li>
+            <li>(20, 0.4)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="AlphaMemes.OutcomeEffectExtension">
+        <stripcorpse>false</stripcorpse>
+        <roleToSpawnOn>AM_RitualRoleCorpse</roleToSpawnOn>
+
+        <outcomeSpawners>
+          <li Class="AlphaMemes.FuneralFramework_ThingToSpawn">
+            <thingDefToSpawn>AM_Urn</thingDefToSpawn>
+            <stuffCategoryDefs>
+              <li>Stony</li>
+            </stuffCategoryDefs>
+            <thingCount>1</thingCount>
+            <stuffCount>20</stuffCount>
+          </li>
+        </outcomeSpawners>
+      </li>
+    </modExtensions>
+  </RitualOutcomeEffectDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>Crows_PyreFuneralObligation</defName>
+    <workerClass>AlphaMemes.RitualObligationTargetWorker_FuneralThingExtended</workerClass>
+    <modExtensions>
+      <li Class="AlphaMemes.ObligationTargetExtension">
+        <filters>
+          <li>Crows_FuneralTargetCremate</li>
+          <li>Crows_FuneralTargetCremateUrnStuff</li>
+        </filters>
+      </li>
+    </modExtensions>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>Crows_FuneralTargetCremate</defName>
+    <workerClass>AlphaMemes.RitualObligationTargetWorker_FuneralThingNeedsPower</workerClass>
+    <thingDefs>
+      <li>Crows_FuneralPyre</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+
+  <RitualObligationTargetFilterDef>
+    <defName>Crows_FuneralTargetCremateUrnStuff</defName>
+    <workerClass>AlphaMemes.RitualObligationTargetWorker_HaveRequiredStuff</workerClass>
+    <thingDefs>
+      <li>Crows_FuneralPyre</li>
+    </thingDefs>
+  </RitualObligationTargetFilterDef>
+</Defs>

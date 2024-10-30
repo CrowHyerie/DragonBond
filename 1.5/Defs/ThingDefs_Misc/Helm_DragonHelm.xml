@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef ParentName="ArmorSmithableBase">
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>Crows_Headgear_DragonHelm</defName>
     <label>dragon helm</label>
     <description>An intricately crafted helm with sharp, angular features. Two elegant wings sprout from the top, embodying the power and grace of dragons. Lightweight yet durable, it offers both protection and a striking, commanding presence.</description>
