@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dragon Genetics</li>
+    </mods>
+
+          <match Class="PatchOperationSequence">
+            <operations>
+              <!-- Dragons -->
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Thrumdragon</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_SnailTrail</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Dragonrat</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Dracowolf</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Dracoraptor</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Dracodile</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Dracarachnid</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Cassodragon</li>
+                </value>
+              </li>
+
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedAnimals</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_Aviagon</li>
+                </value>
+              </li>
+
+              <!-- Eggs -->
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/AbilityDef[defName="Crows_DragonBondAbility"]/modExtensions/li/allowedEggs</xpath>
+                <value>
+                  <li MayRequire="Hol.DragonGenetics">GR_DracoraptorEggFertilized</li>
+                </value>
+              </li>
+ 
+            </operations>
+          </match>
+
+  </Operation>
+</Patch>

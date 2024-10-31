@@ -7,7 +7,7 @@
     <constructEffect>ConstructWood</constructEffect>
     <tickerType>Normal</tickerType>
     <drawerType>RealtimeOnly</drawerType>
-    <fillPercent>0.15</fillPercent>
+    <fillPercent>1</fillPercent>
     <graphicData>
       <texPath>Things/Building/Misc/VelonirFuneralPyre</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
