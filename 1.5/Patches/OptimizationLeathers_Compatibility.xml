@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Optimization: Leathers - C# Edition</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Squire Armor Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_Headgear_DragonHelm"]/costList/HardScale</xpath>
+          <value>
+            <Leather_DragonScale>80</Leather_DragonScale>
+          </value>
+        </li>
+
+        <!-- Dragon Rider Armor Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_DragonRiderArmor"]/costList/HardScale</xpath>
+          <value>
+            <Leather_DragonScale>350</Leather_DragonScale>
+          </value>
+        </li>
+
+        <!-- Dragon Knight Armor Patch -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Crows_DragonKnightArmor"]/costList/HardScale</xpath>
+          <value>
+            <Leather_DragonScale>250</Leather_DragonScale>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
